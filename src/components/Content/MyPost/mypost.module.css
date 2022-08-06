@@ -1,0 +1,26 @@
+
+.wrapper {
+    width: 300px;
+    margin: 0 50px;
+}
+.textarea {
+    width: 300px;
+    height: 70px;
+    border-radius: 8px;
+}
+.btn__wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    margin: 0 0 0 10px;
+    width: 70px;
+    border-radius: 5px;
+    background-color: white;
+}
+.btn:hover {
+    background-color: rgb(230, 227, 227);
+}
+.btn:active {
+    background-color: rgb(185, 183, 183);
+}
