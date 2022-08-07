@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MrBattka/SocialNet.git/static/css/main.dcd92d4a.chunk.css",
+    "main.js": "/MrBattka/SocialNet.git/static/js/main.580b4e16.chunk.js",
+    "main.js.map": "/MrBattka/SocialNet.git/static/js/main.580b4e16.chunk.js.map",
+    "runtime-main.js": "/MrBattka/SocialNet.git/static/js/runtime-main.3ada969c.js",
+    "runtime-main.js.map": "/MrBattka/SocialNet.git/static/js/runtime-main.3ada969c.js.map",
+    "static/js/2.f0d1dcbe.chunk.js": "/MrBattka/SocialNet.git/static/js/2.f0d1dcbe.chunk.js",
+    "static/js/2.f0d1dcbe.chunk.js.map": "/MrBattka/SocialNet.git/static/js/2.f0d1dcbe.chunk.js.map",
+    "index.html": "/MrBattka/SocialNet.git/index.html",
+    "precache-manifest.f65f6e99f165fd45cb5172b58cff45c2.js": "/MrBattka/SocialNet.git/precache-manifest.f65f6e99f165fd45cb5172b58cff45c2.js",
+    "service-worker.js": "/MrBattka/SocialNet.git/service-worker.js",
+    "static/css/main.dcd92d4a.chunk.css.map": "/MrBattka/SocialNet.git/static/css/main.dcd92d4a.chunk.css.map",
+    "static/js/2.f0d1dcbe.chunk.js.LICENSE.txt": "/MrBattka/SocialNet.git/static/js/2.f0d1dcbe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3ada969c.js",
+    "static/js/2.f0d1dcbe.chunk.js",
+    "static/css/main.dcd92d4a.chunk.css",
+    "static/js/main.580b4e16.chunk.js"
+  ]
+}
