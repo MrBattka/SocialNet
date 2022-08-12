@@ -41,13 +41,13 @@ a {
     margin-top: 10%;
     height: 460px;
     width: 85%;
-    overflow: scroll;
+    overflow: auto;
     flex-direction: column-reverse;
     display: flex;  
 }
-.wrapper__messanger::-webkit-scrollbar {
+/* .wrapper__messanger::-webkit-scrollbar {
     width: 0;
-  }
+  } */
 .message {
     padding-left: 10px;
     font-size: 20px;
