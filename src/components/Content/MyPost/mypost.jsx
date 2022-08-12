@@ -31,6 +31,7 @@ function MyPosts(props) {
                 <button className={classes.btn} onClick={ onAddPost } type="submit">Send</button>
                 <button className={classes.btn} onClick={ removePostText } type="submit">Remove</button>
             </div>
+            <h2>Posts:</h2>
         </div>
     )
 }

@@ -12,28 +12,19 @@ let store = {
     this._callSubscriber(this._state);
   },
   _state: {
-    profilePage: {
-      posts: [
-        { id: 1, message: 'Hi, how are you?' },
-        { id: 2, message: 'Its my first post' },
-        { id: 3, message: 'Hi, world' },
-        { id: 4, message: 'React its cool' }
-      ],
-      newPostText: ''
-    },
-    dialogsPage: {
-      dialogs: [
-        { id: 1, name: 'Nick 1' },
-        { id: 2, name: 'Nick 2' },
-        { id: 3, name: 'Nick 3' },
-        { id: 4, name: 'Nick 4' },
-        { id: 5, name: 'Nick 5' }
-      ],
-      messages: [
-        { id: 1, message: '' }
-      ],
-      newMessageText: ''
-    }
+    // profilePage: {
+    //   posts: [
+    //   ],
+    //   newPostText: ''
+    // },
+    // dialogsPage: {
+    //   dialogs: [
+    //   ],
+    //   messages: [
+    //     { id: 1, message: '' }
+    //   ],
+    //   newMessageText: ''
+    // }
   },
 
   getState() {return this._state},

@@ -3,10 +3,10 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
   posts: [
-    { id: 1, message: 'Hi, how are you?' },
-    { id: 2, message: 'Its my first post' },
-    { id: 3, message: 'Hi, world' },
-    { id: 4, message: 'React its cool' }
+    // { id: 1, message: 'Hi, how are you?' },
+    // { id: 2, message: 'Its my first post' },
+    // { id: 3, message: 'Hi, world' },
+    // { id: 4, message: 'React its cool' }
   ],
   newPostText: ''
 }
@@ -15,7 +15,7 @@ const profileReduser = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       let newPost = {
-        id: 6,
+        id: 1,
         message: state.newPostText
       };
       state.posts.push(newPost);

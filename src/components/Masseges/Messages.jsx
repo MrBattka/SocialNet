@@ -1,25 +1,10 @@
 
 import classes from './Messages.module.css';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { sendMessageActionCreater, updateNewMessageTextActionCreater } from '../../Redux/dialogs-reduser';
+import DialogItem from './DilogItem/DialogItem';
+import Message from './Message/Message';
 
-const DialogItem = (props) => {
-    let path = '/messages/' + props.id;
-    return (
-        <div className={classes.dialog + ' ' + classes.active}>
-            <NavLink to={path}>{props.name}</NavLink>
-        </div>
-    )
-};
-
-const Message = (props) => {
-    return (
-        <div className={classes.message}>
-            {props.message}
-        </div>
-    )
-}
 
 const Messages = (props) => {
 
@@ -27,11 +12,13 @@ const Messages = (props) => {
     let send = () => {
         let action = sendMessageActionCreater();
         if (props.newMessageText == false) {
+            sendMessage.current.focus();
             return false;
         } else {
             props.dispatch(action);
             props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: '' });
             sendMessage.current.value = '';
+            sendMessage.current.focus();
         }
     }
     let newMessageText = () => {
