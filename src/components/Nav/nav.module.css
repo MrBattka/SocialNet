@@ -1,6 +1,4 @@
 
-
-
 .nav {
     grid-area: n;
     font-size: 25px;
@@ -8,12 +6,12 @@
     line-height: 60px;
     border-radius: 10px 0px 0 0;
     margin-top: 15px;
+    background-color: rgba(95, 81, 182, 0.218);
   }
   .nav a {
     text-decoration: none;
     color: black;
   }
-  
   .settings {
     display: block;
     margin: 30px 0 0 0;

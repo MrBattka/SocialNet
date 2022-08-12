@@ -4,7 +4,11 @@ import React from 'react';
 function MyPosts(props) {
     let newPostElement = React.createRef();
     let onAddPost = () => {
-        props.addPost();
+        if (props.newPostText == false) {
+            return false
+        } else {
+            props.addPost();
+        }
         newPostElement.current.value = '';
     }
 

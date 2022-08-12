@@ -16,19 +16,23 @@ const DialogItem = (props) => {
 const Message = (props) => {
     return (
         <div className={classes.message}>
-            { props.message }
+            {props.message}
         </div>
     )
 }
 
 const Messages = (props) => {
-    
+
     let sendMessage = React.createRef();
     let send = () => {
         let action = sendMessageActionCreater();
-        props.dispatch(action);
-        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: ''});
-        sendMessage.current.value = '';
+        if (props.newMessageText == false) {
+            return false;
+        } else {
+            props.dispatch(action);
+            props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: '' });
+            sendMessage.current.value = '';
+        }
     }
     let newMessageText = () => {
         let text = sendMessage.current.value;
@@ -45,22 +49,22 @@ const Messages = (props) => {
 
             <h2 className={classes.title}>Dialogs</h2>
             <div className={classes.dialogs}>
-                { dialogsElement }
+                {dialogsElement}
             </div>
             <span className={classes.stick}></span>
             <div className={classes.flexbox}>
                 <div className={classes.wrapper__messanger}>
                     <div className={classes.messanger}>
-                        { messagesElement }
+                        {messagesElement}
                     </div>
                 </div>
             </div>
             <div className={classes.textMessage}>
-                <textarea ref={ sendMessage } onChange={ newMessageText } value={props.newMessageText} autoFocus />
+                <textarea ref={sendMessage} onChange={newMessageText} value={props.newMessageText} autoFocus />
             </div>
             <div className={classes.btn}>
                 <div className={classes.btnSend}>
-                    <button onClick={ send }>Send</button>
+                    <button onClick={send}>Send</button>
                 </div>
             </div>
         </div>

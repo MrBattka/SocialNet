@@ -38,10 +38,10 @@ a {
     justify-content: center;
 }
 .wrapper__messanger {   
-    margin-top: 5%;
-    max-height: 460px;
+    margin-top: 10%;
+    height: 460px;
     width: 85%;
-    overflow-y: scroll;
+    overflow: scroll;
     flex-direction: column-reverse;
     display: flex;  
 }
@@ -49,10 +49,12 @@ a {
     width: 0;
   }
 .message {
+    padding-left: 10px;
     font-size: 20px;
-    /* background-color: thistle;
-    border-radius: 5px 5px 5px 5px; */
+    background-color: thistle;
+    border-radius: 5px 5px 5px 5px;
     min-height: 30px;
+    max-width: 500px;
     margin: 5% 5%;
     min-width: 10px;
 }
