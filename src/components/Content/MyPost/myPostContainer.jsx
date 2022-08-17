@@ -5,8 +5,7 @@ import MyPosts from './mypost';
 
 const MyPostsContainer = (props) => {
     let addPost = () => {
-        let action = addPostActionCreater();
-        props.dispatch(action);
+        props.dispatch(addPostActionCreater());
         props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: ''});
     }
     let onPostChange = (text) => {

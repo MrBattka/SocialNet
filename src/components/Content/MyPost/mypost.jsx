@@ -12,10 +12,10 @@ function MyPosts(props) {
         newPostElement.current.value = '';
     }
 
-    let removePostText = () => {
-        props.addPostActionCreater('');
-        newPostElement.current.value='';
-    }
+    // let removePostText = () => {
+    //     props.addPostActionCreater('');
+    //     newPostElement.current.value='';
+    // }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
