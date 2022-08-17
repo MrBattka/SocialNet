@@ -2,12 +2,7 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
-  posts: [
-    // { id: 1, message: 'Hi, how are you?' },
-    // { id: 2, message: 'Its my first post' },
-    // { id: 3, message: 'Hi, world' },
-    // { id: 4, message: 'React its cool' }
-  ],
+  posts: [],
   newPostText: ''
 }
 

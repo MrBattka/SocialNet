@@ -47,7 +47,7 @@ const Messages = (props) => {
                 </div>
             </div>
             <div className={classes.textMessage}>
-                <textarea ref={sendMessage} onChange={newMessageText} value={props.newMessageText} autoFocus />
+                <textarea ref={ sendMessage } onChange={ newMessageText } value={ props.newMessageText } autoFocus />
             </div>
             <div className={classes.btn}>
                 <div className={classes.btnSend}>
