@@ -21,7 +21,7 @@ function MyPosts(props) {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
     }  
-    
+    debugger
     return (
         <div className={classes.wrapper}>
             <div className={classes.textarea__wrapper}>
@@ -29,7 +29,7 @@ function MyPosts(props) {
             </div>
             <div className={classes.btn__wrapper}>
                 <button className={classes.btn} onClick={ onAddPost } type="submit">Send</button>
-                <button className={classes.btn} onClick={ removePostText } type="submit">Remove</button>
+                {/* <button className={classes.btn} onClick={ removePostText } type="submit">Remove</button> */}
             </div>
             <h2>Posts:</h2>
         </div>
