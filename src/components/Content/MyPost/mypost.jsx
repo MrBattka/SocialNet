@@ -11,7 +11,6 @@ function MyPosts(props) {
         }
         newPostElement.current.value = '';
     }
-
     // let removePostText = () => {
     //     props.addPostActionCreater('');
     //     newPostElement.current.value= '';
@@ -21,7 +20,7 @@ function MyPosts(props) {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
     }
-
+   
     return (
         <div className={classes.wrapper}>
             <div className={classes.textarea__wrapper}>
