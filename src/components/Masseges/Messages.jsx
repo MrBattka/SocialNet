@@ -1,7 +1,5 @@
-
 import classes from './Messages.module.css';
 import React from 'react';
-import { sendMessageActionCreater, updateNewMessageTextActionCreater } from '../../Redux/dialogs-reduser';
 import DialogItem from './DilogItem/DialogItem';
 import Message from './Message/Message';
 
@@ -15,7 +13,6 @@ const Messages = (props) => {
             return false;
         } else {
             props.sendMessage()
-            sendMessage.current.value = '';
             sendMessage.current.focus();
         }
     }
