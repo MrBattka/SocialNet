@@ -4,8 +4,11 @@ import React from 'react';
 function MyPosts(props) {
     let newPostElement = React.createRef();
     let onAddPost = () => {
-        
-        props.addPost();
+        if (props.newPostText == false) {
+            return false
+        } else {
+            props.addPost();
+        }
         newPostElement.current.value = '';
     }
     // let removePostText = () => {
@@ -17,7 +20,7 @@ function MyPosts(props) {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
     }
-   
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.textarea__wrapper}>
