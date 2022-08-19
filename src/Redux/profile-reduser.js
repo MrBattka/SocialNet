@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const RESET_NEW_POST_TEXT = 'RESET-NEW-POST-TEXT'
 
 let initialState = {
   posts: [],

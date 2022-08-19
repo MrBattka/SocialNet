@@ -11,21 +11,21 @@ let store = {
 
     this._callSubscriber(this._state);
   },
-  _state: {
-    // profilePage: {
-    //   posts: [
-    //   ],
-    //   newPostText: ''
-    // },
-    // dialogsPage: {
-    //   dialogs: [
-    //   ],
-    //   messages: [
-    //     { id: 1, message: '' }
-    //   ],
-    //   newMessageText: ''
-    // }
-  },
+  // _state: {
+  //   // profilePage: {
+  //   //   posts: [
+  //   //   ],
+  //   //   newPostText: ''
+  //   // },
+  //   // dialogsPage: {
+  //   //   dialogs: [
+  //   //   ],
+  //   //   messages: [
+  //   //     { id: 1, message: '' }
+  //   //   ],
+  //   //   newMessageText: ''
+  //   // }
+  // },
 
   getState() {return this._state},
   subscribe(observer) {

@@ -27,8 +27,9 @@ const dialogsReduser = (state = initialState, action) => {
       state.messages.push(newSendMessage);
       return state;
     case UPDATE_NEW_MESSAGE_TEXT:
+      const newState = { ...state, newMessageText: action.newText }
       state.newMessageText = action.newText;
-      return state;
+      return newState;
     default:
       return state;
   }

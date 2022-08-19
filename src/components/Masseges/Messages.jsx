@@ -10,25 +10,22 @@ const Messages = (props) => {
 
     let sendMessage = React.createRef();
     let send = () => {
-        let action = sendMessageActionCreater();
         if (props.newMessageText == false) {
             sendMessage.current.focus();
             return false;
         } else {
-            props.dispatch(action);
-            props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: '' });
+            props.sendMessage()
             sendMessage.current.value = '';
             sendMessage.current.focus();
         }
     }
     let newMessageText = () => {
         let text = sendMessage.current.value;
-        let action = updateNewMessageTextActionCreater(text);
-        props.dispatch(action);
+        props.updateNewMessageText(text)
     }
 
-    let dialogsElement = props.dialogsData.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messagesElement = props.dialogsData.messages.map(m => <Message message={m.message} />);
+    let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+    let messagesElement = props.messages.map(m => <Message message={m.message} />);
 
     return (
 
