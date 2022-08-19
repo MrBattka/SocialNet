@@ -16,8 +16,7 @@ const Content = (props) => {
             </div>
             <div className={classes.profile__wrapper}>
                 <Profile />
-                <MyPostsContainer store={props.state}
-                                  dispatch={props.dispatch} />
+                <MyPostsContainer  />
                 <div className={classes.Posts}>
                     { postsElement }
                 </div>

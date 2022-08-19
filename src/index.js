@@ -9,7 +9,9 @@ import { Provider } from 'react-redux';
 let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
-      <App state={state} dispatch={store.dispatch.bind(store)} />
+      <Provider store={store}>
+        <App state={state} dispatch={store.dispatch.bind(store)} />
+      </Provider>
     </BrowserRouter>,
     document.getElementById('root')
   );

@@ -1,13 +1,13 @@
-import dialogsReduser from "./dialogs-reduser";
-import profileReduser from "./profile-reduser";
+import dialogsReducer from "./dialogs-reduser";
+import profileReducer from "./profile-reduser";
 
 let store = {
   _callSubscriber() {
     console.log('state changed');
   },
   dispatch(action) {
-    this._state.profilePage = profileReduser(this._state.profilePage, action);
-    this._state.dialogsPage = dialogsReduser(this._state.dialogsPage, action);
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
 
     this._callSubscriber(this._state);
   },

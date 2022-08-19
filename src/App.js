@@ -1,5 +1,5 @@
 
-import { useLayoutEffect } from 'react';
+
 import './App.css';
 import React from 'react';
 import Header from './components/Header/header';
@@ -15,8 +15,7 @@ function App(props) {
         <Nav />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/content' element={ <Content dispatch={props.dispatch}
-                                                      state={props.state}  />} />
+            <Route path='/content' element={ <Content state={props.state}  />} />
             <Route path='/messages/*' element={ <Messages dialogsData={props.state.dialogsPage} 
                                                           dispatch={props.dispatch}
                                                           newMessageText={props.state.dialogsPage.newMessageText}
