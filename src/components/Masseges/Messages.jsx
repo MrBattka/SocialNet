@@ -9,15 +9,21 @@ const Messages = (props) => {
     let sendMessage = React.createRef();
     let send = () => {
         if (props.newMessageText == false) {
-            sendMessage.current.focus();
             return false;
         } else {
             props.sendMessage()
-            sendMessage.current.focus();
+            
         }
     }
+    
     let newMessageText = () => {
         let text = sendMessage.current.value;
+        sendMessage.current.addEventListener('keydown', function (keyPress) {
+            if (keyPress.keyCode === 13) {
+                keyPress.preventDefault();
+                send()
+            }
+        }, {once: true} )
         props.updateNewMessageText(text)
     }
 

@@ -7,7 +7,7 @@ import MyPostsContainer from './MyPost/myPostContainer';
 
 const Content = (props) => {
 
-    let postsElement = props.state.profilePage.posts.map( p => <Posts post={p.message} /> );
+    
 
     return (
         <div className={classes.content}>
@@ -16,10 +16,7 @@ const Content = (props) => {
             </div>
             <div className={classes.profile__wrapper}>
                 <Profile />
-                <MyPostsContainer  />
-                <div className={classes.Posts}>
-                    { postsElement }
-                </div>
+                <MyPostsContainer  />       
             </div>
         </div>
     )

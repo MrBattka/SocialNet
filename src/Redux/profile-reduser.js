@@ -1,3 +1,5 @@
+import Posts from "../components/Content/Posts/posts";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const RESET_NEW_POST_TEXT = 'RESET-NEW-POST-TEXT'
@@ -9,17 +11,23 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_POST:
+    case ADD_POST: {
       let newPost = {
         id: 1,
         message: state.newPostText
       };
-      state.posts.push(newPost);
-      return state;
-    case UPDATE_NEW_POST_TEXT:
-      const newState = { ...state, newPostText: action.newText }
-      state.newPostText = action.newText;
+      let newState = { ...state }
+      newState.posts = [...state.posts]
+      newState.posts.push(newPost);
+      console.log(newState, ' scss');
       return newState;
+    }
+    case UPDATE_NEW_POST_TEXT: {
+      const newState = { ...state }
+      newState.newPostText = [...state.newPostText]
+      newState.newPostText = action.newText;
+      return newState;
+    }
     default:
       return state;
   }

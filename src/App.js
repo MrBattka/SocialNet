@@ -13,7 +13,7 @@ function App(props) {
         <Nav />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/content' element={ <Content state={props.state}  />} />
+            <Route path='/content' element={ <Content />} />
             <Route path='/messages/*' element={ <MessagesContainer /> } />
           </Routes>
         </div>
