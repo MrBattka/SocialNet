@@ -12,7 +12,6 @@ const Messages = (props) => {
             return false;
         } else {
             props.sendMessage()
-            
         }
     }
     
@@ -27,8 +26,8 @@ const Messages = (props) => {
         props.updateNewMessageText(text)
     }
 
-    let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messagesElement = props.messages.map(m => <Message message={m.message} />);
+    let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
+    let messagesElement = props.messages.map(m => <Message message={m.message} key={m.id} />);
 
     return (
 

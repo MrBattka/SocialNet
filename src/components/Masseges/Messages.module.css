@@ -64,8 +64,6 @@ a {
     margin: 68% 0;
     display: flex;
     justify-content: center;
-    width: 706px;
-    height: 66px;
 }
 .textMessage textarea {
     height: 60px;

@@ -5,10 +5,7 @@ import Profile from './Profile/profile';
 import React from 'react';
 import MyPostsContainer from './MyPost/myPostContainer';
 
-const Content = (props) => {
-
-    
-
+const Content = () => {
     return (
         <div className={classes.content}>
             <div>
