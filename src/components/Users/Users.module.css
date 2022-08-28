@@ -8,7 +8,7 @@
 }
 .users {
     display: block;
-    margin: 30px 65px;
+    margin: 30px 60px;
     color: red;
     font-size: 30px;
     font-weight: 700;
@@ -60,4 +60,8 @@
 .location {
     margin-top: 20px;
     letter-spacing: 1px;
+}
+.item:hover {
+    color: red;
+    font-weight: 700;
 }
