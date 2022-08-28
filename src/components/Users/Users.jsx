@@ -1,8 +1,9 @@
-import React from "react";
+// import React from "react";
 import classes from './Users.module.css';
+import React, { useState } from "react";
 
 let Users = (props) => {
-    
+
     if (props.users.length === 0) {
         props.setUsers([
             {
@@ -21,7 +22,8 @@ let Users = (props) => {
         )
     }
 
-    return <div><span className={classes.users}>Users:</span>
+    return <div>
+        <span className={classes.users}>Users:</span>
         {
             props.users.map(u => <div className={classes.wrapper} key={u.id}>
                 <div className={classes.wrapper__avatar}>
@@ -30,7 +32,7 @@ let Users = (props) => {
                     </div>
                     <div className={classes.btn__wrapper}>
                         {u.followed ? <button className={classes.btn__unfollow} onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-                            : <button className={classes.btn__follow} onClick={() => { props.follow(u.id) }}>Follow</button>}
+                            : <button className={classes.btn__follow} onClick={ () => { props.follow(u.id) } }>Follow</button>}
                     </div>
                 </div>
                 <div className={classes.wrapper__info}>
