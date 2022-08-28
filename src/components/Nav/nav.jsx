@@ -12,7 +12,7 @@ function Nav() {
                 <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/messages">Messages</NavLink>
             </div>
             <div className={classes.link}>
-                <a className={classes.item} href="#">News</a>
+                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/users">Users</NavLink>
             </div>
             <div className={classes.link}>
                 <a className={classes.item} href="#">Music</a>

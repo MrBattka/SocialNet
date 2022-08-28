@@ -9,7 +9,6 @@ function MyPosts(props) {
             return false
         } else {
             props.addPost();
-
         }
     }
     let clickButtonEnten = () => {
