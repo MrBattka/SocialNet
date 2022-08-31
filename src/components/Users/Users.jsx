@@ -33,13 +33,9 @@ class Users extends React.Component {
         }
     
         return <div>
+            <a name='top'></a>
             <span className={classes.users}>Users:</span>
-            <div className={classes.numberPage}>
-                {pages.map(p => {
-                    return <div className={this.props.currentPage === p && classes.selectedPage}
-                        onClick={(e) => { this.onPageChanged(p) }} key={p.id}><span className={classes.number}>{p}</span></div>
-                })}
-            </div>
+            
             {
                 this.props.users.map(u => <div className={classes.wrapper} key={u.id}>
                     <div className={classes.wrapper__avatar}>
@@ -63,7 +59,12 @@ class Users extends React.Component {
                     </div>
                 </div>)
             }
-            
+            <div className={classes.numberPage}>
+                {pages.map(p => {
+                    return <div 
+                        onClick={(e) => { this.onPageChanged(p) }} key={p.id}><button className={this.props.currentPage === p && classes.selectedPage}><a href="#top">{p}</a></button></div>
+                })}
+            </div>
         </div >
     }
 }
