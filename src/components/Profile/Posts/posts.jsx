@@ -5,7 +5,7 @@ import Preloader from '../../Common/Preloader/Preloader';
 
 function Posts(props) {
 
-    if (!props.profile) {
+    if (!props.profile.photos.small) {
         return <Preloader />
     }
 
