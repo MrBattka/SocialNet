@@ -31,7 +31,7 @@ function MyPosts(props) {
         props.updateNewPostText(text);
     }
 
-    let postsElement = props.posts.map(p => <Posts post={p.message} key={p.id} />);
+    let postsElement = props.posts.map(p => <Posts post={p.message} profile={props.profile} key={p.id} />);
 
     return (
         <div className={classes.wrapper}>

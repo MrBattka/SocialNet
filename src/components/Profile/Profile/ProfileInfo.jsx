@@ -1,12 +1,18 @@
-import classes from './profile.module.css';
+import classes from './ProfileInfo.module.css';
 import React from 'react';
+import Preloader from '../../Common/Preloader/Preloader';
 
-function Profile(props) {
+function ProfileInfo(props) {
+
+    if (!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div className={classes.profile__wrapper}>
             <div>
                 <img className={classes.profile__img}
-                    src='https://besco.ru/upload/iblock/4dd/66b6f8f3c67a51dbae67b1d6684d10e9.jpg' />
+                    src={props.profile.photos.large} />
             </div>
             <div className={classes.profile__info}>
                 <p className={classes.username}>Pablo Escobar</p>
@@ -17,4 +23,4 @@ function Profile(props) {
     )
 }
 
-export default Profile;
+export default ProfileInfo;

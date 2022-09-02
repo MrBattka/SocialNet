@@ -7,7 +7,7 @@ function Posts(props) {
         <div>
             <div className={classes.wrapper}>
                 <div className={classes.avatar}>
-                    <img src='https://i.pinimg.com/originals/f5/27/41/f52741fb62bf1d821948a49204406bdc.jpg' />
+                    <img src={props.profile.photos.small} />
                 </div>
                 <div className={classes.text}>
                     {props.post}

@@ -6,7 +6,7 @@ function Nav() {
     return (
         <nav className={classes.nav}>
             <div className={classes.link}>
-                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/content">Profile</NavLink>
+                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/profile">Profile</NavLink>
             </div>
             <div className={classes.link}>
                 <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/messages">Messages</NavLink>

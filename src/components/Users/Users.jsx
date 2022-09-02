@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './Users.module.css';
 import userPhoto from '../../assets/img/user.jpg'
+import { NavLink } from 'react-router-dom';
 
 let Users = (props) => {
 
@@ -16,29 +17,30 @@ let Users = (props) => {
     }
     return <div>
         <a name='top'></a>
-        <span className={classes.users}>Users:</span>
         {props.users.map(u => <div className={classes.wrapper} key={u.id}>
-                <div className={classes.wrapper__avatar}>
-                    <div>
+            <div className={classes.wrapper__avatar}>
+                <div>
+                    <NavLink to={"/profile/" + u.id}>
                         <img className={classes.avatar} src={u.photos.small != null ? u.photos.small : userPhoto} />
-                    </div>
-                    <div className={classes.btn__wrapper}>
-                        {u.followed ? <button className={classes.btn__unfollow} onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-                            : <button className={classes.btn__follow} onClick={() => { props.follow(u.id) }}>Follow</button>}
-                    </div>
+                    </NavLink>
                 </div>
-                <div className={classes.wrapper__info}>
-                    <div>
-                        <div className={classes.nickName}>{u.name}</div>
-                        <div className={classes.status}>{u.status}</div>
-                    </div>
-                    <div className={classes.location}>
-                        <div>{/*"u.location.country"*/ "USA"},</div>
-                        <div>{/*"u.location.city"*/ "New York"}</div>
-                    </div>
+                <div className={classes.btn__wrapper}>
+                    {u.followed ? <button className={classes.btn__unfollow} onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+                        : <button className={classes.btn__follow} onClick={() => { props.follow(u.id) }}>Follow</button>}
                 </div>
-            </div>)}
-    <div className={classes.numberPage}>
+            </div>
+            <div className={classes.wrapper__info}>
+                <div>
+                    <div className={classes.nickName}>{u.name}</div>
+                    <div className={classes.status}>{u.status}</div>
+                </div>
+                <div className={classes.location}>
+                    <div>{/*"u.location.country"*/ "USA"},</div>
+                    <div>{/*"u.location.city"*/ "New York"}</div>
+                </div>
+            </div>
+        </div>)}
+        <div className={classes.numberPage}>
             {pages.map(p => {
                 return <div
                     onClick={(e) => { props.onPageChanged(p) }} key={p.id}>
