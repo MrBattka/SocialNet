@@ -1,8 +1,14 @@
 import classes from './posts.module.css';
 import React from 'react';
+import Preloader from '../../Common/Preloader/Preloader';
 
 
 function Posts(props) {
+
+    if (!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div>
             <div className={classes.wrapper}>
