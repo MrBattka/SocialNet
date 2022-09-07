@@ -1,5 +1,6 @@
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const RESET_NEW_MESSAGE_TEXT = 'RESET_NEW_MESSAGE_TEXT';
 
 let initialState = {
   dialogs: [
@@ -19,25 +20,33 @@ window.initialState = initialState;
 
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
-    case SEND_MESSAGE: 
+    case SEND_MESSAGE:
       let newSendMessage = {
         id: 1,
         message: state.newMessageText
       };
-      return { ...state,
-        messages: [...state.messages, newSendMessage] 
+      return {
+        ...state,
+        messages: [...state.messages, newSendMessage]
       }
-    case UPDATE_NEW_MESSAGE_TEXT: 
-      return { ...state,
+    case UPDATE_NEW_MESSAGE_TEXT:
+      return {
+        ...state,
         newMessageText: action.newText
       }
+    case RESET_NEW_MESSAGE_TEXT:
+      return {
+        ...state,
+        newMessageText: action.newText}
     default:
       return state;
   }
 }
 
-export const sendMessageActionCreater = () => ({ type: SEND_MESSAGE })
-export const updateNewMessageTextActionCreater = (text) =>
+export const sendMessageAC = () => ({ type: SEND_MESSAGE })
+export const updateNewMessageTextAC = (text) =>
   ({ type: UPDATE_NEW_MESSAGE_TEXT, newText: text })
+export const resetNewMessageTextAC = () => 
+  ({ type: RESET_NEW_MESSAGE_TEXT, newText: '' })
 
 export default dialogsReduser;

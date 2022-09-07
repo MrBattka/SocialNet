@@ -1,24 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPostActionCreater, resetNewPostTextActionCreater, updateNewPostTextActionCreater } from '../../../Redux/profile-reduser';
+import { addPostAC, resetNewPostTextAC, updateNewPostTextAC } from '../../../Redux/profile-reduser';
 import MyPosts from './mypost';
 
 const mapStateToProps = (state) => {
+    
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText,
-        profile: state.profilePage.profile
+        profile: state.profilePage.profile,
+        isFetching: state.profilePage.isFetching
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         addPost: () => {
-            dispatch(addPostActionCreater());
-            dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: '' })
+            dispatch(addPostAC());
+            dispatch(resetNewPostTextAC())
         },
         updateNewPostText: (text) => {
-            dispatch(updateNewPostTextActionCreater(text))
-        }
+            dispatch(updateNewPostTextAC(text))
+        },
     }
 }
 

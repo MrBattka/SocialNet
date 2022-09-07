@@ -9,7 +9,7 @@ let Users = (props) => {
 
     let pages = []
     for (let i = 1; i <= pagesCount; i++) {
-        if (i > 11) {
+        if (i > 20) {
             break
         } else {
             pages.push(i)
@@ -44,7 +44,7 @@ let Users = (props) => {
             {pages.map(p => {
                 return <div
                     onClick={(e) => { props.onPageChanged(p) }} key={p.id}>
-                    <button className={props.currentPage === p && classes.selectedPage}><a href="#top">{p}</a></button></div>
+                    <button className={props.currentPage === p ? classes.selectedPage : ""}><a href="#top">{p}</a></button></div>
             })}
         </div>
     </div>

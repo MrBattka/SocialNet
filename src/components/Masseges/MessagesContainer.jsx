@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { updateNewMessageTextActionCreater, sendMessageActionCreater } from "../../Redux/dialogs-reduser";
+import { resetNewMessageTextAC, sendMessageAC, updateNewMessageTextAC } from "../../Redux/dialogs-reduser";
 import Messages from "./Messages";
 
 const mapStateToProps = (state) => {
@@ -12,11 +12,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         sendMessage: () => {
-            dispatch(sendMessageActionCreater());
-            dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newText: '' });
+            dispatch(sendMessageAC());
+            dispatch(resetNewMessageTextAC());
         },
         updateNewMessageText: (text) => {
-            dispatch(updateNewMessageTextActionCreater(text));
+            dispatch(updateNewMessageTextAC(text));
         }
     }
 }

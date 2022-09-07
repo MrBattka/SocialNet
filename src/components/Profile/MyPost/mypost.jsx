@@ -1,8 +1,10 @@
 import classes from './mypost.module.css';
 import React from 'react';
 import Posts from '../Posts/posts';
+import Preloader from '../../Common/Preloader/Preloader';
 
 function MyPosts(props) {
+    
     let newPostElement = React.createRef();
     let onAddPost = () => {
         if (props.newPostText == false) {
@@ -31,8 +33,8 @@ function MyPosts(props) {
         props.updateNewPostText(text);
     }
 
-    let postsElement = props.posts.map(p => <Posts post={p.message} profile={props.profile} key={p.id} />);
-
+    let postsElement = props.posts.map(p => <Posts post={p.message} profile={props.profile} key={p.profile} />);
+    
     return (
         <div className={classes.wrapper}>
             <div className={classes.textarea__wrapper}>
@@ -45,7 +47,7 @@ function MyPosts(props) {
             </div>
             <h2>Posts:</h2>
             <div className={classes.Posts}>
-                { postsElement }
+                { props.isFetching ? postsElement : <Preloader /> }
             </div>
         </div>
     )

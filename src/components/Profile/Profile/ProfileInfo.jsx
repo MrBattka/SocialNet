@@ -1,6 +1,8 @@
 import classes from './ProfileInfo.module.css';
 import React from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
+import userPhoto from '../../../assets/img/user.jpg'
+import Lorem from '../../Common/Lorem/Lorem';
 
 function ProfileInfo(props) {
 
@@ -12,12 +14,11 @@ function ProfileInfo(props) {
         <div className={classes.profile__wrapper}>
             <div>
                 <img className={classes.profile__img}
-                    src={props.profile.photos.large} />
+                    src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto} />
             </div>
             <div className={classes.profile__info}>
-                <p className={classes.username}>Pablo Escobar</p>
-                <p className={classes.about__user}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae animi nulla
-                    debitis facilis repellat. Ullam in earum voluptatem eligendi blanditiis!</p>
+                <div className={classes.userName}>{props.profile.fullName}</div>
+                <div className={classes.about__user}>{props.profile.aboutMe != null ? props.profile.aboutMe : <Lorem />}</div>
             </div>
         </div>
     )
