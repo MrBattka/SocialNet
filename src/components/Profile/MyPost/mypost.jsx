@@ -1,6 +1,6 @@
-import classes from './mypost.module.css';
+import classes from './MyPost.module.css';
 import React from 'react';
-import Posts from '../Posts/posts';
+import Posts from '../Posts/Posts';
 import Preloader from '../../Common/Preloader/Preloader';
 
 function MyPosts(props) {

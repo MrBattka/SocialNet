@@ -1,28 +1,39 @@
-
 .header__wrapper {
-    grid-area: h;
-    position: sticky;
-    z-index: 1;
-    top: 0;
+  grid-area: h;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 
-.header {
-    background-color: rgba(128, 128, 128, 0.507);
-    border-radius: 0px 0px 10px 10px;
-    top: 0; 
-    height: 60px; 
-  }
+.header { 
+  background-color: rgba(128, 128, 128, 0.507);
+  border-radius: 0px 0px 10px 10px;
+  top: 0;
+  height: 60px;
+}
+
 .logo {
-    top: -15px;
-    position: absolute;
-    margin: 0 0 0px 60px;
-    line-height: 2px;
-    font-size: 27px;
-    font-weight: 900;
-    color: red;
-    letter-spacing: 2px;
-  }
+  top: -15px;
+  position: absolute;
+  margin: 0 0 0px 60px;
+  line-height: 2px;
+  font-size: 27px;
+  font-weight: 900;
+  color: red;
+  letter-spacing: 2px;
+}
+
 .logo__text {
-    margin: 0px 0 10px 35px;
-  }
-  
+  margin: 0px 0 10px 35px;
+}
+.login__block {
+  display: flex;
+  justify-content: right;
+  margin-right: 10px;
+}
+.login__block a {
+  align-items: center;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}

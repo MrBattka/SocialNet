@@ -1,4 +1,4 @@
-import classes from './posts.module.css';
+import classes from './Posts.module.css';
 import React from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
 import userPhoto from '../../../assets/img/user.jpg'
