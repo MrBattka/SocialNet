@@ -13,14 +13,14 @@ export const usersAPI = {
                 return response.data
             })
     },
-    getFollow(u) {
-        return instance.post(`follow/${u.id}`)
+    follow(userId) {
+        return instance.post(`follow/${userId.id}`)
             .then(response => {
                 return response.data
             })
     },
-    getUnfollow(u) {
-        return instance.delete(`follow/${u.id}`)
+    unfollow(userId) {
+        return instance.delete(`follow/${userId.id}`)
             .then(response => {
                 return response.data
             })
@@ -34,7 +34,7 @@ export const usersAPI = {
 }
 
 export const authAPI = {
-    getAuth () {
+    auth () {
         return instance.get(`auth/me`)
         .then(response => {
             return response.data
