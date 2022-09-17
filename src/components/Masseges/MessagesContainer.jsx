@@ -1,12 +1,15 @@
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { withAuthLocation } from "../../hoc/withAuthLocation";
 import { resetNewMessageTextAC, sendMessageAC, updateNewMessageTextAC } from "../../Redux/dialogs-reduser";
-import Messages from "./Messages";
+import Messages from "./Messages"
 
 const mapStateToProps = (state) => {
     return {
         dialogs: state.dialogsPage.dialogs,
         messages: state.dialogsPage.messages,
-        newMessageText: state.dialogsPage.newMessageText
+        newMessageText: state.dialogsPage.newMessageText,
+        
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -21,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages)
-
-export default MessagesContainer
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthLocation
+)(Messages)

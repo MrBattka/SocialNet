@@ -3,12 +3,11 @@ import React from 'react';
 import DialogItem from './DilogItem/DialogItem';
 import Message from './Message/Message';
 
-
 const Messages = (props) => {
 
     let sendMessage = React.createRef();
     let send = () => {
-        if (props.newMessageText == false) {
+        if (!props.newMessageText) {
             return false;
         } else {
             props.sendMessage()

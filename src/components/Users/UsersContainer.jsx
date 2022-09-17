@@ -1,14 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import classes from './Users.module.css'
-import { setCurrentPage, toggleFollowingProgress,  getUsers, follow, unfollow } from "../../Redux/users-reduser";
+import { setCurrentPage, toggleFollowingProgress, getUsers, follow, unfollow } from "../../Redux/users-reduser";
 import Users from './Users'
 import Preloader from "../Common/Preloader/Preloader";
+import { compose } from "redux";
+import { withAuthLocation } from "../../hoc/withAuthLocation";
 class UsersContainer extends React.Component {
     componentDidMount() {
         this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
-    onPageChanged = (pageNumber) => {
+    onPageChanged = () => {
         this.props.getUsers(this.props.currentPage, this.props.pageNumber)
     }
     render() {
@@ -39,5 +41,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,
-    { setCurrentPage, toggleFollowingProgress, getUsers, follow, unfollow })(UsersContainer)
+export default compose(
+    connect(mapStateToProps,
+        { setCurrentPage, toggleFollowingProgress, getUsers, follow, unfollow }),
+    withAuthLocation
+)(UsersContainer)

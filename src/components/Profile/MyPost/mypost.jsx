@@ -7,7 +7,7 @@ function MyPosts(props) {
     
     let newPostElement = React.createRef();
     let onAddPost = () => {
-        if (props.newPostText == false) {
+        if (!props.newPostText) {
             return false
         } else {
             props.addPost();

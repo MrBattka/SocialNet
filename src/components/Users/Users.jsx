@@ -33,7 +33,9 @@ let Users = (props) => {
             </div>
             <div className={classes.wrapper__info}>
                 <div>
-                    <div className={classes.nickName}>{u.name}</div>
+                    <div className={classes.nickName}>
+                        <NavLink to={"/profile/" + u.id} className={classes.userName__link}>{u.name}</NavLink>
+                    </div>
                     <div className={classes.status}>{u.status}</div>
                 </div>
                 <div className={classes.location}>

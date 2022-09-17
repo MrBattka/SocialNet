@@ -3,6 +3,7 @@ import React from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
 import userPhoto from '../../../assets/img/user.jpg'
 import Lorem from '../../Common/Lorem/Lorem';
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 
 function ProfileInfo(props) {
 
@@ -18,7 +19,7 @@ function ProfileInfo(props) {
             </div>
             <div className={classes.profile__info}>
                 <div className={classes.userName}>{props.profile.fullName}</div>
-                <div className={classes.about__user}>{props.profile.aboutMe != null ? props.profile.aboutMe : <Lorem />}</div>
+                <div className={classes.about__user}>{<ProfileStatus /> != null ? <ProfileStatus profile={props.profile} /> : <Lorem />}</div>
             </div>
         </div>
     )
