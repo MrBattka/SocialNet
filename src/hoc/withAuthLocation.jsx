@@ -7,8 +7,10 @@ export const withAuthLocation = (Component) => {
         isAuth: state.auth.isAuth
     })
     const LocationComponent = (props) => {
-        if (!props.isAuth) { return <Navigate replace to={"/login"} /> }
-        return <Component {...props} />
+        if (!props.isAuth) {
+            return <Navigate replace to={"/login"} />
+        }
+        return <Component {...props} /> 
     }
     const ConnectedAuthLocation = connect(mapStateToProps)(LocationComponent)
     return ConnectedAuthLocation

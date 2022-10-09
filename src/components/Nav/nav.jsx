@@ -1,12 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import classes from './Nav.module.css';
 import React from 'react';
+import { connect } from 'react-redux';
 
-function Nav() {
+function Nav(props) {
+    // {`/profile/${userId}`}
     return (
         <nav className={classes.nav}>
             <div className={classes.link}>
-                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/profile/2">Profile</NavLink>
+                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/profile">Profile</NavLink>
             </div>
             <div className={classes.link}>
                 <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/messages">Messages</NavLink>
@@ -25,4 +27,8 @@ function Nav() {
     )
 }
 
-export default Nav;
+const mapStateToProps = (state) => ({
+    userId: state.usersPage.profile
+})
+
+export default connect(mapStateToProps)(Nav);

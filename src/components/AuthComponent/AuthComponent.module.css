@@ -1,0 +1,45 @@
+.login__block {
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+    position: sticky;
+}
+
+.login__form {
+    float: left;
+}
+
+.login__block a {
+    align-items: center;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.login {
+    display: flex;
+}
+
+.login a {
+    text-decoration: none;
+    color: black;
+}
+
+.login a:hover {
+    font-weight: bold;
+    text-shadow: white 0 0 10px;
+}
+
+.login a:active {
+    text-shadow: none;
+}
+
+.btn__logout {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    margin-left: 10px;
+    cursor: pointer;
+}

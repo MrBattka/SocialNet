@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { withAuthLocation } from "../../hoc/withAuthLocation";
-import { resetNewMessageTextAC, sendMessageAC, updateNewMessageTextAC } from "../../Redux/dialogs-reduser";
+import { sendMessageAC } from "../../Redux/dialogs-reduser";
 import Messages from "./Messages"
 
 const mapStateToProps = (state) => {
@@ -14,12 +14,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        sendMessage: () => {
-            dispatch(sendMessageAC());
-            dispatch(resetNewMessageTextAC());
-        },
-        updateNewMessageText: (text) => {
-            dispatch(updateNewMessageTextAC(text));
+        sendMessage: (newMessageBody) => {
+            dispatch(sendMessageAC(newMessageBody));
         }
     }
 }

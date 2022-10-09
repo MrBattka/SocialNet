@@ -19,7 +19,12 @@ function ProfileInfo(props) {
             </div>
             <div className={classes.profile__info}>
                 <div className={classes.userName}>{props.profile.fullName}</div>
-                <div className={classes.about__user}>{<ProfileStatus /> != null ? <ProfileStatus profile={props.profile} /> : <Lorem />}</div>
+                <div className={classes.about__user}>{
+                    <ProfileStatus /> != null ? <ProfileStatus
+                                                    profile={props.profile}
+                                                    status={props.status}
+                                                    updateProfileStatus={props.updateProfileStatus} /> : <Lorem />}
+                </div>          
             </div>
         </div>
     )

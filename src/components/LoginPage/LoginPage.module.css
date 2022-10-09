@@ -1,0 +1,36 @@
+.wrapperLoginPage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleLogin {
+    display: flex;
+    justify-content: center;
+}
+
+.wrapperLoginPage p {
+    
+}
+
+.formSummaryError {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    padding: 5px;
+    max-width: min-content;
+    color: red;     
+}
+
+.checkbox {
+    display: flex;
+    color: black;
+    flex-direction: row;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    max-width: min-content;
+}

@@ -1,14 +1,8 @@
 import classes from './Posts.module.css';
 import React from 'react';
-import Preloader from '../../Common/Preloader/Preloader';
 import userPhoto from '../../../assets/img/user.jpg'
 
 function Posts(props) {
-
-    // if (!props.profile.photos.small) {
-    //     return <Preloader />
-    // }
-
     return (
         <div>
             <div className={classes.wrapper}>

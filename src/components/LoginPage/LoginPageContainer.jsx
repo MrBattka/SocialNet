@@ -5,7 +5,8 @@ import LoginPage from "./LoginPage";
 const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
-        isFetching: state.usersPage.isFetching
+        isFetching: state.usersPage.isFetching,
+        profile: state.profilePage.profile
     }
 }
 

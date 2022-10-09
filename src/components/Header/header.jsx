@@ -1,6 +1,6 @@
 import classes from './Header.module.css';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import AuthComponent from '../AuthComponent/AuthComponent';
 
 function Header(props) {
     return (
@@ -10,9 +10,7 @@ function Header(props) {
                     <p>Social ·</p>
                     <p className={classes.logo__text}>· NET</p>
                 </div>
-                <div className={classes.login__block}>
-                    <p className={classes.login}>{ props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}</p>
-                </div>
+                <AuthComponent />
             </div>
         </header>
     )

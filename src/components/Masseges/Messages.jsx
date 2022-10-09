@@ -2,27 +2,11 @@ import classes from './Messages.module.css';
 import React from 'react';
 import DialogItem from './DilogItem/DialogItem';
 import Message from './Message/Message';
+import { MessageFormRedux } from './MessageForm/MessageForm';
 
 const Messages = (props) => {
-
-    let sendMessage = React.createRef();
-    let send = () => {
-        if (!props.newMessageText) {
-            return false;
-        } else {
-            props.sendMessage()
-        }
-    }
-    
-    let newMessageText = () => {
-        let text = sendMessage.current.value;
-        sendMessage.current.addEventListener('keydown', function (keyPress) {
-            if (keyPress.keyCode === 13) {
-                keyPress.preventDefault();
-                send()
-            }
-        }, {once: true} )
-        props.updateNewMessageText(text)
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
 
     let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
@@ -44,14 +28,7 @@ const Messages = (props) => {
                     </div>
                 </div>
             </div>
-            <div className={classes.textMessage}>
-                <textarea ref={ sendMessage } onChange={ newMessageText } value={ props.newMessageText } autoFocus />
-            </div>
-            <div className={classes.btn}>
-                <div className={classes.btnSend}>
-                    <button onClick={send}>Send</button>
-                </div>
-            </div>
+            <MessageFormRedux onSubmit={addNewMessage} />
         </div>
 
     )

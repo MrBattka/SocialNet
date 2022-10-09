@@ -26,14 +26,3 @@
 .logo__text {
   margin: 0px 0 10px 35px;
 }
-.login__block {
-  display: flex;
-  justify-content: right;
-  margin-right: 10px;
-}
-.login__block a {
-  align-items: center;
-  font-size: 17px;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
