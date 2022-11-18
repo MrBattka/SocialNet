@@ -1,7 +1,7 @@
-import { NavLink, useParams } from 'react-router-dom';
-import classes from './Nav.module.css';
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import classes from './Nav.module.css';
 
 function Nav(props) {
     // {`/profile/${userId}`}

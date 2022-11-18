@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { login } from "../../Redux/auth";
+import { login } from "../../Redux/auth-reduser";
 import LoginReduxForm from "./LoginForm/LoginForm";
 import classes from "./LoginPage.module.css"
 
@@ -15,7 +15,7 @@ const LoginPage = (props) => {
     return (
         <div className={classes.wrapperLoginPage}>
             <div className={classes.titleLogin}>
-                <p>LOGIN</p>
+                <p className={classes.loginTitle}>LOGIN</p>
             </div>
             <div>
                 <LoginReduxForm onSubmit={onSubmit} />

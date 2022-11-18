@@ -1,6 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { addPostAC, resetNewPostTextAC, updateNewPostTextAC } from '../../../Redux/profile-reduser';
+import { addPostAC, deletePost } from '../../../Redux/profile-reduser';
 import MyPosts from './MyPost';
 
 const mapStateToProps = (state) => {
@@ -16,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addPost: (newPostText) => {
             dispatch(addPostAC(newPostText));
+        },
+        deletePost: (postId) => {
+            dispatch(deletePost(postId))
         }
     }
 }

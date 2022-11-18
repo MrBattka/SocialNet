@@ -1,15 +1,12 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { compose } from 'redux';
 import { withAuthLocation } from '../../hoc/withAuthLocation';
-import { getAuthUserData } from '../../Redux/auth';
 import { getProfile, getProfileStatus, updateProfileStatus } from '../../Redux/profile-reduser';
 import Profile from './Profile';
 
 const ProfileContainer = (props) => {
-    
     let { userId } = useParams()
     if (!userId) {
         userId = props.authUserId

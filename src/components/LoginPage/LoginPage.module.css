@@ -8,29 +8,30 @@
 .titleLogin {
     display: flex;
     justify-content: center;
-}
-
-.wrapperLoginPage p {
-    
+    margin-top: 20px;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: rgb(83, 83, 83);
 }
 
 .formSummaryError {
     display: flex;
     justify-content: center;
-    border: 1px solid red;
-    padding: 5px;
-    max-width: min-content;
-    color: red;     
-}
-
-.checkbox {
-    display: flex;
-    color: black;
-    flex-direction: row;
+    color: red;
 }
 
 .form {
     display: flex;
     justify-content: center;
     max-width: min-content;
+}
+
+.submit {
+    margin-top: 20px;
+}
+
+.error {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
 }

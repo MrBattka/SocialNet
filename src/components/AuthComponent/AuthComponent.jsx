@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import LogoutReduxForm from "./LogoutForm";
 import classes from "./AuthComponent.module.css"
-import { getAuthUserData, logout } from "../../Redux/auth";
+import { logout } from "../../Redux/auth-reduser";
 import { connect } from "react-redux";
 
 const AuthComponent = (props) => {

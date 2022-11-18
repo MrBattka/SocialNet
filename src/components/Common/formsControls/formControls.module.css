@@ -1,8 +1,21 @@
-.formControl.error input,
-.formControl.error textarea {
-    border: 1px red solid;
-}
 
-.formControl.error span {
+.formError {
     color: red;
+}
+.rememberMe {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.fieldControl {
+    display: flex;
+    margin-bottom: 15px;
+}
+.fieldControl input {
+    background-color: rgb(217, 215, 215);
+}
+.fieldControl:first-child {
+    margin-top: 80px;
 }

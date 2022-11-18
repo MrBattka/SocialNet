@@ -1,4 +1,4 @@
-import { getAuthUserData } from "./auth"
+import { getAuthUserData } from "./auth-reduser"
 
 const INITIALIZED__ACCESS = "INITIALIZED__ACCESS" 
 

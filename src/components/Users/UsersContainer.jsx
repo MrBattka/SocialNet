@@ -14,7 +14,7 @@ const UsersContainer = (props) => {
     const onPageChanged = (pageNumber) => {
         props.requestGetUsers(pageNumber, props.pageSize)
     }
-
+    
     return (<>
         <span className={classes.users}>Users:</span>
         {props.isFetching ? <Preloader /> : <Users

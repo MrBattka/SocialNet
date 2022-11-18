@@ -1,70 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./ProfileStatus.module.css"
 
-class ProfileStatus extends React.Component {
-    updateStatusEnter = React.createRef()
-    state = {
-        editMode: false,
-        status: this.props.status
+const ProfileStatus = (props) => {
+    const updateStatusEnter = React.createRef()
+
+    let [editMode, setEditMode] = useState(false)
+    let [status, setStatus] = useState(props.status)
+
+    const activateEditMode = () => {
+        setEditMode(true)
     }
-    activateEditMode = () => {
-        this.setState({ editMode: true })
-    }
-    deactivateEditeMode = () => {
-        this.setState({ editMode: false })
-        if (!this.state.status) {
-            this.props.updateProfileStatus("Установить статус")
+    const deactivateEditeMode = () => {
+        setEditMode(false)
+        if (!props.status) {
+            props.updateProfileStatus("Установить статус")
         } else {
-            this.props.updateProfileStatus(this.state.status)
+            props.updateProfileStatus(status)
         }
     }
-    deactivateEditeModeOnBlur = () => {
-        this.setState({ editMode: false })
-        return this.props.status
+    const deactivateEditeModeOnBlur = () => {
+        setEditMode(false)
+        return props.status
     }
-    clickButtonEnten = () => {
-        this.updateStatusEnter.current.addEventListener('keydown', (keyPress) => {
+    const clickButtonEnten = () => {
+        updateStatusEnter.current.addEventListener('keydown', (keyPress) => {
             if (keyPress.keyCode === 13) {
                 keyPress.preventDefault()
-                this.deactivateEditeMode()
+                deactivateEditeMode()
             }
         }, { once: true })
     }
-    onStatusChange = (e) => {
-        this.clickButtonEnten()
-        this.setState({
-            status: e.currentTarget.value
-        })
+    const onStatusChange = (e) => {
+        clickButtonEnten()
+        setStatus(e.currentTarget.value)
     }
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.status !==this.props.status) {
-            this.setState({ status: this.props.status })
+    useEffect(() => {
+        if (status !== props.status) {
+            setStatus(props.status)
         }
-    }
+    }, [props.status]) 
 
-    render() {
-        return (
-            <div>
-                {!this.state.editMode &&
+    return (
+        <div>
+            {!editMode &&
+                <div>
+                    <span className={classes.aboutMe__editor} onClick={activateEditMode} >
+                        {props.status ? props.status : "Установить статус"}</span>
+                </div>
+            }
+            {editMode &&
+                <div>
+                    <input ref={updateStatusEnter}
+                        onChange={onStatusChange} autoFocus onBlur={deactivateEditeModeOnBlur}
+                        defaultValue={status} maxLength={300} placeholder='Введите статус' type="text" />
                     <div>
-                        <span className={classes.aboutMe__editor} onClick={this.activateEditMode} >
-                            {this.props.status ? this.props.status : "Установить статус"}</span>
+                        <button onClick={deactivateEditeMode}
+                            onMouseDown={deactivateEditeMode} type="submit">Сохранить</button>
                     </div>
-                }
-                {this.state.editMode &&
-                    <div>
-                        <input ref={this.updateStatusEnter}
-                            onChange={this.onStatusChange} autoFocus onBlur={this.deactivateEditeModeOnBlur}
-                            defaultValue={this.props.status} maxLength={300} placeholder='Введите статус' type="text" />
-                        <div>
-                            <button onClick={this.deactivateEditeMode}
-                                onMouseDown={this.deactivateEditeMode} type="submit">Сохранить</button>
-                        </div>
-                    </div>
-                }
-            </div>
-        )
-    }
+                </div>
+            }
+        </div>
+    )
 }
 
 export default ProfileStatus
