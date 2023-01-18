@@ -16,13 +16,27 @@
     font-size: 16px;
 }
 
-.numberPage button {
+.wrapperPage {
+    width: 40px;
+}
+
+.wrapperPage button {
     background-color: inherit;
     border: none;
 }
 
-.numberPage button:hover {
+.wrapperPage button:hover {
     font-weight: 700;
     transform: scale(1.3);
     transition: 0.4s;
+}
+
+.wrapperPrev {
+    width: 50px;
+}
+
+.portion {
+    width: 50px;
+    background-color: inherit;
+    border: none;
 }

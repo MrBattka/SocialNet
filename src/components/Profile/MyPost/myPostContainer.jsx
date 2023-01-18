@@ -15,9 +15,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addPost: (newPostText) => {
             dispatch(addPostAC(newPostText));
-        },
-        deletePost: (postId) => {
-            dispatch(deletePost(postId))
         }
     }
 }

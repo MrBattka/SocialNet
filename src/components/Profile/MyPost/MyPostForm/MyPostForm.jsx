@@ -7,8 +7,8 @@ import { Textarea } from "../../../Common/formsControls/formControls";
 const maxLength10 = maxLengthCreator(10)
 
 const MyPostForm = (props) => {
-    let deletePostText = () => {
-        props.newPostText = ""
+    let deletePostText = (value) => {
+        props.newPostText(value.newPostText = "")
     }
     return (
         <div>
@@ -18,7 +18,7 @@ const MyPostForm = (props) => {
                         validate={[required, maxLength10]} placeholder={"Post message"} />
                 </div>
                 <div className={classes.btn__wrapper}>
-                    <button className={classes.btn}>Post</button>
+                    <button className={classes.btn} type="submit">Post</button>
                     <button className={classes.btn} type="button" onClick={deletePostText}>Remove</button>
                 </div>
             </form>
