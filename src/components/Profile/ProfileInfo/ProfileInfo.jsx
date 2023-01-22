@@ -10,7 +10,7 @@ function ProfileInfo(props) {
     if (!props.profile) {
         return <Preloader />
     }
-
+    
     return (
         <div className={classes.profile__wrapper}>
             <div>

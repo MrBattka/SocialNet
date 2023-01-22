@@ -70,14 +70,14 @@ type AddPostACType = {
 }
 type SetUserProfileType = {
   type: typeof SET_USER_PROFILE
-  profile: string
+  profile: ProfileType
 }
 type SetProfileStatusType = {
   type: typeof SET_STATUS
   status: string
 }
 export const addPostAC = (newPostText: string): AddPostACType => ({ type: ADD_POST, newPostText })
-export const setUserProfile = (profile: string): SetUserProfileType => ({ type: SET_USER_PROFILE, profile })
+export const setUserProfile = (profile: ProfileType): SetUserProfileType => ({ type: SET_USER_PROFILE, profile })
 export const setProfileStatus = (status: string): SetProfileStatusType => ({ type: SET_STATUS, status })
 
 export const getProfile = (userId: number) => async (dispatch: any) => {

@@ -11,13 +11,14 @@ const ProfileContainer = (props) => {
     if (!userId) {
         userId = props.authUserId
     }
+    
     useEffect(() => {
         props.getProfile(userId)
         props.getProfileStatus(userId)
     }, [])
 
     return (
-        <Profile {...props}  profile={props.profile} status={props.status} updateProfileStatus={props.updateProfileStatus} />
+        <Profile {...props} profile={props.profile} status={props.status} updateProfileStatus={props.updateProfileStatus} />
     )
 }
 

@@ -1,14 +1,19 @@
+import React from 'react';
+import Preloader from '../Common/Preloader/Preloader';
+import AdditionalInformation from './AdditionalInformation/AdditionalInformation';
+import MyPostsContainer from './MyPost/MyPostContainer';
 import classes from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
-import React from 'react';
-import MyPostsContainer from './MyPost/MyPostContainer';
 
 const Profile = (props) => {
+
     return (
         <div className={classes.content}>
             <div className={classes.profile__wrapper}>
                 <ProfileInfo profile={props.profile} status={props.status} updateProfileStatus={props.updateProfileStatus} />
-                <MyPostsContainer profile={props.profile} />       
+                <AdditionalInformation profile={props.profile} lookingForAJob={props.lookingForAJob} lookingForAJobDescription={props.lookingForAJobDescription}
+                    fullName={props.fullName} contacts={props.contacts} />
+                <MyPostsContainer profile={props.profile} />
             </div>
         </div>
     )
