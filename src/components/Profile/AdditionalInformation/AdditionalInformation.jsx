@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Preloader from '../../Common/Preloader/Preloader';
-import classes from '../Profile.module.css';
+import classes from './AdditionalInformation.module.css';
 
 const AdditionalInformation = (props) => {
+    const [editMode, setEditMode] = useState(false)
 
     if (!props.profile) {
         return <Preloader />
+    }
+
+    const activetedMode = () => {
+        setEditMode(!editMode)
     }
 
     return (
@@ -21,22 +26,25 @@ const AdditionalInformation = (props) => {
             <div>
                 <p><b>Full name:</b> {props.profile.fullName}</p>
             </div>
-            <div>
-                <b>Contacts:</b>{Object.keys(props.profile.contacts).map(key => {
+            <div className={classes.wrapperContacts}>
+                <b>Contacts:</b>
+                <span onClick={activetedMode}>
+                        <p className={editMode ? classes.editModeActive : null}>&#5125;</p>
+                </span>
+                {editMode && Object.keys(props.profile.contacts).map(key => {
                     return <Contact key={key} contactTitle={key}
                         contactValue={props.profile.contacts[key]} />
                 })}
             </div>
         </div>
     )
-
 }
 
 const Contact = (props) => {
 
     return (
-        <div className={classes.wrapperContacts}>
-            <p><b>{props.contactTitle}:</b> {!props.contactValue ? "No contacts" : props.contactValue}</p>
+        <div className={classes.wrapperContact}>
+            <p><b>{props.contactTitle}:</b> {!props.contactValue ? "-" : props.contactValue}</p>
         </div>
     )
 }

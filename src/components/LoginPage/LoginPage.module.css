@@ -8,7 +8,8 @@
 .titleLogin {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    cursor: default;
+    margin-top: 15%;
     font-size: 20px;
     letter-spacing: 3px;
     color: rgb(83, 83, 83);

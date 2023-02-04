@@ -18,6 +18,7 @@
 
 .login {
     display: flex;
+    cursor: default;
 }
 
 .login a {

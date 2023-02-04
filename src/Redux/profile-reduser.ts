@@ -39,6 +39,7 @@ let initialState = {
   isFetching: true,
   status: ''
 }
+
 export type InitialStateType = typeof initialState
 
 const profileReducer = (state = initialState, action: any): InitialStateType => {

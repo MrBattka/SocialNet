@@ -6,6 +6,7 @@ import usersReduser from "./users-reduser";
 import thankMiddleware from "redux-thunk";
 import { reducer as formReduser } from "redux-form";
 import appReduser from "./app-reduser";
+import { composeWithDevTools } from "@redux-devtools/extension";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -16,7 +17,9 @@ let reducers = combineReducers({
     app: appReduser
 });
 
-let store = createStore(reducers, applyMiddleware(thankMiddleware));
+let store = createStore(reducers,
+    composeWithDevTools(applyMiddleware(thankMiddleware)))
+
 window.store = store;
 
 export default store;

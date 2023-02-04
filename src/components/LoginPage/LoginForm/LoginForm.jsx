@@ -4,13 +4,16 @@ import { required } from "../../../utils/validators/validators";
 import { createField, Input } from "../../Common/formsControls/formControls";
 import classes from "../LoginPage.module.css";
 
-const LoginForm = ({ handleSubmit, error, props }) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return (
         <div className={error ? classes.formSummaryError : classes.form}>
             <form onSubmit={handleSubmit}>
                 {createField("Email", "email", [required], Input)}
                 {createField("Password", "password", [required], Input, { type: "password" })}
                 {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "Remember Me")}
+
+                { captchaUrl && <img src={captchaUrl} /> }
+                { captchaUrl && createField("Symbols from image", "captcha", [required], Input, {}) }
                 <div className={classes.submit}>
                     <button>Sign In</button>
                     <span className={classes.error}>{error && <div> {error} </div>}</span>
