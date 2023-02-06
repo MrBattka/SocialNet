@@ -16,20 +16,29 @@ const AdditionalInformation = (props) => {
     return (
         <div className={classes.wrapperAddInf}>
             <div>
-                <p><b>lookingForAJob:</b> {props.profile.lookingForAJob ? "Yes" : "No"}</p>
+                <p>
+                    <b>lookingForAJob:</b>
+                    <span>{props.profile.lookingForAJob ? "Yes" : "No"}</span>
+                </p>
             </div>
             {props.profile.lookingForAJob &&
                 <div>
-                    <p><b>My profissional skill:</b> {props.profile.lookingForAJobDescription}</p>
+                    <p>
+                        <b>My profissional skill:</b>
+                        <span>{props.profile.lookingForAJobDescription}</span>
+                    </p>
                 </div>
             }
             <div>
-                <p><b>Full name:</b> {props.profile.fullName}</p>
+                <p>
+                    <b>Full name:</b> 
+                    <span>{props.profile.fullName}</span>
+                    </p>
             </div>
             <div className={classes.wrapperContacts}>
                 <b>Contacts:</b>
                 <span onClick={activetedMode}>
-                        <p className={editMode ? classes.editModeActive : null}>&#5125;</p>
+                    <p className={editMode ? classes.editModeActive : null}>&#5125;</p>
                 </span>
                 {editMode && Object.keys(props.profile.contacts).map(key => {
                     return <Contact key={key} contactTitle={key}

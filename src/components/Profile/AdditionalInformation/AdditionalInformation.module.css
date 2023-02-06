@@ -2,6 +2,10 @@
     margin-left: 70px;
 }
 
+.wrapperAddInf span {
+    margin-left: 8px;
+}
+
 .wrapperContacts p {
     margin: 0;
 }

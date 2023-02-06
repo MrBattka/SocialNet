@@ -1,25 +1,27 @@
-import './App.css';
 import React, { useEffect } from 'react';
-import Nav from './components/Nav/Nav';
-import MessagesContainer from './components/Masseges/MessagesContainer';
-import UsersContainer from './components/Users/UsersContainer'
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import ProfileContainer from './components/Profile/ProfileContainer';
+import { connect, Provider } from 'react-redux';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import './App.css';
+import Preloader from './components/Common/Preloader/Preloader';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginPageContainer from './components/LoginPage/LoginPageContainer';
+import MessagesContainer from './components/Masseges/MessagesContainer';
+import Nav from './components/Nav/Nav';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
-import { connect } from 'react-redux';
-import Preloader from './components/Common/Preloader/Preloader';
+import store from './Redux/redux-store';
 
 const App = (props) => {
-  const navigate = useNavigate()
 
   useEffect(() => {
     props.initializeApp()
-}, [])
+  }, [])
+
   if (props.initialize === false) {
     return <Preloader />
   }
+
   return (
     <>
       <div className="app-wrapper">
@@ -27,8 +29,9 @@ const App = (props) => {
         <Nav />
         <div className='app-wrapper-content'>
           <Routes>
-            
+            <Route path='' element={<Navigate to="/profile" />} />
             <Route path='/' element={<Navigate to="/profile" />} />
+            <Route path='*' element={<Navigate to="/profile" />} />
             <Route path='/profile' element={<ProfileContainer />} >
               <Route path=':userId' element={<ProfileContainer />} />
             </Route>
@@ -46,4 +49,14 @@ const mapStateToProps = (state) => ({
   initialize: state.app.initialized
 })
 
-export default connect(mapStateToProps, {initializeApp})(App);
+const AppContainer = connect(mapStateToProps, { initializeApp })(App);
+
+export const AppSocialNet = () => {
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </BrowserRouter>
+  )
+}
