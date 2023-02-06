@@ -18,7 +18,7 @@ const App = (props) => {
     props.initializeApp()
   }, [])
 
-  if (props.initialize === false) {
+  if (!props.initialize) {
     return <Preloader />
   }
 
@@ -29,9 +29,7 @@ const App = (props) => {
         <Nav />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='' element={<ProfileContainer />} />
-            <Route path='/' element={<ProfileContainer />} />
-            <Route path='*' element={<ProfileContainer />} />
+            <Route path='/' element={<Navigate to={'/profile'} />} />
             <Route path='/profile' element={<ProfileContainer />} >
               <Route path=':userId' element={<ProfileContainer />} />
             </Route>
