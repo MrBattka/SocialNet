@@ -18,7 +18,7 @@ const App = (props) => {
     props.initializeApp()
   }, [])
 
-  if (!props.initialize) {
+  if (props.initialize === false) {
     return <Preloader />
   }
 
