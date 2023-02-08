@@ -23,23 +23,21 @@ const App = (props) => {
   }
 
   return (
-    <>
-      <div className="app-wrapper">
-        <HeaderContainer />
-        <Nav />
-        <div className='app-wrapper-content'>
-          <Routes>
-            <Route path='/' element={<Navigate to='/profile' />} />
-            <Route path='/profile' element={<ProfileContainer />} >
-              <Route path=':userId' element={<ProfileContainer />} />
-            </Route>
-            <Route path='/messages/*' element={<MessagesContainer />} />
-            <Route path='/users' element={<UsersContainer />} />
-            <Route path='/login' element={<LoginPageContainer />} />
-          </Routes>
-        </div>
+    <div className="app-wrapper">
+      <HeaderContainer />
+      <Nav />
+      <div className='app-wrapper-content'>
+        <Routes>
+          {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
+          <Route path='/profile' element={<ProfileContainer />} >
+            <Route path=':userId' element={<ProfileContainer />} />
+          </Route>
+          <Route path='/messages/*' element={<MessagesContainer />} />
+          <Route path='/users' element={<UsersContainer />} />
+          <Route path='/login' element={<LoginPageContainer />} />
+        </Routes>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -49,7 +47,7 @@ const mapStateToProps = (state) => ({
 
 const AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
-export const AppSocialNet = () => {
+const AppSocialNet = () => {
   return (
     <BrowserRouter>
       <Provider store={store}>
@@ -58,3 +56,5 @@ export const AppSocialNet = () => {
     </BrowserRouter>
   )
 }
+
+export default AppSocialNet

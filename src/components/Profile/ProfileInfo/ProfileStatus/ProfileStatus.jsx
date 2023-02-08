@@ -44,17 +44,17 @@ const ProfileStatus = (props) => {
         <div>
             {!editMode &&
                 <div>
-                    <span className={classes.aboutMe__editor} onClick={activateEditMode} >
+                    <span data-testid="status" className={classes.aboutMe__editor} onClick={activateEditMode} >
                         {props.status ? props.status : "Установить статус"}</span>
                 </div>
             }
             {editMode &&
                 <div>
-                    <input ref={updateStatusEnter}
+                    <input data-testid="status-input" ref={updateStatusEnter}
                         onChange={onStatusChange} autoFocus onBlur={deactivateEditeModeOnBlur}
                         defaultValue={status} maxLength={300} placeholder='Введите статус' type="text" />
                     <div>
-                        <button onClick={deactivateEditeMode}
+                        <button data-testid="btn-status" onClick={deactivateEditeMode}
                             onMouseDown={deactivateEditeMode} type="submit">Сохранить</button>
                     </div>
                 </div>
