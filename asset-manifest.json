@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/SocialNet/static/css/main.a4cc7683.chunk.css",
-    "main.js": "/SocialNet/static/js/main.b70e4c62.chunk.js",
-    "main.js.map": "/SocialNet/static/js/main.b70e4c62.chunk.js.map",
+    "main.js": "/SocialNet/static/js/main.bf8bd281.chunk.js",
+    "main.js.map": "/SocialNet/static/js/main.bf8bd281.chunk.js.map",
     "runtime-main.js": "/SocialNet/static/js/runtime-main.4ead4c0b.js",
     "runtime-main.js.map": "/SocialNet/static/js/runtime-main.4ead4c0b.js.map",
     "static/js/2.b4b636a4.chunk.js": "/SocialNet/static/js/2.b4b636a4.chunk.js",
     "static/js/2.b4b636a4.chunk.js.map": "/SocialNet/static/js/2.b4b636a4.chunk.js.map",
     "index.html": "/SocialNet/index.html",
-    "precache-manifest.4c8144dc368fcc42cf4d5c77aefc36fb.js": "/SocialNet/precache-manifest.4c8144dc368fcc42cf4d5c77aefc36fb.js",
+    "precache-manifest.cc841f1a9684e326cc8e35b70f64c7d3.js": "/SocialNet/precache-manifest.cc841f1a9684e326cc8e35b70f64c7d3.js",
     "service-worker.js": "/SocialNet/service-worker.js",
     "static/css/main.a4cc7683.chunk.css.map": "/SocialNet/static/css/main.a4cc7683.chunk.css.map",
     "static/js/2.b4b636a4.chunk.js.LICENSE.txt": "/SocialNet/static/js/2.b4b636a4.chunk.js.LICENSE.txt",
-    "static/js/main.b70e4c62.chunk.js.LICENSE.txt": "/SocialNet/static/js/main.b70e4c62.chunk.js.LICENSE.txt",
+    "static/js/main.bf8bd281.chunk.js.LICENSE.txt": "/SocialNet/static/js/main.bf8bd281.chunk.js.LICENSE.txt",
     "static/media/logout.svg": "/SocialNet/static/media/logout.6517ee94.svg",
     "static/media/preloader.svg": "/SocialNet/static/media/preloader.ef886190.svg",
     "static/media/user.jpg": "/SocialNet/static/media/user.8c62dd08.jpg"
@@ -21,6 +21,6 @@
     "static/js/runtime-main.4ead4c0b.js",
     "static/js/2.b4b636a4.chunk.js",
     "static/css/main.a4cc7683.chunk.css",
-    "static/js/main.b70e4c62.chunk.js"
+    "static/js/main.bf8bd281.chunk.js"
   ]
 }
