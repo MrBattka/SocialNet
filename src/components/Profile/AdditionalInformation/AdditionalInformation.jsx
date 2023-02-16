@@ -5,10 +5,6 @@ import classes from './AdditionalInformation.module.css';
 const AdditionalInformation = (props) => {
     const [editMode, setEditMode] = useState(false)
 
-    if (!props.profile) {
-        return <Preloader />
-    }
-
     const activetedMode = () => {
         setEditMode(!editMode)
     }

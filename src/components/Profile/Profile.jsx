@@ -1,10 +1,14 @@
 import React from 'react';
+import Preloader from '../Common/Preloader/Preloader';
 import AdditionalInformation from './AdditionalInformation/AdditionalInformation';
 import MyPostsContainer from './MyPost/MyPostContainer';
 import classes from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
 
     return (
         <div className={classes.content}>

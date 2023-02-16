@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { usersAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
@@ -34,6 +33,7 @@ type ProfileType = {
 
 let initialState = {
   posts: [] as Array<PostType>,
+  id: 0,
   newPostText: '',
   profile: null as ProfileType | null,
   isFetching: true,
@@ -48,7 +48,7 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
       let body = action.newPostText
       return {
         ...state,
-        posts: [...state.posts, { id: 1, message: body }]
+        posts: [...state.posts, { id: action.id, message: body }]
       }
     case SET_USER_PROFILE:
       return {
@@ -68,6 +68,7 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
 type AddPostACType = {
   type: typeof ADD_POST
   newPostText: string
+  id: number
 }
 type SetUserProfileType = {
   type: typeof SET_USER_PROFILE
@@ -77,7 +78,7 @@ type SetProfileStatusType = {
   type: typeof SET_STATUS
   status: string
 }
-export const addPostAC = (newPostText: string): AddPostACType => ({ type: ADD_POST, newPostText })
+export const addPostAC = (newPostText: string, id: number): AddPostACType => ({ type: ADD_POST, newPostText, id })
 export const setUserProfile = (profile: ProfileType): SetUserProfileType => ({ type: SET_USER_PROFILE, profile })
 export const setProfileStatus = (status: string): SetProfileStatusType => ({ type: SET_STATUS, status })
 

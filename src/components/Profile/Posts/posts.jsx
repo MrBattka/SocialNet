@@ -1,18 +1,24 @@
-import classes from './Posts.module.css';
 import React from 'react';
-import userPhoto from '../../../assets/img/user.jpg'
+import userPhoto from '../../../assets/img/user.jpg';
+import classes from './Posts.module.css';
 
-function Posts(props) {
+const Posts = (props) => {
     return (
-        <div>
-            <div className={classes.wrapper}>
-                <div className={classes.avatar}>
-                    <img src={props.profile.photos.small != null ? props.profile.photos.small : userPhoto} />
-                </div>
-                <div className={classes.text}>
-                    {props.post}
-                </div>
-            </div>
+        <div className={classes.wrapper}>
+            {props.posts.map((post, id) => (
+                <ul key={id}>
+                    <li>
+                        <div className={classes.post}>
+                            <div className={classes.avatar}>
+                                <img src={props.profile.photos.small != null ? props.profile.photos.small : userPhoto} />
+                            </div>
+                            <div className={classes.text}>
+                                {post.message}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            ))}
         </div>
     )
 }
