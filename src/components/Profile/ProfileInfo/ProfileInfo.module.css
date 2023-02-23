@@ -2,6 +2,7 @@
     width: 200px;
     margin: 40px 50px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .profile__wrapper {
     display: flex;

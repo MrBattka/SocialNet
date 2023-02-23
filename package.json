@@ -14,6 +14,7 @@
     "@types/react-dom": "^18.0.9",
     "@types/redux-form": "^8.3.5",
     "axios": "^0.27.2",
+    "classnames": "^2.3.2",
     "eslint": "^6.8.0",
     "react": "^17.0.2",
     "react-devtools": "^4.25.0",

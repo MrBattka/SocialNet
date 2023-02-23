@@ -6,11 +6,9 @@ let initialState = {
     { id: 2, name: 'Nick 2' },
     { id: 3, name: 'Nick 3' },
     { id: 4, name: 'Nick 4' },
-    { id: 5, name: 'Nick 5' },
+    { id: 5, name: 'Nick 5' }
   ],
-  messages: [
-    { message: 'Hi, world' }
-  ]
+  messages: []
 }
 
 window.initialState = initialState;
@@ -21,12 +19,12 @@ const dialogsReduser = (state = initialState, action) => {
       let body = action.newMessageBody
       return {
         ...state,
-        messages: [...state.messages, {id: 1, message: body}] 
+        messages: [...state.messages, {id: action.id, message: body}] 
       }
     default:
       return state;
   }
 }
 
-export const sendMessageAC = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
+export const sendMessageAC = (newMessageBody, id) => ({ type: SEND_MESSAGE, newMessageBody, id })
 export default dialogsReduser;
