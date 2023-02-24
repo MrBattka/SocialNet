@@ -18,7 +18,7 @@ function ProfileInfo(props) {
                 <img className={classes.profile__img}
                     src={props.profile.photos.large ? props.profile.photos.large : userPhoto} onClick={() => setActive(!active)} />
             </div>
-            {active && <ModalWindow active={active} setEctive={setActive} children={props.profile.photos.large} />}
+            <ModalWindow active={active} setEctive={setActive} children={props.profile.photos.large} />
             <div className={classes.profile__info}>
                 <div className={classes.userName}>{props.profile.fullName}</div>
                 <div className={classes.about__user}>{
