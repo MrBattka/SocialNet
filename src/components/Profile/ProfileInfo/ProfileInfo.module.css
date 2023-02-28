@@ -4,17 +4,22 @@
     margin: 40px 50px;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0px 0px 6px rgb(164, 164, 164);
 }
+
 .profile__wrapper {
     display: flex;
 }
+
 .profile__info {
     margin: 60px 0 0 70px;
 }
+
 .about__user {
     max-width: 300px;
     font-style: italic;
 }
+
 .userName {
     font-size: 25px;
     font-weight: bold;

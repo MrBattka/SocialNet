@@ -22,7 +22,7 @@ function ProfileInfo(props) {
 
     return (
         <div className={classes.profile__wrapper}>
-            <div>
+            <div className={classes.wrapper_img}>
                 <img className={classes.profile__img}
                     src={props.profile.photos.large ?? props.urlProfilePhoto ?? userPhoto} onClick={() => setActive(!active)} />
             </div>
