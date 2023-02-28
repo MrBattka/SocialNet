@@ -3,6 +3,7 @@ import { usersAPI } from "../api/api";
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS'
+const SET_PHOTO_PROFILE = 'SET_PHOTO_PROFILE'
 
 type PostType = {
   id: number
@@ -37,7 +38,8 @@ let initialState = {
   newPostText: '',
   profile: null as ProfileType | null,
   isFetching: true,
-  status: ''
+  status: '',
+  urlProfilePhoto: null
 }
 
 export type InitialStateType = typeof initialState
@@ -60,6 +62,11 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
         ...state,
         status: action.status
       }
+    case SET_PHOTO_PROFILE:
+      return {
+        ...state,
+        urlProfilePhoto: action.urlProfilePhoto
+      }
     default:
       return state;
   }
@@ -81,6 +88,7 @@ type SetProfileStatusType = {
 export const addPostAC = (newPostText: string, id: number): AddPostACType => ({ type: ADD_POST, newPostText, id })
 export const setUserProfile = (profile: ProfileType): SetUserProfileType => ({ type: SET_USER_PROFILE, profile })
 export const setProfileStatus = (status: string): SetProfileStatusType => ({ type: SET_STATUS, status })
+export const updateProfilePhoto = (urlProfilePhoto: object) => ({ type: SET_PHOTO_PROFILE, urlProfilePhoto })
 
 export const getProfile = (userId: number) => async (dispatch: any) => {
   let response = await usersAPI.getUserProfile(userId)
