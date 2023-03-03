@@ -4,14 +4,14 @@ import Posts from '../Posts/Posts';
 import classes from './MyPost.module.css';
 import { MyPostReduxForm } from './MyPostForm/MyPostForm';
 
-function MyPosts(props) {
+const MyPosts = (props) => {
+
     const onPostMessage = (values) => {
         if (values.newPostText) {
             props.addPost(values.newPostText, props.id)
             values.newPostText = ''
         }
     }
-
 
     return (
         <div className={classes.wrapper}>

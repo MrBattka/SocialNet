@@ -5,6 +5,7 @@ import { maxLengthCreator, required } from "../../../utils/validators/validators
 import { Textarea } from "../../Common/formsControls/formControls";
 
 const maxLength100 = maxLengthCreator(100)
+
 const MessageForm = (props) => {
     return (
         <div className={classes.textMessage}>

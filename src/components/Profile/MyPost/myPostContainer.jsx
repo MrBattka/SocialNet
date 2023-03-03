@@ -3,7 +3,6 @@ import { addPostAC } from '../../../Redux/profile-reduser';
 import MyPosts from './MyPost';
 
 const mapStateToProps = (state) => {
-
     return {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText,
@@ -11,6 +10,7 @@ const mapStateToProps = (state) => {
         isFetching: state.profilePage.isFetching
     }
 }
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addPost: (newPostText, id) => {

@@ -6,7 +6,7 @@ import Lorem from '../../Common/Lorem/Lorem';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ModalWindow from '../../Common/ModalWindow/ModalWindow';
 
-function ProfileInfo(props) {
+const ProfileInfo = (props) => {
     const [active, setActive] = useState(false)
     const [photo, setPhoto] = useState(null)
 

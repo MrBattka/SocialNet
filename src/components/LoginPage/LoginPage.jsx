@@ -10,6 +10,7 @@ const LoginPage = (props) => {
     if (props.isAuth) {
         return <Navigate replace to={"/profile"} />
     }
+    
     const onSubmit = (formData) => {
         props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
     }

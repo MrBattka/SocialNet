@@ -2,7 +2,7 @@ import classes from './Header.module.css';
 import React from 'react';
 import AuthComponent from '../AuthComponent/AuthComponent';
 
-function Header(props) {
+const Header = () => {
     return (
         <header className={classes.header__wrapper}>
             <div className={classes.header}>

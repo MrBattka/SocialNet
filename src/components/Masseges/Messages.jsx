@@ -5,14 +5,16 @@ import Message from './Message/Message';
 import { MessageFormRedux } from './MessageForm/MessageForm';
 
 const Messages = (props) => {
-    let id = 1
+    
     let addNewMessage = (values) => {
-        id++
-        props.sendMessage(values.newMessageBody, id);
+        if (values.newMessageBody) {
+            props.sendMessage(values.newMessageBody)
+            values.newMessageBody = '' 
+        } 
     }
 
-    let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
-    let messagesElement = props.messages.map(m => <Message message={m.message} key={m.id} id={m.id} />);
+    let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />)
+    let messagesElement = props.messages.map(m => <Message message={m.message} key={m.id} id={m.id} />)
 
     return (
 

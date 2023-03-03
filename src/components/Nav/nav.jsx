@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import classes from './Nav.module.css';
 
-function Nav(props) {
-    // {`/profile/${userId}`}
+const Nav = () => {
     return (
         <nav className={classes.nav}>
             <div className={classes.link}>

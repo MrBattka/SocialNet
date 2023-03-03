@@ -8,8 +8,11 @@ import Profile from './Profile';
 
 const ProfileContainer = (props) => {
     let { userId } = useParams()
+    
     if (!userId) {
         userId = props.authUserId
+        props.getProfile(userId)
+        props.getProfileStatus(userId)
     }
     
     useEffect(() => {

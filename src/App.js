@@ -25,7 +25,7 @@ const App = (props) => {
   return (
     <div className="app-wrapper">
       <HeaderContainer />
-      <Nav />
+      <Nav authUserId={props.authUserId} />
       <div className='app-wrapper-content'>
         <Routes>
           {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
@@ -42,7 +42,8 @@ const App = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  initialize: state.app.initialized
+  initialize: state.app.initialized,
+  authUserId: state.auth.userId
 })
 
 const AppContainer = connect(mapStateToProps, { initializeApp })(App);
