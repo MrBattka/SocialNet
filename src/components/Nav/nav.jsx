@@ -7,16 +7,16 @@ const Nav = () => {
     return (
         <nav className={classes.nav}>
             <div className={classes.link}>
-                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/profile">Profile</NavLink>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/profile">Profile</NavLink>
             </div>
             <div className={classes.link}>
-                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/messages">Messages</NavLink>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/messages">Messages</NavLink>
             </div>
             <div className={classes.link}>
-                <NavLink className={ navData => navData.isActive ? classes.active : classes.item } to="/users">Users</NavLink>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/users">Users</NavLink>
             </div>
             <div className={classes.link}>
-                <a className={classes.item} href="#">Music</a>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/friends">My Friend</NavLink>
             </div>
             <div className={classes.line}></div>
             <div className={classes.link}>

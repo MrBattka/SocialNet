@@ -30,9 +30,9 @@ const Paginator = ({ totalUsersCount, pageSize, onPageChanged, currentPage, port
             <div className={classes.wrapperPrev}> {portionNumber > 1 &&
                 <button className={classes.portion} onClick={selectedPrevPortion}><a href="#top">prev</a></button>} </div>
             {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
-                .map((p) => {
+                .map((p, id) => {
                     return <div
-                        onClick={(e) => { onPageChanged(p) }} className={classes.wrapperPage} key={p.id}>
+                        onClick={() => { onPageChanged(p) }} className={classes.wrapperPage} key={id}>
                         <button className={currentPage === p ? classes.selectedPage : ""}><a href="#top">{p}</a></button></div>
                 })
             }

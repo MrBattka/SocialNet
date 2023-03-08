@@ -4,6 +4,7 @@ import classes from "../Users.module.css";
 import userPhoto from '../../../assets/img/user.jpg'
 
 const User = (props) => {
+
     return (
         <div className={classes.wrapper}>
             <div className={classes.wrapper__avatar}>

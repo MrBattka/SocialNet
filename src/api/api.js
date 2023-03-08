@@ -10,6 +10,9 @@ export const usersAPI = {
     requestGetUsers(currentPage, pageSize) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
     },
+    requestGetFriendUsers(currentPage, pageSize, friend = true) {
+        return instance.get(`users?page=${currentPage}&count=${pageSize}&friend=${friend}`)
+    },
     follow(userId) {
         return instance.post(`follow/${userId.id}`)
     },

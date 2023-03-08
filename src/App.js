@@ -6,6 +6,7 @@ import Preloader from './components/Common/Preloader/Preloader';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginPageContainer from './components/LoginPage/LoginPageContainer';
 import MessagesContainer from './components/Masseges/MessagesContainer';
+import MySubscriptionsContainer from './components/MyFriends/MyFriendsContainer';
 import Nav from './components/Nav/Nav';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
@@ -34,6 +35,7 @@ const App = (props) => {
           </Route>
           <Route path='/messages/*' element={<MessagesContainer />} />
           <Route path='/users' element={<UsersContainer />} />
+          <Route path='/friends' element={<MySubscriptionsContainer />} />
           <Route path='/login' element={<LoginPageContainer />} />
         </Routes>
       </div>

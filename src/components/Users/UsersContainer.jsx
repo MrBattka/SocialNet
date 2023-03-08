@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import classes from './Users.module.css'
-import { setCurrentPage, toggleFollowingProgress, requestGetUsers, follow, unfollow } from "../../Redux/users-reduser";
-import Users from './Users'
-import Preloader from "../Common/Preloader/Preloader";
-import { useEffect } from "react";
+import { follow, requestGetUsers, setCurrentPage, toggleFollowingProgress, unfollow } from "../../Redux/users-reduser";
 import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers } from "../../Redux/users-selector";
+import Preloader from "../Common/Preloader/Preloader";
+import Users from './Users';
+import classes from './Users.module.css';
 
 const UsersContainer = (props) => {
     useEffect(() => {

@@ -10,13 +10,13 @@ const ProfileContainer = (props) => {
     let { userId } = useParams()
 
     useEffect(() => {
-        props.getProfile(userId)
-        props.getProfileStatus(userId)
         if (!userId) {
             userId = props.authUserId
             props.getProfile(userId)
             props.getProfileStatus(userId)
         }
+        props.getProfile(userId)
+        props.getProfileStatus(userId)
     }, [userId])
 
     return (
