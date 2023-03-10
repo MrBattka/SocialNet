@@ -15,7 +15,7 @@ body {
 .app-wrapper-content {
   grid-area: c;
   background-color: rgba(128, 128, 128, 0.507);
-  min-height: 100vh;
+  min-height: 90vh;
   border-radius: 0 10px 10px 0;
   margin-top: 15px;
   margin-left: 15px;

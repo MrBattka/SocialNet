@@ -8,14 +8,14 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
     return (
         <div className={error ? classes.formSummaryError : classes.form}>
             <form onSubmit={handleSubmit}>
-                {createField("Email", "email", [required], Input)}
+                {createField('Email', "email", [required], Input)}
                 {createField("Password", "password", [required], Input, { type: "password" })}
                 {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "Remember Me")}
 
                 { captchaUrl && <img src={captchaUrl} /> }
                 { captchaUrl && createField("Symbols from image", "captcha", [required], Input, {}) }
                 <div className={classes.submit}>
-                    <button>Sign In</button>
+                    <button className={classes.loginBtn}>Log In</button>
                     <span className={classes.error}>{error && <div> {error} </div>}</span>
                 </div>
             </form>

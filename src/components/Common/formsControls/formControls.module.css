@@ -1,21 +1,33 @@
-
 .formError {
     color: red;
 }
+
 .rememberMe {
     display: flex;
     flex-direction: row;
-    color: black;
+    color: white;
     font-size: 14px;
     margin-left: 5px;
 }
+
 .fieldControl {
     display: flex;
     margin-bottom: 15px;
 }
+
 .fieldControl input {
-    background-color: rgb(217, 215, 215);
+    color: white;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
+
 .fieldControl:first-child {
     margin-top: 80px;
 }
