@@ -1,31 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fb3c09a03febcaff93efa5c322fac507",
+    "revision": "8ef2187467d8a3f09910a8d6f70ff647",
     "url": "/SocialNet/index.html"
   },
   {
-    "revision": "647c9cbf7ff08398f91c",
-    "url": "/SocialNet/static/css/main.0ca823c1.chunk.css"
+    "revision": "459826e826e544dccd36",
+    "url": "/SocialNet/static/css/main.4603b35b.chunk.css"
   },
   {
-    "revision": "95168b1eb9a04522820e",
-    "url": "/SocialNet/static/js/2.162b5d31.chunk.js"
+    "revision": "a2f9bdedfcc9fece67d8",
+    "url": "/SocialNet/static/js/2.ffa3cfc4.chunk.js"
   },
   {
     "revision": "84c0f298efa8dbc11eb0d17a18e21b57",
-    "url": "/SocialNet/static/js/2.162b5d31.chunk.js.LICENSE.txt"
+    "url": "/SocialNet/static/js/2.ffa3cfc4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "647c9cbf7ff08398f91c",
-    "url": "/SocialNet/static/js/main.0ad159fa.chunk.js"
+    "revision": "459826e826e544dccd36",
+    "url": "/SocialNet/static/js/main.db06204b.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/SocialNet/static/js/main.0ad159fa.chunk.js.LICENSE.txt"
+    "url": "/SocialNet/static/js/main.db06204b.chunk.js.LICENSE.txt"
   },
   {
     "revision": "4ec84dd36251fc49d188",
     "url": "/SocialNet/static/js/runtime-main.4ead4c0b.js"
+  },
+  {
+    "revision": "9a0b88c924ff30ea69569534a17a0153",
+    "url": "/SocialNet/static/media/1612935649_52-p-fon-krasnii-s-sinim-68.9a0b88c9.jpg"
   },
   {
     "revision": "6517ee94040f6bfee473123b602e989e",
