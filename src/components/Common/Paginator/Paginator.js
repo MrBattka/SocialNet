@@ -36,7 +36,8 @@ const Paginator = ({ totalUsersCount, pageSize, onPageChanged, currentPage, port
                         <button className={currentPage === p ? classes.selectedPage : ""}><a href="#top">{p}</a></button></div>
                 })
             }
-            <button className={classes.portion} onClick={selectedNextPortion}><a href="#top">next</a></button>
+            {pagesCount > 14 &&
+                <button className={classes.portion} onClick={selectedNextPortion}><a href="#top">next</a></button>}
         </div >
     )
 }

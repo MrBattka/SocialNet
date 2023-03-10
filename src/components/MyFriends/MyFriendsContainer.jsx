@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { follow, requestGetFriendUsers, setCurrentPage, toggleFollowingProgress, unfollow } from '../../Redux/users-reduser'
-import { getCurrentPage, getFollowingInProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsersArray } from '../../Redux/users-selector'
+import {
+    follow, requestGetFriendUsers, setCurrentPageFriends,
+    toggleFollowingProgress, unfollow
+} from '../../Redux/users-reduser'
+import {
+    getCurrentPageFriends, getFollowingInProgress, getIsFetching,
+    getPageSize, getTotalUsersCount, getUsersArray
+} from '../../Redux/users-selector'
 import Preloader from '../Common/Preloader/Preloader'
 import MyFriends from './MyFriends'
 
@@ -36,11 +42,17 @@ const mapStateToProps = (state) => ({
     users: getUsersArray(state),
     pageSize: getPageSize(state),
     totalUsersCount: getTotalUsersCount(state),
-    currentPage: getCurrentPage(state),
+    currentPage: getCurrentPageFriends(state),
     isFetching: getIsFetching(state),
     followingInProgress: getFollowingInProgress(state)
-
 })
 
 export default
-    connect(mapStateToProps, { setCurrentPage, requestGetFriendUsers, toggleFollowingProgress, follow, unfollow })(MyFriendsContainer)
+    connect(mapStateToProps,
+        {
+            setCurrentPageFriends,
+            requestGetFriendUsers,
+            toggleFollowingProgress,
+            follow,
+            unfollow
+        })(MyFriendsContainer)

@@ -17,8 +17,12 @@ export const getTotalUsersCount = (state) => {
     return state.usersPage.totalUsersCount
 }
 
-export const getCurrentPage = (state) => {
-    return state.usersPage.currentPage
+export const getCurrentPageUsers = (state) => {
+    return state.usersPage.currentPageUsers
+}
+
+export const getCurrentPageFriends = (state) => {
+    return state.usersPage.currentPageFriends
 }
 
 export const getIsFetching = (state) => {

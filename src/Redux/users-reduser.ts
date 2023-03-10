@@ -4,7 +4,8 @@ import { updateObjectInArray } from "../utils/objects-helper";
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
-const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+const SET_CURRENT_PAGE_USERS = 'SET_CURRENT_PAGE_USERS'
+const SET_CURRENT_PAGE_FRIENDS = 'SET_CURRENT_PAGE_FRIENDS'
 const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS'
@@ -13,7 +14,8 @@ let initialState = {
     users: [],
     pageSize: 20,
     totalUsersCount: 0,
-    currentPage: 1,
+    currentPageUsers: 1,
+    currentPageFriends: 1,
     isFetching: true,
     followingInProgress: [null]
 }
@@ -36,8 +38,11 @@ const usersReduser = (state = initialState, action: any): InitialStateType => {
         case SET_USERS: {
             return { ...state, users: action.users }
         }
-        case SET_CURRENT_PAGE: {
-            return { ...state, currentPage: action.currentPage }
+        case SET_CURRENT_PAGE_USERS: {
+            return { ...state, currentPageUsers: action.currentPageUsers }
+        }
+        case SET_CURRENT_PAGE_FRIENDS: {
+            return { ...state, currentPageFriends: action.currentPageFriends }
         }
         case SET_TOTAL_USERS_COUNT: {
             return { ...state, totalUsersCount: action.count }
@@ -70,9 +75,13 @@ type SetUsersType = {
     type: typeof SET_USERS
     users: string
 }
-type SetCurrentPageType = {
-    type: typeof SET_CURRENT_PAGE
-    currentPage: number
+type SetCurrentPageUsersType = {
+    type: typeof SET_CURRENT_PAGE_USERS
+    currentPageUsers: number
+}
+type SetCurrentPageFriendsType = {
+    type: typeof SET_CURRENT_PAGE_FRIENDS
+    currentPageFriends: number
 }
 type SetTotalUsersCountType = {
     type: typeof SET_TOTAL_USERS_COUNT
@@ -91,7 +100,8 @@ type ToggleFollowingProgressType = {
 export const followSuccess = (userId: number): FollowSuccessType => ({ type: FOLLOW, userId })
 export const unfollowSuccess = (userId: number): UnfollowSuccessType => ({ type: UNFOLLOW, userId })
 export const setUsers = (users: string): SetUsersType => ({ type: SET_USERS, users })
-export const setCurrentPage = (currentPage: number): SetCurrentPageType => ({ type: SET_CURRENT_PAGE, currentPage })
+export const setCurrentPageUsers = (currentPageUsers: number): SetCurrentPageUsersType => ({ type: SET_CURRENT_PAGE_USERS, currentPageUsers })
+export const setCurrentPageFriends = (currentPageFriends: number): SetCurrentPageFriendsType => ({ type: SET_CURRENT_PAGE_FRIENDS, currentPageFriends })
 export const setTotalUsersCount = (totalUsersCount: number): SetTotalUsersCountType =>
     ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount })
 export const toggleIsFetching = (isFetching: boolean): ToggleIsFetchingType => ({ type: TOGGLE_IS_FETCHING, isFetching })
@@ -100,7 +110,7 @@ export const toggleFollowingProgress = (isFetching: boolean, userId: number): To
 
 export const requestGetUsers = (page: number, pageSize: number) => async (dispatch: any) => {
     dispatch(toggleIsFetching(true))
-    dispatch(setCurrentPage(page))
+    dispatch(setCurrentPageUsers(page))
     let response = await usersAPI.requestGetUsers(page, pageSize)
     dispatch(toggleIsFetching(false))
     dispatch(setUsers(response.data.items))
@@ -109,7 +119,7 @@ export const requestGetUsers = (page: number, pageSize: number) => async (dispat
 
 export const requestGetFriendUsers = (page: number, pageSize: number, friend: boolean) => async (dispatch: any) => {
     dispatch(toggleIsFetching(true))
-    dispatch(setCurrentPage(page))
+    dispatch(setCurrentPageFriends(page))
     let response = await usersAPI.requestGetFriendUsers(page, pageSize, friend)
     dispatch(toggleIsFetching(false))
     dispatch(setUsers(response.data.items))
