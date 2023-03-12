@@ -1,5 +1,7 @@
 .loader {
     display: flex;
+    height: 100vh;
+    width: auto;
     justify-content: center;
-    margin-top: 100px;
+    align-items: center;
 }

@@ -13,20 +13,20 @@ import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
 import store from './Redux/redux-store';
 
-const App = (props) => {
+const App = ({isAuth, authUserId, initializeApp, initialize}) => {
 
   useEffect(() => {
-    props.initializeApp()
+    initializeApp()
   }, [])
 
-  if (props.initialize === false) {
+  if (initialize === false) {
     return <Preloader />
   }
 
   return (
     <div className="app-wrapper">
       <HeaderContainer />
-      <Nav authUserId={props.authUserId} />
+      {isAuth && <Nav authUserId={authUserId} />}
       <div className='app-wrapper-content'>
         <Routes>
           {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
@@ -45,7 +45,8 @@ const App = (props) => {
 
 const mapStateToProps = (state) => ({
   initialize: state.app.initialized,
-  authUserId: state.auth.userId
+  authUserId: state.auth.userId,
+  isAuth: state.auth.isAuth
 })
 
 const AppContainer = connect(mapStateToProps, { initializeApp })(App);

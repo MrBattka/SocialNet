@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { withAuthLocation } from "../../hoc/withAuthLocation";
 import {
     follow, requestGetUsers, setCurrentPageUsers,
     toggleFollowingProgress, unfollow
 } from "../../Redux/users-reduser";
 import {
-    getCurrentPage, getCurrentPageUsers, getFollowingInProgress,
+    getCurrentPageUsers, getFollowingInProgress,
     getIsFetching, getPageSize, getTotalUsersCount, getUsers
 } from "../../Redux/users-selector";
 import Preloader from "../Common/Preloader/Preloader";
@@ -21,7 +23,6 @@ const UsersContainer = (props) => {
     }
 
     return (<>
-        <span className={classes.users}>Users:</span>
         {props.isFetching ? <Preloader /> : <Users
             totalUsersCount={props.totalUsersCount}
             pageSize={props.pageSize}
@@ -47,11 +48,12 @@ const mapStateToProps = (state) => {
 }
 
 export default
-    connect(mapStateToProps,
-        {
-            setCurrentPageUsers,
-            toggleFollowingProgress,
-            requestGetUsers,
-            follow,
-            unfollow
-        })(UsersContainer)
+    compose(
+        connect(mapStateToProps,
+            {
+                setCurrentPageUsers,
+                toggleFollowingProgress,
+                requestGetUsers,
+                follow,
+                unfollow
+            }), withAuthLocation)(UsersContainer)

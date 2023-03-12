@@ -1,18 +1,19 @@
 .wrapperLoginPage {
     height: 90vh;
+    width: 80vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background: url('../../assets/img/1612935649_52-p-fon-krasnii-s-sinim-68.jpg');
     background-size: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .titleLogin {
     display: flex;
     justify-content: center;
     cursor: default;
-    margin-top: 15%;
     font-size: 20px;
     letter-spacing: 4px;
     color: rgb(255, 255, 255);
@@ -21,17 +22,27 @@
 .formSummaryError {
     display: flex;
     justify-content: center;
+    align-items: center;
     color: red;
+    background: inherit;
+    backdrop-filter: blur(3px);
+    width: 300px;
+    min-height: 200px;
+    padding: 25px 0 25px 0;
+    box-shadow: 0 0 3px 1px white;
+    border-radius: 20px;
 }
 
 .form {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 300px;
-    min-height: 300px;
+    min-height: 150px;
+    padding: 55px 0 55px 0;
     background: inherit;
     backdrop-filter: blur(3px);
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     border-radius: 20px;
     box-shadow: 0 0 3px 1px white;
     
@@ -49,6 +60,7 @@
     border: none;
     letter-spacing: 1px;
     font-weight: 700;
+    margin: 0;
 }
 
 .loginBtn:hover {

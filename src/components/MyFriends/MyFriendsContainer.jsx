@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { withAuthLocation } from '../../hoc/withAuthLocation'
 import {
     follow, requestGetFriendUsers, setCurrentPageFriends,
     toggleFollowingProgress, unfollow
@@ -48,11 +50,12 @@ const mapStateToProps = (state) => ({
 })
 
 export default
-    connect(mapStateToProps,
-        {
-            setCurrentPageFriends,
-            requestGetFriendUsers,
-            toggleFollowingProgress,
-            follow,
-            unfollow
-        })(MyFriendsContainer)
+    compose(
+        connect(mapStateToProps,
+            {
+                setCurrentPageFriends,
+                requestGetFriendUsers,
+                toggleFollowingProgress,
+                follow,
+                unfollow
+            }), withAuthLocation)(MyFriendsContainer)
