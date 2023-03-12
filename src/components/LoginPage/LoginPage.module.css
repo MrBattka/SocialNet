@@ -76,3 +76,7 @@
     flex-direction: row;
     font-size: 13px;
 }
+
+.imgCaptcha {
+    border-radius: 10px;
+}

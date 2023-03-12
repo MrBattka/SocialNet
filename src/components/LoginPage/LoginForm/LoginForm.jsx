@@ -12,7 +12,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
                 {createField("Password", "password", [required], Input, { type: "password" })}
                 {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "Remember Me")}
 
-                { captchaUrl && <img src={captchaUrl} /> }
+                { captchaUrl && <img className={classes.imgCaptcha} src={captchaUrl} /> }
                 { captchaUrl && createField("Symbols from image", "captcha", [required], Input, {}) }
                 <div className={classes.submit}>
                     <button className={classes.loginBtn}>Log In</button>
