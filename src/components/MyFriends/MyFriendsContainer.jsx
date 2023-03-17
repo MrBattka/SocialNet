@@ -25,6 +25,7 @@ const MyFriendsContainer = ({ users, currentPage, pageSize, requestGetFriendUser
 
     return (
         <>
+            <a name='top'></a>
             {isFetching ? <Preloader /> :
                 <MyFriends
                     totalUsersCount={totalUsersCount}

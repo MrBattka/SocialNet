@@ -23,6 +23,7 @@ const UsersContainer = (props) => {
     }
 
     return (<>
+        <a name='top'></a>
         {props.isFetching ? <Preloader /> : <Users
             totalUsersCount={props.totalUsersCount}
             pageSize={props.pageSize}

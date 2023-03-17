@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect, Provider } from 'react-redux';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Preloader from './components/Common/Preloader/Preloader';
 import HeaderContainer from './components/Header/HeaderContainer';
@@ -13,7 +13,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
 import store from './Redux/redux-store';
 
-const App = ({isAuth, authUserId, initializeApp, initialize}) => {
+const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
 
   useEffect(() => {
     initializeApp()
@@ -27,6 +27,9 @@ const App = ({isAuth, authUserId, initializeApp, initialize}) => {
     <div className="app-wrapper">
       <HeaderContainer />
       {isAuth && <Nav authUserId={authUserId} />}
+      <Routes>
+        <Route path='/login' element={<LoginPageContainer />} />
+      </Routes>
       <div className='app-wrapper-content'>
         <Routes>
           {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
@@ -36,7 +39,6 @@ const App = ({isAuth, authUserId, initializeApp, initialize}) => {
           <Route path='/messages/*' element={<MessagesContainer />} />
           <Route path='/users' element={<UsersContainer />} />
           <Route path='/friends' element={<MySubscriptionsContainer />} />
-          <Route path='/login' element={<LoginPageContainer />} />
         </Routes>
       </div>
     </div>

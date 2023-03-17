@@ -8,8 +8,7 @@ const LogoutForm = (props) => {
     return (
         <div className={classes.login__block}>
             <form className={classes.login__form} onSubmit={props.handleSubmit}>
-                <p className={classes.login}> {props.isAuth ? props.login :
-                    <NavLink to={'/login'}>Login</NavLink>} {props.isAuth ?
+                <p className={classes.login}> {props.login} {props.isAuth ?
                         <button className={classes.btn__logout}><LogoutSvg /></button> : ""}</p>
             </form>
         </div>

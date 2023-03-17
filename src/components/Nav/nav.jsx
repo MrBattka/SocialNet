@@ -23,7 +23,7 @@ const Nav = ({ setCurrentPageUsers, setCurrentPageFriends }) => {
                 <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/users">Users</NavLink>
             </div>
             <div className={classes.link} onClick={hundleClick}>
-                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/friends">My Friend</NavLink>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/friends">My Friends</NavLink>
             </div>
             <div className={classes.line}></div>
             <div className={classes.link}>
