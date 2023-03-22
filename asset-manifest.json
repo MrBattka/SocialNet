@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/SocialNet/static/css/main.2c0ac3fd.chunk.css",
-    "main.js": "/SocialNet/static/js/main.d3ee618d.chunk.js",
-    "main.js.map": "/SocialNet/static/js/main.d3ee618d.chunk.js.map",
+    "main.css": "/SocialNet/static/css/main.3a549542.chunk.css",
+    "main.js": "/SocialNet/static/js/main.ec64a5aa.chunk.js",
+    "main.js.map": "/SocialNet/static/js/main.ec64a5aa.chunk.js.map",
     "runtime-main.js": "/SocialNet/static/js/runtime-main.4ead4c0b.js",
     "runtime-main.js.map": "/SocialNet/static/js/runtime-main.4ead4c0b.js.map",
-    "static/js/2.6b8e5655.chunk.js": "/SocialNet/static/js/2.6b8e5655.chunk.js",
-    "static/js/2.6b8e5655.chunk.js.map": "/SocialNet/static/js/2.6b8e5655.chunk.js.map",
+    "static/js/2.fbb9f36e.chunk.js": "/SocialNet/static/js/2.fbb9f36e.chunk.js",
+    "static/js/2.fbb9f36e.chunk.js.map": "/SocialNet/static/js/2.fbb9f36e.chunk.js.map",
     "index.html": "/SocialNet/index.html",
-    "precache-manifest.0cc39d6198380e470f2cfa8690692c11.js": "/SocialNet/precache-manifest.0cc39d6198380e470f2cfa8690692c11.js",
+    "precache-manifest.804ae427464c062f98567a5596c2bc97.js": "/SocialNet/precache-manifest.804ae427464c062f98567a5596c2bc97.js",
     "service-worker.js": "/SocialNet/service-worker.js",
-    "static/css/main.2c0ac3fd.chunk.css.map": "/SocialNet/static/css/main.2c0ac3fd.chunk.css.map",
-    "static/js/2.6b8e5655.chunk.js.LICENSE.txt": "/SocialNet/static/js/2.6b8e5655.chunk.js.LICENSE.txt",
-    "static/js/main.d3ee618d.chunk.js.LICENSE.txt": "/SocialNet/static/js/main.d3ee618d.chunk.js.LICENSE.txt",
+    "static/css/main.3a549542.chunk.css.map": "/SocialNet/static/css/main.3a549542.chunk.css.map",
+    "static/js/2.fbb9f36e.chunk.js.LICENSE.txt": "/SocialNet/static/js/2.fbb9f36e.chunk.js.LICENSE.txt",
+    "static/js/main.ec64a5aa.chunk.js.LICENSE.txt": "/SocialNet/static/js/main.ec64a5aa.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/SocialNet/static/media/social-media-3.f633c14b.jpg",
     "static/media/logout.svg": "/SocialNet/static/media/logout.6517ee94.svg",
     "static/media/preloader.svg": "/SocialNet/static/media/preloader.ef886190.svg",
-    "static/media/LoginPage.module.css": "/SocialNet/static/media/social-media-3.f633c14b.jpg",
     "static/media/user.jpg": "/SocialNet/static/media/user.8c62dd08.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4ead4c0b.js",
-    "static/js/2.6b8e5655.chunk.js",
-    "static/css/main.2c0ac3fd.chunk.css",
-    "static/js/main.d3ee618d.chunk.js"
+    "static/js/2.fbb9f36e.chunk.js",
+    "static/css/main.3a549542.chunk.css",
+    "static/js/main.ec64a5aa.chunk.js"
   ]
 }
