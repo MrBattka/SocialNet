@@ -9,11 +9,14 @@ import MessagesContainer from './components/Masseges/MessagesContainer';
 import MySubscriptionsContainer from './components/MyFriends/MyFriendsContainer';
 import Nav from './components/Nav/Nav';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import SettingCompContainer from './components/Setting Component/SettingCompContainer';
+import { useTheme } from './components/Common/useTheme/useTheme';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
 import store from './Redux/redux-store';
 
 const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     initializeApp()
@@ -39,6 +42,7 @@ const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
           <Route path='/messages/*' element={<MessagesContainer />} />
           <Route path='/users' element={<UsersContainer />} />
           <Route path='/friends' element={<MySubscriptionsContainer />} />
+          <Route path='/setting' element={<SettingCompContainer />} />
         </Routes>
       </div>
     </div>

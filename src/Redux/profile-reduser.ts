@@ -4,10 +4,12 @@ const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS'
 const SET_PHOTO_PROFILE = 'SET_PHOTO_PROFILE'
+const DELETE_POST = 'DELETE_POST'
 
 type PostType = {
   id: number
   message: string
+  isDelete: boolean
 }
 type ContactsType = {
   github: string
@@ -50,7 +52,12 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
       let body = action.newPostText
       return {
         ...state,
-        posts: [...state.posts, { id: action.id, message: body }]
+        posts: [...state.posts, { id: action.id, message: body, isDelete: false }]
+      }
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: [...state.posts.filter(post => post.isDelete !== false)]
       }
     case SET_USER_PROFILE:
       return {
@@ -86,6 +93,7 @@ type SetProfileStatusType = {
   status: string
 }
 export const addPostAC = (newPostText: string, id: number): AddPostACType => ({ type: ADD_POST, newPostText, id })
+export const deletePost = (isDelete: boolean) => ({ type: DELETE_POST, isDelete })
 export const setUserProfile = (profile: ProfileType): SetUserProfileType => ({ type: SET_USER_PROFILE, profile })
 export const setProfileStatus = (status: string): SetProfileStatusType => ({ type: SET_STATUS, status })
 export const updateProfilePhoto = (urlProfilePhoto: object) => ({ type: SET_PHOTO_PROFILE, urlProfilePhoto })

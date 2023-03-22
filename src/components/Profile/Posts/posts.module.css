@@ -19,6 +19,9 @@
     font-size: 15px;
     margin: 0 50px;
     width: 600px;
+    height: 60px;
+    display: flex;
+    align-items: center;
 }
 
 .wrapperTextPost {
@@ -35,4 +38,12 @@
    display: flex;
    justify-content: center;
    cursor: pointer;
+}
+
+.deleteBtn {
+    display: flex;
+    align-items: start;
+    margin: 0 0 15px 15px;
+    color: rgb(98, 98, 98);
+    cursor: pointer;
 }

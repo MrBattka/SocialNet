@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html[data-theme='dark'] {
+--background-color: black;
+--background: url('assets/img/login-page-bg-dark.jpg');
+}
+
+html[data-theme='light'] {
+--background-color: white;
+--background: url('assets/img/social-media-3.jpg');
+}

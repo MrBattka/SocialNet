@@ -1,0 +1,26 @@
+.wrapper {
+    height: 90vh;
+    display: flex;
+    margin: 20px 0 0 0px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapperFields {
+    margin-top: 50px;
+}
+
+.wrapperFields span {
+    margin-right: 200px;
+    font-size: 18px;
+}
+
+.wrapperFields fieldset {
+    font-size: 17px;
+    border: none;
+    padding: 0;
+}
+
+.wrapperFields fieldset label {
+    margin-right: 10px;
+}

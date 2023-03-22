@@ -27,7 +27,7 @@ const Nav = ({ setCurrentPageUsers, setCurrentPageFriends }) => {
             </div>
             <div className={classes.line}></div>
             <div className={classes.link}>
-                <a className={classes.settings} href="#">Settings</a>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/setting">My Setting</NavLink>
             </div>
         </nav>
     )
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => ({
     // someState
 })
 
-export default connect(mapStateToProps, {setCurrentPageFriends, setCurrentPageUsers})(Nav);
+export default connect(mapStateToProps, { setCurrentPageFriends, setCurrentPageUsers })(Nav);
