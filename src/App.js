@@ -13,7 +13,8 @@ import SettingCompContainer from './components/Setting Component/SettingCompCont
 import { useTheme } from './components/Common/useTheme/useTheme';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
-import store from './Redux/redux-store';
+import {store, persistor} from './Redux/redux-store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
   const { theme, setTheme } = useTheme()
@@ -61,7 +62,9 @@ const AppSocialNet = () => {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <AppContainer />
+        <PersistGate loading={<AppContainer />} persistor={persistor}>
+          <AppContainer />
+        </PersistGate>
       </Provider>
     </BrowserRouter>
   )

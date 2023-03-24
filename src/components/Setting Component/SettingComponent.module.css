@@ -5,27 +5,35 @@
     flex-direction: column;
 }
 
-.wrapper h2 {
-    margin-top: 40px;
-}
-
-.wrapperFields {
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.592);
-    height: 65vh;
-    padding: 50px 30px 0 30px;
-    border-radius: 13px;
-}
-
-.wrapperFields span {
-    margin-right: 200px;
-    font-size: 18px;
+.wrapperFields input {
+    cursor: pointer;
 }
 
 .wrapperFields fieldset {
     font-size: 17px;
     border: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapperFields {
+    margin-top: 20px;
+    box-shadow: 0 0 4px rgb(146, 144, 144);
+    background-color: rgba(241, 241, 241, 0.386);
+    height: 65vh;
+    padding: 50px 30px 0 30px;
+    border-radius: 13px;
+    width: 40vw;
+}
+
+.wrapper h2 {
+    margin-top: 40px;
+}
+
+.wrapperFields span {
+    font-size: 18px;
 }
 
 .wrapperFields fieldset label {

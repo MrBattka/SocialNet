@@ -14,10 +14,12 @@ code {
 
 html[data-theme='dark'] {
 --background-color: black;
+--color: white;
 --background: url('assets/img/login-page-bg-dark.jpg');
 }
 
 html[data-theme='light'] {
 --background-color: white;
+--color: black;
 --background: url('assets/img/social-media-3.jpg');
 }
