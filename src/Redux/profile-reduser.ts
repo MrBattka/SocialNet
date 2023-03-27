@@ -1,3 +1,5 @@
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/lib/storage";
 import { usersAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
@@ -43,6 +45,12 @@ let initialState = {
   status: '',
   urlProfilePhoto: null
 }
+
+const persistConfig: any = {
+  key: 'root',
+  storage: storage,
+  blacklist: ['urlProfilePhoto', 'status', 'isFetching', 'profile']
+};
 
 export type InitialStateType = typeof initialState
 
@@ -113,4 +121,4 @@ export const updateProfileStatus = (status: string) => async (dispatch: any) => 
   }
 }
 
-export default profileReducer;
+export default persistReducer(persistConfig, profileReducer);

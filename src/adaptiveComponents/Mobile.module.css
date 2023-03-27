@@ -1,0 +1,31 @@
+.wrapper_app {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 12px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "h"
+    "n"
+    "c";
+}
+
+.header {
+    grid-area: h;
+    background-color: rgba(128, 128, 128, 0.507);
+    border-radius: 0 0 16px 16px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+.nav {
+
+}
+
+.content {
+    grid-area: c;
+    width: fit-content;
+    background-color: rgba(221, 218, 218, 0.474);
+    border-radius: 16px 16px 0 0;
+}

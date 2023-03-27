@@ -1,51 +1,56 @@
 import React, { useEffect } from 'react';
 import { connect, Provider } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { BrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
+import DesktopView from './adaptiveComponents/DesktopView';
+import MobileView from './adaptiveComponents/MobileView';
+import TabletView from './adaptiveComponents/TabletView';
 import './App.css';
 import Preloader from './components/Common/Preloader/Preloader';
-import HeaderContainer from './components/Header/HeaderContainer';
-import LoginPageContainer from './components/LoginPage/LoginPageContainer';
-import MessagesContainer from './components/Masseges/MessagesContainer';
-import MySubscriptionsContainer from './components/MyFriends/MyFriendsContainer';
-import Nav from './components/Nav/Nav';
-import ProfileContainer from './components/Profile/ProfileContainer';
-import SettingCompContainer from './components/Setting Component/SettingCompContainer';
 import { useTheme } from './components/Common/useTheme/useTheme';
-import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './Redux/app-reduser';
-import {store, persistor} from './Redux/redux-store';
-import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from './Redux/redux-store';
 
 const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
+
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1024px)"
+  })
+
+  const isMobile = useMediaQuery({
+    query: "(max-width: 786px)"
+  })
+
+  const isPortrait = useMediaQuery({
+    query: "(orientation: portrait)"
+  });
+
+  const isTablet = useMediaQuery({
+    query: "(max-width: 1224px)"
+  })
+
+  const isRetina = useMediaQuery({
+    query: "(max-resolution: 300dpi)"
+  });
+
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     initializeApp()
   }, [])
 
-  if (initialize === false) {
+  if (!initialize) {
     return <Preloader />
   }
 
   return (
-    <div className="app-wrapper">
-      <HeaderContainer />
-      {isAuth && <Nav authUserId={authUserId} />}
-      <Routes>
-        <Route path='/login' element={<LoginPageContainer />} />
-      </Routes>
-      <div className='app-wrapper-content'>
-        <Routes>
-          {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
-          <Route path='/profile' element={<ProfileContainer />} >
-            <Route path=':userId' element={<ProfileContainer />} />
-          </Route>
-          <Route path='/messages/*' element={<MessagesContainer />} />
-          <Route path='/users' element={<UsersContainer />} />
-          <Route path='/friends' element={<MySubscriptionsContainer />} />
-          <Route path='/setting' element={<SettingCompContainer />} />
-        </Routes>
-      </div>
+    <div>
+      {
+        isDesktop && <DesktopView isAuth={isAuth} authUserId={authUserId} />
+        || isMobile && <MobileView />
+        || isTablet && <TabletView />
+      }
     </div>
   );
 }

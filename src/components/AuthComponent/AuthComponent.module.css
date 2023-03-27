@@ -19,6 +19,7 @@
 .login {
     display: flex;
     cursor: default;
+    color: var(--color);
 }
 
 .login a {

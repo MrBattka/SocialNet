@@ -15,7 +15,6 @@ const SwitchInput = ({ isSelected, selectedDarkTheme }) => {
       setTheme('light')
     }
   })
-  console.log(isSelected);
 
   return (
     <div className='wrapperSwitchInput'>

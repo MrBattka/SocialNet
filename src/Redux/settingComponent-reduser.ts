@@ -1,4 +1,3 @@
-
 const SELECTED_DARK_THEME = 'SELECTED_DARK_THEME'
 
 const initialState = {
@@ -18,6 +17,11 @@ const settingPageRedusers = (state = initialState, action: any): InitialStateTyp
             return state
     }
 }
+
+type selectedDarkTheme = {
+    type: typeof SELECTED_DARK_THEME
+    isSelected: boolean
+  }
 
 export const selectedDarkTheme = (isSelected: boolean) => ({ type: SELECTED_DARK_THEME, isSelected })
 
