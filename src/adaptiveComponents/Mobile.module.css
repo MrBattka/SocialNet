@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .wrapper_app {
     width: 100vw;
     height: 100vh;
@@ -13,7 +17,7 @@
 .header {
     grid-area: h;
     background-color: rgba(128, 128, 128, 0.507);
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 10px 10px;
     position: sticky;
     z-index: 1;
     top: 0;
@@ -27,5 +31,5 @@
     grid-area: c;
     width: fit-content;
     background-color: rgba(221, 218, 218, 0.474);
-    border-radius: 16px 16px 0 0;
+    border-radius: 10px 10px 0 0;
 }

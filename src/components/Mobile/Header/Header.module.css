@@ -7,9 +7,23 @@
 }
 
 .logo {
-    margin-left: 70px;
+    margin-right: 10px;
+    top: -15px;
+    line-height: 2px;
+    font-size: 25px;
+    font-weight: 900;
+    color: red;
+    letter-spacing: 2px;
 }
 
+.logo__text {
+    margin-left: 35px;
+  }
+
 .burger_menu {
-    margin-left: 50px;
+    margin-left: 15px;
+}
+
+.wrapper_auth {
+    margin-left: 70px;
 }

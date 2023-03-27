@@ -10,7 +10,7 @@ const Header = () => {
                     <p>Social ·</p>
                     <p className={classes.logo__text}>· NET</p>
                 </div>
-                <AuthComponent />
+                <div className={classes.wrapper_auth}><AuthComponent /></div>
             </div>
         </header>
     )

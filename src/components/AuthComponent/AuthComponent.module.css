@@ -1,7 +1,7 @@
 .login__block {
     display: flex;
     justify-content: right;
-    margin-right: 10px;
+    margin-right: 0px;
     position: sticky;
 }
 
