@@ -1,21 +1,33 @@
 import React from 'react'
-import Header from '../components/Mobile/Header/Header'
+import { connect } from 'react-redux'
+import { Route, Routes } from 'react-router-dom'
+import HeaderContainer from '../components/Mobile/Header/HeaderContainer'
+import NavContainer from '../components/Mobile/Nav/NavContainer'
 import ProfileContainer from '../components/Mobile/Profile/ProfileContainer'
 import classes from './Mobile.module.css'
 
-const MobileView = () => {
+const MobileView = ({ open }) => {
+  console.log(open);
   return (
     <div className={classes.wrapper_app}>
       <header className={classes.header}>
-        <Header />
+        <HeaderContainer />
       </header>
-      <nav className={classes.nav}>
-      </nav>
       <main className={classes.content}>
-        <ProfileContainer />
+        <Routes>
+          <Route path='/profile' element={<ProfileContainer />} />
+        </Routes>
       </main>
     </div>
   )
 }
 
-export default MobileView
+const mapStateToProps = (state) => {
+  return {
+    open: state.mobHeader.isOpenNavMenu
+  }
+}
+
+const MobileViewCont = connect(mapStateToProps)(MobileView)
+
+export default MobileViewCont

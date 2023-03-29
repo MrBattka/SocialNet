@@ -4,6 +4,7 @@
     align-items: center;
     height: 60px;
     font-size: 20px;
+    transition: 0.8s;
 }
 
 .logo {
@@ -22,8 +23,20 @@
 
 .burger_menu {
     margin-left: 15px;
+    display: block;
 }
 
-.wrapper_auth {
-    margin-left: 70px;
+.menu_closed {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    transition: 0.8s;
+    z-index: 10;
 }
+
+.menu_open {
+    left: 0;
+    top: 70px;
+    position: absolute;
+    transition: 0.8s;
+}   

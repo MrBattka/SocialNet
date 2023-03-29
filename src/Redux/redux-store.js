@@ -11,6 +11,7 @@ import settingPageRedusers from "./settingComponent-reduser";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
+import headerRedusers from "./Mobile/header-reduser";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -19,7 +20,8 @@ let reducers = combineReducers({
     settingPage: settingPageRedusers,
     auth: authReduser,
     form: formReduser,
-    app: appReduser
+    app: appReduser,
+    mobHeader: headerRedusers
 })
 
 const persistConfig = {

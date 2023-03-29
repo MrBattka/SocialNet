@@ -23,13 +23,9 @@ body {
     top: 0;
 }
 
-.nav {
-
-}
-
 .content {
     grid-area: c;
-    width: fit-content;
+    height: fit-content;
     background-color: rgba(221, 218, 218, 0.474);
     border-radius: 10px 10px 0 0;
 }

@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import DesktopView from './adaptiveComponents/DesktopView';
+import MobileViewCont from './adaptiveComponents/MobileView';
 import MobileView from './adaptiveComponents/MobileView';
 import TabletView from './adaptiveComponents/TabletView';
 import './App.css';
@@ -48,7 +49,7 @@ const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
     <div>
       {
         isDesktop && <DesktopView isAuth={isAuth} authUserId={authUserId} />
-        || isMobile && <MobileView />
+        || isMobile && <MobileViewCont />
         || isTablet && <TabletView />
       }
     </div>
