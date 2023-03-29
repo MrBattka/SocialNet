@@ -1,9 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import AuthComponent from '../../AuthComponent/AuthComponent'
 import classes from './Nav.module.css'
 
 const Nav = ({ open, openNavMenu }) => {
-    return (
+    return (<div className={classes.wrapper_nav}>
+    <div className={classes.wrapper_auth}><AuthComponent /></div>
         <nav className={classes.nav}>
             <div className={classes.link}>
                 <NavLink onClick={() => { openNavMenu(false) }}
@@ -23,6 +25,7 @@ const Nav = ({ open, openNavMenu }) => {
                 <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/settings">My Settings</NavLink>
             </div>
         </nav>
+        </div>
     )
 }
 

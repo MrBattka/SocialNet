@@ -14,8 +14,8 @@ const Header = ({ openNavMenu, open }) => {
         <>
             <div className={classes.wrapper}>
                 
-                <div className={classes.burger_menu}>
-                    <span onClick={() => openNavMenu(!open)}>B</span>
+                <div className={open ? classes.open : classes.burger_menu}>
+                    <span onClick={() => openNavMenu(!open)}>Menu</span>
                 </div>
                 <div className={open ? classes.menu_open : classes.menu_closed}>
                     <NavContainer />
