@@ -1,0 +1,10 @@
+.aboutMe__editor {
+    font-style: italic;
+    text-decoration: none;
+    color: black;
+}
+.aboutMe__editor:hover {
+    text-shadow: 0px 1px 3px white;
+    color: rgb(35, 34, 34);
+    cursor: pointer;
+}

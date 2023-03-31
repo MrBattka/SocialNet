@@ -9,7 +9,7 @@ const Profile = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
-
+    
     return (
         <div className={classes.content}>
             <div className={classes.profile__wrapper}>

@@ -3,12 +3,6 @@ import NavContainer from '../Nav/NavContainer';
 import classes from './Header.module.css';
 
 const Header = ({ openNavMenu, open }) => {
-    // const nav = useNavigate()
-    // useEffect(() => {
-    //     if (open) {
-    //         nav('/nav')
-    //     }
-    // }, [open])
 
     return (
         <>

@@ -7,7 +7,6 @@ import ProfileContainer from '../components/Mobile/Profile/ProfileContainer'
 import classes from './Mobile.module.css'
 
 const MobileView = ({ open }) => {
-  console.log(open);
   return (
     <div className={classes.wrapper_app}>
       <header className={classes.header}>
@@ -15,7 +14,9 @@ const MobileView = ({ open }) => {
       </header>
       <main className={classes.content}>
         <Routes>
-          <Route path='/profile' element={<ProfileContainer />} />
+          <Route path='/profile' element={<ProfileContainer />} >
+            <Route path=':userId' element={<ProfileContainer />} />
+          </Route>
         </Routes>
       </main>
     </div>
