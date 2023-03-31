@@ -29,6 +29,7 @@ body {
     background-color: rgba(221, 218, 218, 0.474);
     border-radius: 10px 10px 0 0;
     max-height: 90vh;
+    min-height: 90vh;
     overflow-y: auto;
     scroll-behavior: smooth;
 }

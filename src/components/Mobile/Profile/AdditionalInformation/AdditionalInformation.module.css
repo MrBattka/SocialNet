@@ -1,0 +1,48 @@
+.wrapperContact {
+    
+}
+
+.wrapperAddInf span {
+    margin-left: 8px;
+}
+
+.wrapperContacts p {
+    margin: 0;
+}
+
+.wrapperContact p {
+    margin: 10px 0 0 30px;
+}
+
+.editModeActive {
+    display: inline-block;
+    transform: rotateZ(90deg);
+    transition: 0.2s;
+}
+
+.wrapperContacts span {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.wrapperMode {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.wrapperAddInf {
+    background-color: rgba(128, 128, 128, 0.277);
+    padding: 60px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.wrapperAddInf span {
+    font-size: 22px;
+}
+
+.wrapperAddInf b {
+    font-size: 22px;
+}
