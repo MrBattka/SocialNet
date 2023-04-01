@@ -13,17 +13,21 @@ const Nav = ({ open, openNavMenu }) => {
                         className={navData => navData.isActive ? classes.active : classes.item} to="/profile">Profile</NavLink>
                 </div>
                 <div className={classes.link}>
-                    <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/messages">Messages</NavLink>
+                    <NavLink onClick={() => { openNavMenu(false) }}
+                        className={navData => navData.isActive ? classes.active : classes.item} to="/messages">Messages</NavLink>
                 </div>
                 <div className={classes.link}>
-                    <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/users">Users</NavLink>
+                    <NavLink onClick={() => { openNavMenu(false) }}
+                        className={navData => navData.isActive ? classes.active : classes.item} to="/users">Users</NavLink>
                 </div>
                 <div className={classes.link}>
-                    <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/friends">My Friends</NavLink>
+                    <NavLink onClick={() => { openNavMenu(false) }}
+                        className={navData => navData.isActive ? classes.active : classes.item} to="/friends">My Friends</NavLink>
                 </div>
                 <div className={classes.line}></div>
                 <div className={classes.link}>
-                    <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/settings">My Settings</NavLink>
+                    <NavLink onClick={() => { openNavMenu(false) }}
+                        className={navData => navData.isActive ? classes.active : classes.item} to="/settings">My Settings</NavLink>
                 </div>
             </nav>
         </div>

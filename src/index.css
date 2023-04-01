@@ -14,7 +14,7 @@ code {
 
 html[data-theme='dark'] {
 --background-color: black;
---color: white;
+--color: rgb(203, 203, 203);
 --background: url('assets/img/login-page-bg-dark.jpg');
 }
 

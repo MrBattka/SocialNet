@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Paginator.module.css";
 
-const Paginator = ({ totalUsersCount, pageSize, onPageChanged, currentPage, portionSize = 15 }) => {
+const Paginator = ({ totalUsersCount, pageSize, onPageChanged, currentPage, portionSize = 10 }) => {
     const [portionNumber, setPortionNumber] = useState(1)
 
     let pages = []
