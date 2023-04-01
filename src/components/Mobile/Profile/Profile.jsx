@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Preloader from '../../Common/Preloader/Preloader'
 import AdditionalInformation from './AdditionalInformation/AdditionalInformation'
 import MyPostsContainer from './MyPost/MyPostContainer'

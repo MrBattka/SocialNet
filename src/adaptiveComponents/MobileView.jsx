@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import HeaderContainer from '../components/Mobile/Header/HeaderContainer'
+import LoginPageContainer from '../components/Mobile/Login Page/LoginContainer'
+import LoginReduxForm from '../components/Mobile/Login Page/LoginForm/LoginForm'
 import Messages from '../components/Mobile/Messages/Messages'
 import MyFriendsContainer from '../components/Mobile/My Friends/MyFriendsContainer'
 import NavContainer from '../components/Mobile/Nav/NavContainer'
@@ -25,6 +27,7 @@ const MobileView = ({ open }) => {
           <Route path='/users' element={<UsersContainer />} />
           <Route path='/friends' element={<MyFriendsContainer />} />
           <Route path='/settings' element={<SettingCompContainer />} />
+          <Route path='/login' element={<LoginPageContainer />} />
         </Routes>
       </main>
     </div>

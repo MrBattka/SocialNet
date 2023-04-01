@@ -1,13 +1,15 @@
 import React from "react";
-import LogoutReduxForm from "./LogoutForm";
-import classes from "./AuthComponent.module.css"
-import { logout } from "../../Redux/auth-reduser";
 import { connect } from "react-redux";
+import { logout } from "../../Redux/auth-reduser";
+import { openNavMenu } from "../../Redux/Mobile/header-reduser";
+import classes from "./AuthComponent.module.css";
+import LogoutReduxForm from "./LogoutForm";
 
 const AuthComponent = (props) => {
     
     const onSubmit = () => {
         props.logout()
+        props.openNavMenu(false)
     }
     
     return (
@@ -23,4 +25,4 @@ const mapStateToProps = (state) => ({
     login: state.auth.login
 })
 
-export default connect(mapStateToProps, { logout })(AuthComponent)
+export default connect(mapStateToProps, { logout, openNavMenu })(AuthComponent)
