@@ -29,7 +29,7 @@ body {
     height: fit-content;
     background-color: rgba(221, 218, 218, 0.474);
     border-radius:10px 10px 0 0;
-    max-height: 88vh;
+    max-height: 90vh;
     min-height: 100%;
     overflow-y: auto;
     scroll-behavior: smooth;
