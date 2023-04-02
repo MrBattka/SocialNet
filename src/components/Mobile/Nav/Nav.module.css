@@ -9,14 +9,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.507);
     width: 100vw;
     height: 91vh;
     border-radius: 10px 10px 0 0;
+    backdrop-filter: blur(6px);
 }
 
 .nav a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: inherit;
     font-size: 30px;
     line-height: 70px;
