@@ -5,8 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import DesktopView from './adaptiveComponents/DesktopView';
 import MobileViewCont from './adaptiveComponents/MobileView';
-import MobileView from './adaptiveComponents/MobileView';
-import TabletView from './adaptiveComponents/TabletView';
 import './App.css';
 import Preloader from './components/Common/Preloader/Preloader';
 import { useTheme } from './components/Common/useTheme/useTheme';
@@ -20,16 +18,12 @@ const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
   })
 
   const isMobile = useMediaQuery({
-    query: "(max-width: 786px)"
+    query: "(max-width: 1023px)"
   })
 
   const isPortrait = useMediaQuery({
     query: "(orientation: portrait)"
   });
-
-  const isTablet = useMediaQuery({
-    query: "(max-width: 1224px)"
-  })
 
   const isRetina = useMediaQuery({
     query: "(max-resolution: 300dpi)"
@@ -50,7 +44,6 @@ const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
       {
         isDesktop && <DesktopView isAuth={isAuth} authUserId={authUserId} />
         || isMobile && <MobileViewCont />
-        || isTablet && <TabletView />
       }
     </div>
   );
