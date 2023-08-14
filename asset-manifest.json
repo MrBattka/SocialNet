@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/SocialNet/static/css/main.c3448be8.chunk.css",
-    "main.js": "/SocialNet/static/js/main.8902f170.chunk.js",
-    "main.js.map": "/SocialNet/static/js/main.8902f170.chunk.js.map",
-    "runtime-main.js": "/SocialNet/static/js/runtime-main.4ead4c0b.js",
-    "runtime-main.js.map": "/SocialNet/static/js/runtime-main.4ead4c0b.js.map",
-    "static/js/2.b4467d6e.chunk.js": "/SocialNet/static/js/2.b4467d6e.chunk.js",
-    "static/js/2.b4467d6e.chunk.js.map": "/SocialNet/static/js/2.b4467d6e.chunk.js.map",
+    "main.css": "/SocialNet/static/css/main.a740107c.css",
+    "main.js": "/SocialNet/static/js/main.4af2b14b.js",
+    "static/media/3.jpg": "/SocialNet/static/media/3.483decf6db8d34d147c3.jpg",
+    "static/media/3200x2400_mountain-river-trees-shore-nature.jpg": "/SocialNet/static/media/3200x2400_mountain-river-trees-shore-nature.0f6366369855115bf8d1.jpg",
+    "static/media/7.jpg": "/SocialNet/static/media/7.ade9e999726db76bcc4e.jpg",
+    "static/media/5.jpg": "/SocialNet/static/media/5.20d52eea7d0ca82c4f97.jpg",
+    "static/media/2.jpg": "/SocialNet/static/media/2.17f84bdfe23d9344db1b.jpg",
+    "static/media/login-page-bg-dark.jpg": "/SocialNet/static/media/login-page-bg-dark.bbb54606bf82bbbf0ed9.jpg",
+    "static/media/6.jpg": "/SocialNet/static/media/6.37897b460967f47bb575.jpg",
+    "static/media/10.jpg": "/SocialNet/static/media/10.77945f4458f073846401.jpg",
+    "static/media/9.jpg": "/SocialNet/static/media/9.2584a04885366da0854d.jpg",
+    "static/media/4.jpg": "/SocialNet/static/media/4.83769f3c33031fef9e78.jpg",
+    "static/media/1.jpg": "/SocialNet/static/media/1.261e9be62c77fc6410fa.jpg",
+    "static/media/social-media-3.jpg": "/SocialNet/static/media/social-media-3.0fb0a4d12a6df3faaed7.jpg",
+    "static/media/8.jpg": "/SocialNet/static/media/8.8681c2e150add00b749e.jpg",
+    "static/media/user.jpg": "/SocialNet/static/media/user.20945c2192bbe3d21db6.jpg",
+    "static/media/preloader.svg": "/SocialNet/static/media/preloader.3338677e2adc0e929e231558c0ff3d96.svg",
     "index.html": "/SocialNet/index.html",
-    "precache-manifest.b61170bc90f31e363ca08abaf0892c00.js": "/SocialNet/precache-manifest.b61170bc90f31e363ca08abaf0892c00.js",
-    "service-worker.js": "/SocialNet/service-worker.js",
-    "static/css/main.c3448be8.chunk.css.map": "/SocialNet/static/css/main.c3448be8.chunk.css.map",
-    "static/js/2.b4467d6e.chunk.js.LICENSE.txt": "/SocialNet/static/js/2.b4467d6e.chunk.js.LICENSE.txt",
-    "static/js/main.8902f170.chunk.js.LICENSE.txt": "/SocialNet/static/js/main.8902f170.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/SocialNet/static/media/social-media-3.f633c14b.jpg",
-    "static/media/logout.svg": "/SocialNet/static/media/logout.6517ee94.svg",
-    "static/media/preloader.svg": "/SocialNet/static/media/preloader.ef886190.svg",
-    "static/media/user.jpg": "/SocialNet/static/media/user.8c62dd08.jpg"
+    "static/media/logout.svg": "/SocialNet/static/media/logout.30c3834048643fdcc769f8f57dc936a8.svg",
+    "main.a740107c.css.map": "/SocialNet/static/css/main.a740107c.css.map",
+    "main.4af2b14b.js.map": "/SocialNet/static/js/main.4af2b14b.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ead4c0b.js",
-    "static/js/2.b4467d6e.chunk.js",
-    "static/css/main.c3448be8.chunk.css",
-    "static/js/main.8902f170.chunk.js"
+    "static/css/main.a740107c.css",
+    "static/js/main.4af2b14b.js"
   ]
 }
