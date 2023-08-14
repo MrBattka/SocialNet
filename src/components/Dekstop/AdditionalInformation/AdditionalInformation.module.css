@@ -28,9 +28,11 @@
 }
 
 .wrapperAddInf {
-    margin-left: 50px;
+    margin: auto;
     background-color: rgba(128, 128, 128, 0.277);
     padding: 20px;
     border-radius: 10px;
-    width: fit-content;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

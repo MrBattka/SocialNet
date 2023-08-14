@@ -1,44 +1,63 @@
-import classes from './ProfileInfo.module.css';
-import React, { useEffect, useState } from 'react';
-import ProfileStatus from './ProfileStatus/ProfileStatus';
-import userPhoto from '../../../../assets/img/user.jpg'
-import Preloader from '../../../Common/Preloader/Preloader';
-import ModalWindow from '../../../Common/ModalWindow/ModalWindow';
-import Lorem from '../../../Common/Lorem/Lorem';
+import classes from "./ProfileInfo.module.css";
+import React, { useEffect, useState } from "react";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import userPhoto from "../../../../assets/img/user.jpg";
+import Preloader from "../../../Common/Preloader/Preloader";
+import ModalWindow from "../../../Common/ModalWindow/ModalWindow";
+import Lorem from "../../../Common/Lorem/Lorem";
+import bg from '../../../../assets/img/3200x2400_mountain-river-trees-shore-nature.jpg'
 
 const ProfileInfo = (props) => {
-    const [active, setActive] = useState(false)
-    const [photo, setPhoto] = useState(null)
+  const [active, setActive] = useState(false);
+  const [photo, setPhoto] = useState(null);
 
-    useEffect(() => {
-        if (photo) {
-            props.updateProfilePhoto(photo)
-        }
-    })
-
-    if (!props.profile) {
-        return <Preloader />
+  useEffect(() => {
+    if (photo) {
+      props.updateProfilePhoto(photo);
     }
+  });
 
-    return (
-        <div className={classes.profile__wrapper}>
-            <div className={classes.wrapper_img}>
-                <img className={classes.profile__img}
-                    src={props.profile.photos.large ?? props.urlProfilePhoto ?? userPhoto} onClick={() => setActive(!active)} />
-            </div>
-            <ModalWindow active={active} setEctive={setActive} setPhoto={setPhoto}
-                profilePhotoLarge={props.profile.photos.large} children={props.profile.photos.large} />
-            <div className={classes.profile__info}>
-                <div className={classes.userName}>{props.profile.fullName}</div>
-                <div className={classes.about__user}>{
-                    <ProfileStatus /> != null ? <ProfileStatus
-                        profile={props.profile}
-                        status={props.status}
-                        updateProfileStatus={props.updateProfileStatus} /> : <Lorem />}
-                </div>
-            </div>
+  if (!props.profile) {
+    return <Preloader />;
+  }
+
+  return (
+    <>
+      {/* <img className={classes.bg} src={bg} /> */}
+      <div className={classes.profile__wrapper}>
+        <div className={classes.wrapper_img}>
+          <img
+            className={classes.profile__img}
+            src={
+              props.profile.photos.large ?? props.urlProfilePhoto ?? userPhoto
+            }
+            onClick={() => setActive(!active)}
+          />
         </div>
-    )
-}
+        <ModalWindow
+          active={active}
+          setEctive={setActive}
+          setPhoto={setPhoto}
+          profilePhotoLarge={props.profile.photos.large}
+          children={props.profile.photos.large}
+        />
+        <div className={classes.profile__info}>
+          <div className={classes.userName}>{props.profile.fullName}</div>
+          <div className={classes.about__user}>
+            {<ProfileStatus /> != null ? (
+              <ProfileStatus
+                profile={props.profile}
+                status={props.status}
+                updateProfileStatus={props.updateProfileStatus}
+              />
+            ) : (
+              <Lorem />
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default ProfileInfo;

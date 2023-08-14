@@ -20,7 +20,7 @@ const MyPostForm = (props) => {
                     {/* { createField("Post message", "newPostText", [required], Textarea, {}) } */}
                 </div>
                 <div className={classes.btn__wrapper}>
-                    <button className={classes.btn} type="submit">Post</button>
+                <button className={classes.btn} type="submit">Post</button>
                 </div>
             </form>
         </div>

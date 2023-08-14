@@ -17,7 +17,7 @@ const MyPosts = (props) => {
         <div className={classes.wrapper}>
             <MyPostReduxForm onSubmit={onPostMessage} addPost={props.addPost} newPostText={props.newPostText} />
             <h2>Posts:</h2>
-            <div className={classes.Posts}>
+            <div className={classes.posts}>
                 {props.isFetching ?
                     <Posts posts={props.posts} id={props.id} deletePost={props.deletePost} profile={props.profile} idPost={props.idPost} />
                     : <Preloader />}

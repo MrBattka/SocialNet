@@ -14,6 +14,7 @@ const MyPosts = (props) => {
     }
 
     return (
+        <>
         <div className={classes.wrapper}>
             <MyPostReduxForm onSubmit={onPostMessage} addPost={props.addPost} newPostText={props.newPostText} />
             <h2>Posts:</h2>
@@ -23,6 +24,7 @@ const MyPosts = (props) => {
                     : <Preloader />}
             </div>
         </div>
+        </>
     )
 }
 

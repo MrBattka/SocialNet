@@ -17,12 +17,12 @@ const Paginator = ({ totalUsersCount, pageSize, onPageChanged, currentPage, port
 
     const selectedNextPortion = () => {
         setPortionNumber(portionNumber - 1)
-        onPageChanged(currentPage + 15)
+        onPageChanged(currentPage + 10)
     }
 
     const selectedPrevPortion = () => {
         setPortionNumber(portionNumber + 1)
-        onPageChanged(currentPage - 15)
+        onPageChanged(currentPage - 10)
     }
 
     return (

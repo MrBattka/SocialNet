@@ -1,0 +1,50 @@
+.wrapper {
+    height: 180px;
+    width: 95%;
+}
+
+.wrapperImg {
+    display: flex;
+}
+
+.swiper_button_next {
+    color: #000;
+}
+
+:root {
+    --swiper-theme-color: #000;
+}
+
+.img {
+    height: 180px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+@media(max-width: 1024px) {
+    .wrapper {
+        height: 300px;
+    }
+    .img {
+        height: 300px;
+    }
+}
+
+
+@media(max-width: 750px) {
+    .wrapper {
+        height: 200px;
+    }
+    .img {
+        height: 200px;
+    }
+}
+
+@media(max-width: 550px) {
+    .wrapper {
+        height: 150px;
+    }
+    .img {
+        height: 150px;
+    }
+}

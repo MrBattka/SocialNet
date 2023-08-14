@@ -7,6 +7,18 @@
     margin: 0;
     padding: 0;
     margin-top: 20px;
+    animation-duration: 0.4s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
 }
 
 .post {

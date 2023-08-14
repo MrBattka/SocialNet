@@ -2,6 +2,21 @@
     list-style: none;
 }
 
+.wrapper ul {
+    animation-duration: 0.4s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
 .post {
     display: flex;
     align-items: center;
@@ -35,9 +50,9 @@
 }
 
 .wrapperTextPost span {
-   display: flex;
-   justify-content: center;
-   cursor: pointer;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .deleteBtn {

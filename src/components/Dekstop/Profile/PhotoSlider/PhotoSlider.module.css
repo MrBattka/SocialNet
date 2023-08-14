@@ -1,0 +1,11 @@
+.wrapperImg {
+    display: flex;
+}
+
+.swiper_button_next {
+    color: #000;
+}
+
+:root {
+    --swiper-theme-color: #000;
+}
