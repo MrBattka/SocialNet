@@ -53,6 +53,9 @@ export const getMessage = async (dispatch) => {
 export const dialogsAPI = {
     requestGetDialogs() {
         return instanceMessage.get('users')
+    },
+    requsetGetPhotos() {
+        return instanceMessage.get('photos?albumId=2')
     }
 }
 

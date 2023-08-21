@@ -1,14 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Dialogs.module.css";
 
 const Dialogs = ({ dialogs, photos, id, setId }) => {
-  const photos10 = photos.slice(0, 10);
+
+  const [photo10, setPhoto10] = useState([])
+
+  const getPhotos10 = async () => setPhoto10(await photos.slice(0, 10))
   const navigate = useNavigate();
 
   const openDialog = () => {
     return navigate(`/dialogs/${id}`);
   };
+
+  useEffect(() => {
+    getPhotos10()
+  }, [])
 
   useEffect(() => {
     const timeFunc = setTimeout(() => {
@@ -20,7 +27,7 @@ const Dialogs = ({ dialogs, photos, id, setId }) => {
   return (
     <div className={classes.wrapper} onClick={openDialog}>
       <div>
-        {photos10.map((photo, i) => {
+        {photo10.map((photo, i) => {
           return (
             <div className={classes.wrapper_avatar} key={i}>
               <img
