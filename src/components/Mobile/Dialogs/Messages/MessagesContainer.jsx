@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Messages from "./Messages";
-import { withAuthLocation } from "../../../../hoc/withAuthLocation";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import { getMessages, getPhotos } from "../../../../Redux/dialogs-reduser";
 import { getProfile } from "../../../../Redux/profile-reduser";
-import { getPhotos } from "../../../../api/api";
-import { getMessages } from "../../../../Redux/dialogs-reduser";
+import { withAuthLocation } from "../../../../hoc/withAuthLocation";
+import Messages from "./Messages";
 
 const MessagesContainer = ({
   profile,
@@ -13,13 +12,15 @@ const MessagesContainer = ({
   authUserId,
   getProfile,
   getMessages,
-  dialogs
+  dialogs,
+  getPhotos,
+  photos,
+  messages
 }) => {
-  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     getProfile(authUserId);
-    getPhotos(setPhotos);
+    getPhotos();
     getMessages()
   }, []);
 
@@ -29,6 +30,7 @@ const MessagesContainer = ({
       profile={profile}
       urlProfilePhoto={urlProfilePhoto}
       photos={photos}
+      messages={messages}
     />
   );
 };
@@ -36,11 +38,13 @@ const MessagesContainer = ({
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
   dialogs: state.dialogsPage.dialogs,
+  photos: state.dialogsPage.photos,
+  messages: state.dialogsPage.messages,
   urlProfilePhoto: state.profilePage.urlProfilePhoto,
   authUserId: state.auth.userId,
 });
 
 export default compose(
-  connect(mapStateToProps, { getProfile, getMessages }),
+  connect(mapStateToProps, { getProfile, getMessages, getPhotos }),
   withAuthLocation
 )(MessagesContainer);

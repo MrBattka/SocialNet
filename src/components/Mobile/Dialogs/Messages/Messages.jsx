@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getDialogs, getMessage } from "../../../../api/api";
+import { getMessage } from "../../../../api/api";
+import userPhoto from "../../../../assets/img/user.jpg";
 import classes from "./Messages.module.css";
 import SendMessageReduxForm from "./SendMessageForm/SendMessageForm";
-import userPhoto from "../../../../assets/img/user.jpg";
 
-const Messages = ({ profile, urlProfilePhoto, photos, dialogs }) => {
+const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
   const location = useLocation();
 
-  const [data, setData] = useState([]);
   const [message, setMessage] = useState([]);
-  const [text, setText] = useState('')
-
-  useEffect(() => {
-    getMessage(setData);
-  }, []);
 
   const dialogId = location.pathname.slice(-1);
   const dialogPhotoId = 5 + dialogId;
@@ -33,7 +27,7 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs }) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapper_message}>
-        {data.map((message, i) => {
+        {messages.map((message, i) => {
           return (
             <div key={i}>
               {(dialogId == message.userId || isNumber == message.userId) && (
@@ -87,7 +81,7 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs }) => {
         })}
       </div>
       <div className={classes.wrapperForm}>
-        <SendMessageReduxForm onSubmit={onSubmit} text={text} />
+        <SendMessageReduxForm onSubmit={onSubmit} message={message} />
       </div>
     </div>
   );

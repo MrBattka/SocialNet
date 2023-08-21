@@ -7,7 +7,7 @@
 }
 
 .wrapper_message {  
-    height: 88ch;
+    height: 75svh;
     margin: 10px 0 0 0px;
     overflow-y: scroll;
     scroll-behavior: smooth;

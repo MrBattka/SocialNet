@@ -2,7 +2,7 @@ import { dialogsAPI } from "../api/api";
 
 const SEND_MESSAGE = "SEND-MESSAGE";
 const SET_DIALOGS = "SET_DIALOGS";
-const SET_PHOTOS = "SET_PHOTOS"
+const SET_PHOTOS = "SET_PHOTOS";
 
 let initialState = {
   dialogs: [],
@@ -20,10 +20,9 @@ window.initialState = initialState;
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE:
-      let body = action.newMessageBody;
       return {
         ...state,
-        messages: [...state.messages, { id: action.id, message: body }],
+        messages: action.messages,
       };
     case SET_DIALOGS:
       return {
@@ -40,23 +39,21 @@ const dialogsReduser = (state = initialState, action) => {
   }
 };
 
-export const sendMessageAC = (newMessageBody, id) => ({
+export const setMessages = (messages) => ({
   type: SEND_MESSAGE,
-  newMessageBody,
-  id,
+  messages,
 });
 export const setDialogs = (dialog) => ({ type: SET_DIALOGS, dialog });
-export const setPhotos = (photo) => ({ type: SET_PHOTOS, photo })
+export const setPhotos = (photo) => ({ type: SET_PHOTOS, photo });
 
 export const getMessages = () => async (dispatch) => {
-  let response = await dialogsAPI.requestGetDialogs();
-  dispatch(setDialogs(response.data));
+  let response = await dialogsAPI.requsetGetMessages();
+  dispatch(setMessages(response.data));
 };
 
 export const getPhotos = () => async (dispatch) => {
   let response = await dialogsAPI.requsetGetPhotos();
   dispatch(setPhotos(response.data));
 };
-
 
 export default dialogsReduser;

@@ -56,6 +56,9 @@ export const dialogsAPI = {
     },
     requsetGetPhotos() {
         return instanceMessage.get('photos?albumId=2')
+    },
+    requsetGetMessages() {
+        return instanceMessage.get(`posts`);
     }
 }
 
