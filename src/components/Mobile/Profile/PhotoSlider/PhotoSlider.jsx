@@ -59,9 +59,9 @@ const PhotoSlider = ({ isOpenNavMenu }) => {
   ]);
 
   return (
-    <>
-      {!isOpenNavMenu && (
-        <div className={classes.wrapper}>
+    <div className={classes.wrapper}>
+      {  (
+        <div className={isOpenNavMenu ? classes.close_wrapper_swiper : classes.wrapper_swiper}>
           <Swiper
             modules={[Navigation, Autoplay, Scrollbar, EffectCoverflow, A11y]}
             spaceBetween={10}
@@ -79,7 +79,7 @@ const PhotoSlider = ({ isOpenNavMenu }) => {
           </Swiper>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -3,7 +3,6 @@ import NavContainer from '../Nav/NavContainer';
 import classes from './Header.module.css';
 
 const Header = ({ openNavMenu, open }) => {
-
     return (
         <>
             <div className={classes.wrapper}>
