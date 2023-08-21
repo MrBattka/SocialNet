@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import AuthComponent from '../../AuthComponent/AuthComponent'
 import classes from './Nav.module.css'
 
-const Nav = ({ open, openNavMenu }) => {
+const Nav = ({ openNavMenu }) => {
     return (
         <div className={classes.wrapper_nav}>
             <div className={classes.wrapper_auth}><AuthComponent /></div>
@@ -14,7 +14,7 @@ const Nav = ({ open, openNavMenu }) => {
                 </div>
                 <div className={classes.link}>
                     <NavLink onClick={() => { openNavMenu(false) }}
-                        className={navData => navData.isActive ? classes.active : classes.item} to="/messages">Messages</NavLink>
+                        className={navData => navData.isActive ? classes.active : classes.item} to="/dialogs">Messages</NavLink>
                 </div>
                 <div className={classes.link}>
                     <NavLink onClick={() => { openNavMenu(false) }}

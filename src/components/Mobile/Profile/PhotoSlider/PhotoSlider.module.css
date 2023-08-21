@@ -1,6 +1,7 @@
 .wrapper {
     height: 180px;
     width: 95%;
+    z-index: 1;
 }
 
 .wrapperImg {

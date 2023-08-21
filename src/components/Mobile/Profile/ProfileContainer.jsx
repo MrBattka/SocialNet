@@ -9,7 +9,7 @@ import Profile from './Profile'
 const ProfileContainer = ({ profile, status, updateProfileStatus, authUserId, getProfile, getProfileStatus }) => {
 
   let { userId } = useParams()
-
+  
   useEffect(() => {
     if (!userId) {
       userId = authUserId

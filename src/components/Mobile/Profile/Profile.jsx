@@ -2,9 +2,9 @@ import React from 'react'
 import Preloader from '../../Common/Preloader/Preloader'
 import AdditionalInformation from './AdditionalInformation/AdditionalInformation'
 import MyPostsContainer from './MyPost/MyPostContainer'
+import PhotoSliderContainer from './PhotoSlider/PhotoSliderContainer'
 import classes from './Profile.module.css'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
-import PhotoSlider from './PhotoSlider/PhotoSlider'
 
 const Profile = ({ profile, status, authUserId, isAuth, urlProfilePhoto, getProfile,
                 updateProfileStatus, getProfileStatus, updateProfilePhoto, lookingForAJob,
@@ -20,7 +20,7 @@ const Profile = ({ profile, status, authUserId, isAuth, urlProfilePhoto, getProf
       <AdditionalInformation profile={profile} lookingForAJob={lookingForAJob}
         lookingForAJobDescription={lookingForAJobDescription}
         fullName={fullName} contacts={contacts} />
-        <PhotoSlider />
+        <PhotoSliderContainer />
       <MyPostsContainer profile={profile} />
     </div>
   )

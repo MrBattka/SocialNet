@@ -1,17 +1,20 @@
+import { dialogsAPI } from "../api/api";
+
 const SEND_MESSAGE = 'SEND-MESSAGE';
+const SET_DIALOGS = 'SET_DIALOGS'
 
 let initialState = {
-  dialogs: [
-    { id: 1, name: 'Nick 1' },
-    { id: 2, name: 'Nick 2' },
-    { id: 3, name: 'Nick 3' },
-    { id: 4, name: 'Nick 4' },
-    { id: 5, name: 'Nick 5' }
-  ],
-  messages: []
+  dialogs: [],
+  messages: [],
+  photos: [],
+  id: ''
 }
 
 window.initialState = initialState;
+
+// const [dialogs, setDialogs] = useState([]);
+//   const [photos, setPhotos] = useState([]);
+//   const [id, setId] = useState("");
 
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
@@ -21,10 +24,23 @@ const dialogsReduser = (state = initialState, action) => {
         ...state,
         messages: [...state.messages, {id: action.id, message: body}] 
       }
+    case SET_DIALOGS:
+      return {
+        ...state,
+        dialogs: action.dialog
+      }
+
     default:
       return state;
   }
 }
 
 export const sendMessageAC = (newMessageBody, id) => ({ type: SEND_MESSAGE, newMessageBody, id })
+export const setDialogs = (dialog) => ({ type: SET_DIALOGS, dialog })
+
+export const getMessages = () => async (dispatch) => {
+  let response = await dialogsAPI.requestGetDialogs()
+  dispatch(setDialogs(response.data))
+}
+
 export default dialogsReduser;

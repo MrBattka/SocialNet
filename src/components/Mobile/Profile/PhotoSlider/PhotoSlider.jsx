@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import {
   A11y,
   Autoplay,
+  EffectCoverflow,
   Navigation,
   Scrollbar,
-  EffectCoverflow,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import classes from "./PhotoSlider.module.css";
 
 import "swiper/css";
 import "swiper/css/autoplay";
-import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
-const PhotoSlider = () => {
+const PhotoSlider = ({ isOpenNavMenu }) => {
   const [slide, setSlide] = useState([
     <img
       className={classes.img}
@@ -60,23 +60,23 @@ const PhotoSlider = () => {
 
   return (
     <div className={classes.wrapper}>
-      <Swiper
-        modules={[Navigation, Autoplay, Scrollbar, EffectCoverflow, A11y]}
-        spaceBetween={10}
-        slidesPerView={2}
-        autoplay={true}
-        navigation
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {slide.map((slide, i) => {
-          return (
-            <SwiperSlide>
-              <div className={classes.wrapperImg}>{slide}</div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      {!isOpenNavMenu && (
+        <Swiper
+          modules={[Navigation, Autoplay, Scrollbar, EffectCoverflow, A11y]}
+          spaceBetween={10}
+          slidesPerView={2}
+          autoplay={true}
+          navigation
+        >
+          {slide.map((slide, i) => {
+            return (
+              <SwiperSlide key={i}>
+                <div className={classes.wrapperImg}>{slide}</div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      )}
     </div>
   );
 };
