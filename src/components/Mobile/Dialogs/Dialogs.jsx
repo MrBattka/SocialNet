@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Dialogs.module.css";
+import Preloader from "../../Common/Preloader/Preloader";
 
 const Dialogs = ({ dialogs, photos, id, setId }) => {
 
   const [photo10, setPhoto10] = useState([])
+
+  if (!photos) {
+    return <Preloader />
+  }
 
   const getPhotos10 = async () => setPhoto10(await photos.slice(0, 10))
   const navigate = useNavigate();
@@ -15,7 +20,7 @@ const Dialogs = ({ dialogs, photos, id, setId }) => {
 
   useEffect(() => {
     getPhotos10()
-  }, [])
+  }, [photos])
 
   useEffect(() => {
     const timeFunc = setTimeout(() => {

@@ -59,25 +59,27 @@ const PhotoSlider = ({ isOpenNavMenu }) => {
   ]);
 
   return (
-    <div className={classes.wrapper}>
+    <>
       {!isOpenNavMenu && (
-        <Swiper
-          modules={[Navigation, Autoplay, Scrollbar, EffectCoverflow, A11y]}
-          spaceBetween={10}
-          slidesPerView={2}
-          autoplay={true}
-          navigation
-        >
-          {slide.map((slide, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <div className={classes.wrapperImg}>{slide}</div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+        <div className={classes.wrapper}>
+          <Swiper
+            modules={[Navigation, Autoplay, Scrollbar, EffectCoverflow, A11y]}
+            spaceBetween={10}
+            slidesPerView={2}
+            autoplay={true}
+            navigation
+          >
+            {slide.map((slide, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <div className={classes.wrapperImg}>{slide}</div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
