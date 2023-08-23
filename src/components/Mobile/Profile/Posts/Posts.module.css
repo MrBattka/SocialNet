@@ -60,15 +60,14 @@
 }
 
 .wrapperTextPost span {
-   display: flex;
-   justify-content: center;
-   cursor: pointer;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .deleteBtn {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     margin: 0 0 15px 15px;
-    color: rgb(98, 98, 98);
     cursor: pointer;
 }

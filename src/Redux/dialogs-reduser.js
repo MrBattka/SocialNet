@@ -46,6 +46,12 @@ export const setMessages = (messages) => ({
 export const setDialogs = (dialog) => ({ type: SET_DIALOGS, dialog });
 export const setPhotos = (photo) => ({ type: SET_PHOTOS, photo });
 
+export const getDialogs = () => async (dispatch) => {
+  let response = await dialogsAPI.requestGetDialogs();
+  dispatch(setDialogs(response.data));
+};
+
+
 export const getMessages = () => async (dispatch) => {
   let response = await dialogsAPI.requsetGetMessages();
   dispatch(setMessages(response.data));

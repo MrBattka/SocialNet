@@ -57,7 +57,7 @@
 
 .deleteBtn {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     margin: 0 0 15px 15px;
     color: rgb(98, 98, 98);
     cursor: pointer;

@@ -77,9 +77,6 @@ const PhotoSlider = () => {
       autoplay={true}
       effect="coverflow"
       navigation
-      
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {slide.map((slide, i) => {
         return (

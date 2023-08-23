@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Field, reduxForm } from "redux-form";
 import {
-  maxLengthCreator,
-  required,
+  maxLengthCreator
 } from "../../../../../utils/validators/validators";
 import { Input } from "../../../../Common/formsControls/formControls";
 import classes from "../MyPost.module.css";
@@ -21,7 +20,7 @@ const MyPostForm = (props) => {
             component={Input}
             name="newPostText"
             className={classes.input}
-            validate={[required, maxLength200]}
+            validate={maxLength200}
             placeholder={"Post message"}
             value={text}
             onChange={(e) => setText(e.target.value)}

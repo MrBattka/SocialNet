@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { getMessages, getPhotos } from "../../../Redux/dialogs-reduser";
-import { getMessage,  } from "../../../api/api";
+import { getDialogs, getPhotos } from "../../../Redux/dialogs-reduser";
 import { withAuthLocation } from "../../../hoc/withAuthLocation";
 import Dialogs from "./Dialogs";
 
-const DialogsContainer = ({ dialogs, getMessages, photos, getPhotos }) => {
+const DialogsContainer = ({ dialogs, getDialogs, photos, getPhotos }) => {
   const [id, setId] = useState("");
 
   useEffect(() => {
-    getMessages();
+    getDialogs();
     getPhotos();
   }, []);
-  console.log(photos);
+
   return (
     <Dialogs
       dialogs={dialogs}
@@ -30,6 +29,6 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStateToProps, { getMessages, getPhotos }),
+  connect(mapStateToProps, { getDialogs, getPhotos }),
   withAuthLocation
 )(DialogsContainer);

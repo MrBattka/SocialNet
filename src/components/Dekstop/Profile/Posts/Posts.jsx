@@ -9,7 +9,6 @@ const Posts = (props) => {
     setIsDelete(!isDelete);
     props.deletePost(isDelete);
   };
-  console.log(props.posts);
 
   return (
     <div className={classes.wrapper}>
