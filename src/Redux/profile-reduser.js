@@ -1,6 +1,6 @@
-import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import { usersAPI } from "../api/api";
+import persistReducer from "redux-persist/es/persistReducer";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
@@ -33,7 +33,7 @@ const profileReducer = (state = initialState, action) => {
         posts: [
           ...state.posts,
           { id: action.id, message: body, isDelete: false },
-        ].reverse(),
+        ],
       };
     case DELETE_POST:
       return {
@@ -91,4 +91,4 @@ export const updateProfileStatus = (status) => async (dispatch) => {
   }
 };
 
-export default profileReducer;
+export default persistReducer(persistConfig, profileReducer);

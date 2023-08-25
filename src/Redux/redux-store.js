@@ -27,8 +27,8 @@ let reducers = combineReducers({
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['settingPage'],
-    blacklist: ['profilePage']
+    whitelist: ['settingPage', 'dialogsPage'],
+    // blacklist: ['profilePage']
 };
 const pReducer = persistReducer(persistConfig, reducers);
 

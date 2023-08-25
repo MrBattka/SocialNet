@@ -8,11 +8,11 @@ const Posts = (props) => {
     post.isDelete = true
     props.deletePost(post)
   };
-  
+  console.log(props.posts);
   return (
     <div className={classes.wrapper}>
       {props.posts.map((post, id) => (
-        <ul key={id}>
+        <ul key={id} className={classes.wrapper_post}>
           <li>
             <div className={classes.post}>
               <div className={classes.avatar}>

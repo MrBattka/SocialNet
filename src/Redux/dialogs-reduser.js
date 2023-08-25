@@ -1,4 +1,6 @@
+import persistReducer from "redux-persist/es/persistReducer";
 import { dialogsAPI } from "../api/api";
+import storage from "redux-persist/lib/storage";
 
 const SEND_MESSAGE = "SEND-MESSAGE";
 const SET_DIALOGS = "SET_DIALOGS";
@@ -13,9 +15,11 @@ let initialState = {
 
 window.initialState = initialState;
 
-// const [dialogs, setDialogs] = useState([]);
-//   const [photos, setPhotos] = useState([]);
-//   const [id, setId] = useState("");
+const persistConfig = {
+  key: "root",
+  storage: storage,
+  blacklist: ["dialogs", "photos"],
+};
 
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
@@ -62,4 +66,4 @@ export const getPhotos = () => async (dispatch) => {
   dispatch(setPhotos(response.data));
 };
 
-export default dialogsReduser;
+export default persistReducer(persistConfig, dialogsReduser);

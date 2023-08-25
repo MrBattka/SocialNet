@@ -1,8 +1,8 @@
 .wrapper {
     padding-bottom: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 10vh;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .wrapper ul {
@@ -11,6 +11,7 @@
     padding: 0;
     animation-duration: 0.4s;
     animation-name: slidein;
+    margin-top: 20px;
 }
 
 @keyframes slidein {
@@ -37,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 30px 0;
+    margin: 0 0 0px 0;
 }
 
 .text {
