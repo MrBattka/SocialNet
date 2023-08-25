@@ -1,10 +1,9 @@
 import React, { useRef, useState } from "react";
 import { Field, reduxForm } from "redux-form";
-import {
-  maxLengthCreator
-} from "../../../../../utils/validators/validators";
+import { maxLengthCreator } from "../../../../../utils/validators/validators";
 import { Input } from "../../../../Common/formsControls/formControls";
 import classes from "../MyPost.module.css";
+import { Button, TextField } from "@mui/material";
 
 const maxLength200 = maxLengthCreator(200);
 
@@ -15,21 +14,21 @@ const MyPostForm = (props) => {
   return (
     <div>
       <form ref={refForm} onSubmit={props.handleSubmit}>
-        <div className={classes.textarea__wrapper}>
+        <div>
           <Field
             component={Input}
             name="newPostText"
             className={classes.input}
             validate={maxLength200}
-            placeholder={"Post message"}
+            placeholder="Post message"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div className={classes.btn__wrapper}>
-          <button className={classes.btn} type="submit">
-            Post
-          </button>
+          <Button variant="contained" color="error" size="small" type="submit">
+            New Post
+          </Button>
         </div>
       </form>
     </div>

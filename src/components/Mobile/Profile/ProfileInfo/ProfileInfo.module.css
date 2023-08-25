@@ -1,9 +1,10 @@
 .profile__img {
+    object-fit: cover;
+    border-radius: 50%;
     width: 200px;
     height: 200px;
-    margin: 40px 50px;
-    border-radius: 50%;
     cursor: pointer;
+    margin: 15px 30px;
 }
 
 .profile__img:hover {
@@ -22,11 +23,28 @@
 }
 
 .profile__info {
-    margin: 60px 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 10px 0 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    background-color: #ffffff28;
+    height: 130px;
+}
+
+.profile_bg {
+    background-image: url('../../../../assets/img/3200x2400_mountain-river-trees-shore-nature.jpg');
+    background-position: center;
+    border-radius: 10px;
+    background-size: cover;
+    width: 100cqw;
+    height: 150px;
+    margin: 0px 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about__user {

@@ -1,11 +1,10 @@
-import classes from "./ProfileInfo.module.css";
 import React, { useEffect, useState } from "react";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import userPhoto from "../../../../assets/img/user.jpg";
-import Preloader from "../../../Common/Preloader/Preloader";
-import ModalWindow from "../../../Common/ModalWindow/ModalWindow";
 import Lorem from "../../../Common/Lorem/Lorem";
-import bg from '../../../../assets/img/3200x2400_mountain-river-trees-shore-nature.jpg'
+import ModalWindow from "../../../Common/ModalWindow/ModalWindow";
+import Preloader from "../../../Common/Preloader/Preloader";
+import classes from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
   const [active, setActive] = useState(false);
@@ -23,7 +22,6 @@ const ProfileInfo = (props) => {
 
   return (
     <>
-      {/* <img className={classes.bg} src={bg} /> */}
       <div className={classes.profile__wrapper}>
         <div className={classes.wrapper_img}>
           <img

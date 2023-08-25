@@ -18,7 +18,7 @@ const LoginPage = (props) => {
     return (
         <div className={classes.wrapperLoginPage}>
             <div className={classes.wrapperForm}>
-                <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+                <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} isAuth={props.isAuth} />
             </div>
         </div>
     )

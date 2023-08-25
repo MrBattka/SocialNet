@@ -8,7 +8,7 @@ const Posts = (props) => {
     post.isDelete = true
     props.deletePost(post)
   };
-  console.log(props.posts);
+  
   return (
     <div className={classes.wrapper}>
       {props.posts.map((post, id) => (

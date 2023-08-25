@@ -16,13 +16,12 @@ const SendMessageForm = ({ handleSubmit }) => {
 
   return (
     <form ref={refForm} onSubmit={handleSubmit}>
-      {/* {createField('sendMessage', "text", [required], Input)} */}
       <div className={classes.form}>
         <div className={classes.wrapper_input}>
           <Field
             component={Input}
             name="sendMessage"
-            validate={[required, maxLength100]}
+            validate={[maxLength100]}
             placeholder="New message"
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -30,9 +29,7 @@ const SendMessageForm = ({ handleSubmit }) => {
         </div>
         <div className={classes.submit}>
           <button>
-            <a href="#buttom">
-              <img src={submitIcon} alt="Not found" />
-            </a>
+            <img src={submitIcon} alt="Not found" />
           </button>
         </div>
       </div>

@@ -58,6 +58,9 @@
 
 .submit {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .loginBtn {
