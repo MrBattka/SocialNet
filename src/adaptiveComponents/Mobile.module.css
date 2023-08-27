@@ -5,7 +5,7 @@ body {
 
 .wrapper_app {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: grid;
     grid-template-rows: 60px 12px 1fr;
     grid-template-columns: 1fr;
@@ -29,8 +29,7 @@ body {
     height: fit-content;
     background-color: rgba(221, 218, 218, 0.474);
     border-radius:10px 10px 0 0;
-    max-height: 90vh;
-    min-height: 100%;
+    height: 90vh;
     overflow-y: auto;
     scroll-behavior: smooth;
 }
