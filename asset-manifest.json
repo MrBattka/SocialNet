@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SocialNet/static/css/main.7c4c5879.css",
-    "main.js": "/SocialNet/static/js/main.8f5e6cac.js",
+    "main.css": "/SocialNet/static/css/main.409f6787.css",
+    "main.js": "/SocialNet/static/js/main.a309e957.js",
     "static/media/3.jpg": "/SocialNet/static/media/3.483decf6db8d34d147c3.jpg",
     "static/media/3200x2400_mountain-river-trees-shore-nature.jpg": "/SocialNet/static/media/3200x2400_mountain-river-trees-shore-nature.0f6366369855115bf8d1.jpg",
     "static/media/7.jpg": "/SocialNet/static/media/7.ade9e999726db76bcc4e.jpg",
@@ -20,11 +20,11 @@
     "static/media/preloader.svg": "/SocialNet/static/media/preloader.3338677e2adc0e929e231558c0ff3d96.svg",
     "index.html": "/SocialNet/index.html",
     "static/media/logout.svg": "/SocialNet/static/media/logout.30c3834048643fdcc769f8f57dc936a8.svg",
-    "main.7c4c5879.css.map": "/SocialNet/static/css/main.7c4c5879.css.map",
-    "main.8f5e6cac.js.map": "/SocialNet/static/js/main.8f5e6cac.js.map"
+    "main.409f6787.css.map": "/SocialNet/static/css/main.409f6787.css.map",
+    "main.a309e957.js.map": "/SocialNet/static/js/main.a309e957.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c4c5879.css",
-    "static/js/main.8f5e6cac.js"
+    "static/css/main.409f6787.css",
+    "static/js/main.a309e957.js"
   ]
 }
