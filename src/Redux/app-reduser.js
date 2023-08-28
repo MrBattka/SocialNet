@@ -1,6 +1,7 @@
+import { createAction } from "@reduxjs/toolkit";
 import { getAuthUserData } from "./auth-reduser"
 
-const INITIALIZED__ACCESS = "INITIALIZED__ACCESS" 
+export const initializedSuccess = createAction("INITIALIZED__ACCESS");
 
 const initialState = {
     initialized: false
@@ -8,7 +9,7 @@ const initialState = {
 
 const appReduser = (state = initialState, action ) => {
     switch (action.type) {
-        case INITIALIZED__ACCESS:
+        case initializedSuccess.toString():
             return {
                 ...state,
                 initialized: true
@@ -17,8 +18,6 @@ const appReduser = (state = initialState, action ) => {
             return state
     }
 }
-
-export const initializedSuccess = () => ({ type: INITIALIZED__ACCESS })
 
 export const initializeApp = () => (dispatch) => {
     let promise = dispatch(getAuthUserData())

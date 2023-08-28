@@ -1,12 +1,12 @@
+import { createAction } from "@reduxjs/toolkit";
+import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
 import { usersAPI } from "../api/api";
-import persistReducer from "redux-persist/es/persistReducer";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 const SET_PHOTO_PROFILE = "SET_PHOTO_PROFILE";
-const DELETE_POST = "DELETE_POST";
 
 let initialState = {
   posts: [],
@@ -24,6 +24,9 @@ const persistConfig = {
   blacklist: ["urlProfilePhoto", "status", "isFetching", "profile"],
 };
 
+// export const addPost = createAction("ADD_POST");
+export const deletePost = createAction("DELETE_POST");
+
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
@@ -35,10 +38,10 @@ const profileReducer = (state = initialState, action) => {
           { id: action.id, message: body, isDelete: false },
         ],
       };
-    case DELETE_POST:
+    case deletePost.toString():
       return {
         ...state,
-        posts: [...state.posts.filter(post => post.isDelete === false)],
+        posts: [...state.posts.filter((post) => post.isDelete === false)],
       };
     case SET_USER_PROFILE:
       return {
@@ -65,7 +68,6 @@ export const addPostAC = (newPostText, id) => ({
   newPostText,
   id,
 });
-export const deletePost = () => ({ type: DELETE_POST });
 export const setUserProfile = (profile) => ({
   type: SET_USER_PROFILE,
   profile,

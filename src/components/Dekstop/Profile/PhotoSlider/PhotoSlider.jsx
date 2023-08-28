@@ -80,7 +80,7 @@ const PhotoSlider = () => {
     >
       {slide.map((slide, i) => {
         return (
-          <SwiperSlide>
+          <SwiperSlide key={i}>
             <div className={classes.wrapperImg}>{slide}</div>
           </SwiperSlide>
         );

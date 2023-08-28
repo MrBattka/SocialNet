@@ -26,7 +26,7 @@ const MyPostForm = (props) => {
           />
         </div>
         <div className={classes.btn__wrapper}>
-          <Button variant="contained" color="error" size="small" type="submit">
+          <Button variant="contained" color="error" size="small" type="submit" onClick={(e) => e.target.blur()}>
             New Post
           </Button>
         </div>

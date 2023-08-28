@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import { getMessages, getPhotos, setMessages } from "../../../../Redux/dialogs-reduser";
+import { getDialogs, getMessages, getPhotos, setMessages } from "../../../../Redux/dialogs-reduser";
 import { getProfile } from "../../../../Redux/profile-reduser";
 import { withAuthLocation } from "../../../../hoc/withAuthLocation";
 import Messages from "./Messages";
@@ -15,13 +15,15 @@ const MessagesContainer = ({
   dialogs,
   getPhotos,
   photos,
-  messages
+  messages,
+  getDialogs
 }) => {
 
   useEffect(() => {
     getProfile(authUserId);
     getPhotos();
     getMessages()
+    getDialogs()
   }, []);
 
   return (
@@ -45,6 +47,6 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-  connect(mapStateToProps, { getProfile, getMessages, getPhotos }),
+  connect(mapStateToProps, { getProfile, getMessages, getPhotos, getDialogs }),
   withAuthLocation
 )(MessagesContainer);

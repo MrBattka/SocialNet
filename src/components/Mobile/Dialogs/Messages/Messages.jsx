@@ -49,12 +49,12 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
                   {photos10.map((photo, i) => {
                     return (
                       <div key={i}>
-                        {dialogPhotoId == photo.id && (
-                          <img
-                            className={classes.my_img}
-                            src={photo.thumbnailUrl}
-                            alt="#"
-                          />
+                        {(dialogPhotoId == photo.id) || (photo.id == 60) && (
+                            <img
+                              className={classes.my_img}
+                              src={photo.thumbnailUrl}
+                              alt="#"
+                            />
                         )}
                       </div>
                     );
