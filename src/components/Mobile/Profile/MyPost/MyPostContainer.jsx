@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
         posts: state.profilePage.posts,
         newPostText: state.profilePage.newPostText,
         profile: state.profilePage.profile,
-        isFetching: state.profilePage.isFetching
+        isFetching: state.profilePage.isFetching,
+        urlProfilePhoto: state.profilePage.urlProfilePhoto
     }
 }
 

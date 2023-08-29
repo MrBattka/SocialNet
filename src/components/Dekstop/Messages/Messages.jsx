@@ -3,6 +3,7 @@ import React from 'react';
 import DialogItem from './DilogItem/DialogItem';
 import Message from './Message/Message';
 import { MessageFormRedux } from './MessageForm/MessageForm';
+import useInput from './useInput';
 
 const Messages = (props) => {
 
@@ -16,9 +17,12 @@ const Messages = (props) => {
     let dialogsElement = props.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />)
     let messagesElement = props.messages.map(m => <Message message={m.message} key={m.id} id={m.id} />)
 
+    const input = useInput('', true, 'hellow')
+
     return (
         <div className={classes.wrapper__messages}>
-            {<div className={classes.wrapper_dev}><h2 className={classes.dev}>Currently under development</h2></div> ??
+            <input {...input} />
+            {/* {<div className={classes.wrapper_dev}><h2 className={classes.dev}>Currently under development</h2></div> ??
                 <div>
                     <h2 className={classes.title}>Dialogs</h2>
                     <div className={classes.dialogs}>
@@ -33,7 +37,7 @@ const Messages = (props) => {
                         </div>
                     </div>
                     <MessageFormRedux onSubmit={addNewMessage} />
-                </div>}
+                </div>} */}
         </div>
     )
 }

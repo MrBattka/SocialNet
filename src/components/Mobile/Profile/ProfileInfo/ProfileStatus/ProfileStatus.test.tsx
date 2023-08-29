@@ -5,7 +5,7 @@ import ProfileStatus from "./ProfileStatus"
 
 describe('testing ProfileStatus', () => {
     it("status be should changed", () => {
-        render(<ProfileStatus status="test" />)
+        render(<ProfileStatus updateProfileStatus status="test" />)
 
         const statusText = screen.getByTestId("status")
         fireEvent.click(statusText)

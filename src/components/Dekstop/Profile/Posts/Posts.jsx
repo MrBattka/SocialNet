@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import deleteIcon from "../../../../assets/img/delete.png";
 import userPhoto from "../../../../assets/img/user.jpg";
 import classes from "./Posts.module.css";
 
 const Posts = (props) => {
-  const [isDelete, setIsDelete] = useState(false);
-
-  const handleClick = (e) => {
-    setIsDelete(!isDelete);
-    props.deletePost(isDelete);
+  const handleClick = (post) => {
+    post.isDelete = true;
+    props.deletePost(post);
   };
 
   return (
     <div className={classes.wrapper}>
-      {props.posts.map((post, id, isDelete) => (
+      {props.posts.map((post, id) => (
         <ul key={id}>
           <li>
             <div className={classes.post}>
@@ -27,12 +26,12 @@ const Posts = (props) => {
               </div>
               <div className={classes.text}>
                 {post.message}
-                <span
+                <img
                   className={classes.deleteBtn}
-                  onClick={() => props.deletePost(isDelete)}
-                >
-                  x
-                </span>
+                  onClick={() => handleClick(post)}
+                  src={deleteIcon}
+                  alt="#"
+                />
               </div>
             </div>
           </li>

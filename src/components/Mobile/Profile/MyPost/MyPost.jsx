@@ -4,10 +4,19 @@ import Posts from "../Posts/Posts";
 import classes from "./MyPost.module.css";
 import { MyPostReduxForm } from "./MyPostForm/MyPostForm";
 
-const MyPosts = (props) => {
+const MyPosts = ({
+  posts,
+  profile,
+  isFetching,
+  urlProfilePhoto,
+  addPost,
+  id,
+  deletePost,
+  idPost
+}) => {
   const onPostMessage = (values) => {
     if (values.newPostText) {
-      props.addPost(values.newPostText, props.id);
+      addPost(values.newPostText, id);
       values.newPostText = "";
     }
   };
@@ -16,18 +25,17 @@ const MyPosts = (props) => {
     <div className={classes.wrapper}>
       <MyPostReduxForm
         onSubmit={onPostMessage}
-        addPost={props.addPost}
-        newPostText={props.newPostText}
       />
       <h2>Posts:</h2>
       <div className={classes.posts}>
-        {props.isFetching ? (
+        {isFetching ? (
           <Posts
-            posts={props.posts}
-            id={props.id}
-            deletePost={props.deletePost}
-            profile={props.profile}
-            idPost={props.idPost}
+            posts={posts}
+            id={id}
+            deletePost={deletePost}
+            profile={profile}
+            idPost={idPost}
+            urlProfilePhoto={urlProfilePhoto}
           />
         ) : (
           <Preloader />
