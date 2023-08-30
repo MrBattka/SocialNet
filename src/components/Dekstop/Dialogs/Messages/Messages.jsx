@@ -11,7 +11,7 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
 
   const dialogId = location.pathname.slice(-1);
   const dialogPhotoId = 5 + dialogId;
-  const photos10 = photos.slice(0, 10);
+  const photos10 = photos.slice(0, 9);
 
   const isNumber =
     Number(location.pathname.slice(-2, -1)) && location.pathname.slice(-2);
@@ -22,6 +22,11 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
       formData.sendMessage = "";
     }
   };
+
+  const hours = new Date().getHours()
+  const minutes = new Date().getMinutes()
+  const time = `${hours}:${minutes}`
+  console.log(time);
 
   return (
     <div className={classes.wrapper}>
@@ -37,6 +42,7 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
               <div>
                 <h4>{profile.fullName}</h4>
                 <p>{myMessage.text}</p>
+                <p className={classes.time}>{time}</p>
               </div>
             </div>
           );
@@ -49,7 +55,7 @@ const Messages = ({ profile, urlProfilePhoto, photos, dialogs, messages }) => {
                   {photos10.map((photo, i) => {
                     return (
                       <div key={i}>
-                        {dialogPhotoId == photo.id && (
+                        {(dialogPhotoId == photo.id) && (
                             <img
                               className={classes.my_img}
                               src={photo.thumbnailUrl}

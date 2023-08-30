@@ -52,7 +52,7 @@ const Dialogs = ({ dialogs, photos, id, setId }) => {
               onClick={() => setId(user.id)}
               className={classes.dialog}
             >
-              {user.name}
+              <h4>{user.name}</h4>
             </div>
           );
         })}

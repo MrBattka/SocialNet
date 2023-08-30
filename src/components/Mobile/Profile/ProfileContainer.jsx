@@ -19,7 +19,11 @@ const ProfileContainer = ({
   getProfile,
   getProfileStatus,
   updateProfilePhoto,
-  urlProfilePhoto
+  urlProfilePhoto,
+  lookingForAJob,
+  lookingForAJobDescription,
+  fullName,
+  contacts,
 }) => {
   let { userId } = useParams();
 
@@ -40,6 +44,10 @@ const ProfileContainer = ({
       updateProfileStatus={updateProfileStatus}
       updateProfilePhoto={updateProfilePhoto}
       urlProfilePhoto={urlProfilePhoto}
+      lookingForAJob={lookingForAJob}
+      lookingForAJobDescription={lookingForAJobDescription}
+      fullName={fullName}
+      contacts={contacts}
     />
   );
 };
@@ -50,6 +58,10 @@ let mapStateToProps = (state) => ({
   authUserId: state.auth.userId,
   isAuth: state.auth.isAuth,
   urlProfilePhoto: state.profilePage.urlProfilePhoto,
+  lookingForAJob: state.profilePage.profile?.lookingForAJob,
+  lookingForAJobDescription: state.profilePage.profile?.lookingForAJobDescription,
+  fullName: state.profilePage.profile?.fullName,
+  contacts: state.profilePage.profile?.contacts,
 });
 
 export default compose(

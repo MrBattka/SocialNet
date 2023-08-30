@@ -1,6 +1,6 @@
-import persistReducer from "redux-persist/es/persistReducer";
 import { dialogsAPI } from "../api/api";
 import storage from "redux-persist/lib/storage";
+import persistReducer from "redux-persist/es/persistReducer";
 
 const SEND_MESSAGE = "SEND-MESSAGE";
 const SET_DIALOGS = "SET_DIALOGS";

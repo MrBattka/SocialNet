@@ -23,7 +23,7 @@ const MyPostForm = (props) => {
             name="newPostText"
             className={classes.textarea}
             validate={[maxLength500]}
-            placeholder={"Post message"}
+            placeholder="Post message"
             value={text}
             onChange={(e) => setText(e.target.value)}
             label="New post"

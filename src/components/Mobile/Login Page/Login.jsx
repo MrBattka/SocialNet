@@ -5,23 +5,31 @@ import { login } from "../../../Redux/auth-reduser";
 import classes from "./Login.module.css";
 import LoginReduxForm from "./LoginForm/LoginForm";
 
-const LoginPage = (props) => {
+const LoginPage = ({ isAuth, captchaUrl, login }) => {
+  if (isAuth) {
+    return <Navigate replace to={"/profile"} />;
+  }
 
-    if (props.isAuth) {
-        return <Navigate replace to={"/profile"} />
-    }
-    
-    const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
-    }
+  const onSubmit = (formData) => {
+    login(
+      formData.email,
+      formData.password,
+      formData.rememberMe,
+      formData.captcha
+    );
+  };
 
-    return (
-        <div className={classes.wrapperLoginPage}>
-            <div className={classes.wrapperForm}>
-                <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} isAuth={props.isAuth} />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className={classes.wrapperLoginPage}>
+      <div className={classes.wrapperForm}>
+        <LoginReduxForm
+          onSubmit={onSubmit}
+          captchaUrl={captchaUrl}
+          isAuth={isAuth}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default connect(null, { login })(LoginPage)
+export default connect(null, { login })(LoginPage);

@@ -1,0 +1,60 @@
+.wrapper_dialog {
+    height: 80px;
+    width: 80vw;
+    margin-left: 30px;
+}
+
+.dialog {
+    height: 80px;
+    width: 80vw;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+}
+
+.dialog h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.dialog:hover {
+    text-shadow: 0 0 2px white;
+}
+
+.dialog:first-child {
+    margin-top: 20px;
+    border: 0;
+}
+
+.wrapper {
+    display: flex;
+    height: 80vmin;
+    margin: 0 2px 0 2px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.avatar:first-child {
+    margin-top: 10px;
+}
+
+.wrapper_avatar {
+    height: 80px;
+    margin: 10px 0 10px 20px;
+    cursor: pointer;
+}
+
+@media(max-width: 450px) {
+    .dialog {
+        font-size: 18px;
+    }
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
+}

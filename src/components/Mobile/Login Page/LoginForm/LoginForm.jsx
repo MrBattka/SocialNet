@@ -5,7 +5,7 @@ import { createField, Input } from "../../../Common/formsControls/formControls";
 import classes from "../Login.module.css";
 import { Button } from "@mui/material";
 
-const LoginForm = ({ handleSubmit, error, captchaUrl, isAuth }) => {
+const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
   return (
     <div className={error ? classes.formSummaryError : classes.form}>
       <form onSubmit={handleSubmit}>

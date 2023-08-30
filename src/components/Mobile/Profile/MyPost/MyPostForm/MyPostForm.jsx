@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Field, reduxForm } from "redux-form";
 import { maxLengthCreator } from "../../../../../utils/validators/validators";
-import { Input } from "../../../../Common/formsControls/formControls";
+import {
+  Input,
+  TextareaMaterialUI,
+} from "../../../../Common/formsControls/formControls";
 import classes from "../MyPost.module.css";
 import { Button } from "@mui/material";
 
@@ -17,12 +20,14 @@ const MyPostForm = ({ handleSubmit }) => {
         <div>
           <Field
             className={classes.input}
-            component={Input}
+            component={TextareaMaterialUI}
             name="newPostText"
             validate={maxLength200}
             placeholder="Post message"
             value={text}
             onChange={(e) => setText(e.target.value)}
+            label="New post"
+            color="error"
           />
         </div>
         <div className={classes.btn__wrapper}>

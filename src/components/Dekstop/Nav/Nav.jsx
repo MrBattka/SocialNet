@@ -17,7 +17,7 @@ const Nav = ({ setCurrentPageUsers, setCurrentPageFriends }) => {
                 <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/profile">Profile</NavLink>
             </div>
             <div className={classes.link}>
-                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/messages">Messages</NavLink>
+                <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/dialogs">Messages</NavLink>
             </div>
             <div className={classes.link} onClick={hundleClick}>
                 <NavLink className={navData => navData.isActive ? classes.active : classes.item} to="/users">Users</NavLink>

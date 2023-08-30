@@ -55,7 +55,7 @@ const mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth
 })
 
-const AppContainer = connect(mapStateToProps, { initializeApp })(App);
+export const AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
 const AppSocialNet = () => {
   return (
