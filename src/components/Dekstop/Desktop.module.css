@@ -2,7 +2,7 @@ body {
   background-color: var(--background-color);
   transition: background-color 200ms linear;
 }
-.app-wrapper {
+.app_wrapper {
   max-width: 80vw;
   margin: 0 auto;
   display: grid;
@@ -13,7 +13,7 @@ body {
   "n c"
   ;
 }
-.app-wrapper-content {
+.app_wrapper_content {
   grid-area: c;
   background-color: rgba(221, 218, 218, 0.474);
   box-shadow: 0px 0px 3px rgb(154, 154, 154);

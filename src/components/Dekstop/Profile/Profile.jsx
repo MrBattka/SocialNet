@@ -6,8 +6,18 @@ import classes from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import PhotoSlider from "./PhotoSlider/PhotoSlider";
 
-const Profile = (props) => {
-  if (!props.profile) {
+const Profile = ({
+  profile,
+  status,
+  updateProfileStatus,
+  urlProfilePhoto,
+  updateProfilePhoto,
+  lookingForAJob,
+  lookingForAJobDescription,
+  fullName,
+  contacts,
+}) => {
+  if (!profile) {
     return <Preloader />;
   }
 
@@ -15,21 +25,21 @@ const Profile = (props) => {
     <div className={classes.content}>
       <div className={classes.profile__wrapper}>
         <ProfileInfo
-          profile={props.profile}
-          status={props.status}
-          updateProfileStatus={props.updateProfileStatus}
-          urlProfilePhoto={props.urlProfilePhoto}
-          updateProfilePhoto={props.updateProfilePhoto}
+          profile={profile}
+          status={status}
+          updateProfileStatus={updateProfileStatus}
+          urlProfilePhoto={urlProfilePhoto}
+          updateProfilePhoto={updateProfilePhoto}
         />
         <AdditionalInformation
-          profile={props.profile}
-          lookingForAJob={props.lookingForAJob}
-          lookingForAJobDescription={props.lookingForAJobDescription}
-          fullName={props.fullName}
-          contacts={props.contacts}
+          profile={profile}
+          lookingForAJob={lookingForAJob}
+          lookingForAJobDescription={lookingForAJobDescription}
+          fullName={fullName}
+          contacts={contacts}
         />
         <PhotoSlider />
-        <MyPostsContainer profile={props.profile} />
+        <MyPostsContainer profile={profile} />
       </div>
     </div>
   );

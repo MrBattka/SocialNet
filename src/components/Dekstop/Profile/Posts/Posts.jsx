@@ -3,24 +3,24 @@ import deleteIcon from "../../../../assets/img/delete.png";
 import userPhoto from "../../../../assets/img/user.jpg";
 import classes from "./Posts.module.css";
 
-const Posts = (props) => {
+const Posts = ({ profile, deletePost, posts, urlProfilePhoto }) => {
   const handleClick = (post) => {
     post.isDelete = true;
-    props.deletePost(post);
+    deletePost(post);
   };
 
   return (
     <div className={classes.wrapper}>
-      {props.posts.map((post, id) => (
+      {posts.map((post, id) => (
         <ul key={id}>
           <li>
             <div className={classes.post}>
               <div className={classes.avatar}>
-                <img
+              <img
                   src={
-                    props.profile.photos.small != null
-                      ? props.profile.photos.small
-                      : userPhoto
+                    profile.photos.large ??
+                    urlProfilePhoto ??
+                    userPhoto
                   }
                 />
               </div>

@@ -3,13 +3,12 @@ import { connect, Provider } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import DesktopView from './adaptiveComponents/DesktopView';
-import MobileViewCont from './adaptiveComponents/MobileView';
-import './App.css';
 import Preloader from './components/Common/Preloader/Preloader';
 import { useTheme } from './components/Common/useTheme/useTheme';
 import { initializeApp } from './Redux/app-reduser';
 import { persistor, store } from './Redux/redux-store';
+import DesktopView from './components/Dekstop/DesktopView';
+import MobileViewCont from './components/Mobile/MobileView';
 
 const App = ({ isAuth, authUserId, initializeApp, initialize }) => {
 

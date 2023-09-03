@@ -1,25 +1,25 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "../App.css";
-import HeaderContainer from "../components/Dekstop/Header/HeaderContainer";
-import LoginPageContainer from "../components/Dekstop/LoginPage/LoginPageContainer";
-import MyFriendsContainer from "../components/Dekstop/MyFriends/MyFriendsContainer";
-import Nav from "../components/Dekstop/Nav/Nav";
-import ProfileContainer from "../components/Dekstop/Profile/ProfileContainer";
-import SettingCompContainer from "../components/Dekstop/Setting Component/SettingCompContainer";
-import UsersContainer from "../components/Dekstop/Users/UsersContainer";
-import DialogsContainer from "../components/Dekstop/Dialogs/DialogsContainer";
-import MessagesContainer from "../components/Dekstop/Dialogs/Messages/MessagesContainer";
+import DialogsContainer from "./Dialogs/DialogsContainer";
+import MessagesContainer from "./Dialogs/Messages/MessagesContainer";
+import HeaderContainer from "./Header/HeaderContainer";
+import LoginPageContainer from "./LoginPage/LoginPageContainer";
+import MyFriendsContainer from "./MyFriends/MyFriendsContainer";
+import Nav from "./Nav/Nav";
+import ProfileContainer from "./Profile/ProfileContainer";
+import SettingCompContainer from "./Setting Component/SettingCompContainer";
+import UsersContainer from "./Users/UsersContainer";
+import classes from './Desktop.module.css';
 
 const DesktopView = ({ isAuth, authUserId }) => {
   return (
-    <div className="app-wrapper">
+    <div className={classes.app_wrapper}>
       <HeaderContainer />
       {isAuth && <Nav authUserId={authUserId} />}
       <Routes>
         <Route path="/login" element={<LoginPageContainer />} />
       </Routes>
-      <div className="app-wrapper-content">
+      <div className={classes.app_wrapper_content}>
         <Routes>
           {/* <Route path='/' element={<Navigate to='/profile' />} /> */}
           <Route path="/profile" element={<ProfileContainer />}>

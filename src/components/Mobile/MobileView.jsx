@@ -1,15 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import DialogsContainer from "../components/Mobile/Dialogs/DialogsContainer";
-import HeaderContainer from "../components/Mobile/Header/HeaderContainer";
-import LoginPageContainer from "../components/Mobile/Login Page/LoginContainer";
-import MyFriendsContainer from "../components/Mobile/My Friends/MyFriendsContainer";
-import ProfileContainer from "../components/Mobile/Profile/ProfileContainer";
-import SettingCompContainer from "../components/Mobile/Settins Component/SettingsContainer";
-import UsersContainer from "../components/Mobile/Users/UsersContainer";
+import DialogsContainer from "./Dialogs/DialogsContainer";
+import HeaderContainer from "./Header/HeaderContainer";
+import LoginPageContainer from "./Login Page/LoginContainer";
+import MyFriendsContainer from "./My Friends/MyFriendsContainer";
+import ProfileContainer from "./Profile/ProfileContainer";
+import SettingCompContainer from "./Settins Component/SettingsContainer";
+import UsersContainer from "./Users/UsersContainer";
 import classes from "./Mobile.module.css";
-import MessagesContainer from "../components/Mobile/Dialogs/Messages/MessagesContainer";
+import MessagesContainer from "./Dialogs/Messages/MessagesContainer";
 
 const MobileView = () => {
   return (

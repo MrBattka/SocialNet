@@ -11,32 +11,6 @@ const instanceMessage = axios.create({
   baseURL: `https://jsonplaceholder.typicode.com/`,
 });
 
-export const getDialogs = async (dispatch) => {
-  try {
-    const res = instanceMessage.get(`users`);
-    res.then((response) => dispatch(response.data));
-  } catch (err) {
-    if (axios.AxiosError(err)) {
-      console.log(err.response?.data.errText, "error");
-    } else if (err instanceof Error) {
-      console.log(err.message);
-    }
-  }
-};
-
-export const getPhotos = async (dispatch) => {
-    try {
-      const res = instanceMessage.get(`photos?albumId=2`);
-      res.then((response) => dispatch(response.data));
-    } catch (err) {
-      if (axios.AxiosError(err)) {
-        console.log(err.response?.data.errText, "error");
-      } else if (err instanceof Error) {
-        console.log(err.message);
-      }
-    }
-  };
-
 export const getMessage = async (dispatch) => {
   try {
     const res = instanceMessage.get(`posts`);
