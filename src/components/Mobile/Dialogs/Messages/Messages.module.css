@@ -6,8 +6,7 @@
     flex-direction: column;
 }
 
-.wrapper_message {  
-    height: 75svh;
+.wrapper_message { 
     margin: 10px 0 0 0px;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -39,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    height: 90px;
 }
 
 .wrapper_input {
